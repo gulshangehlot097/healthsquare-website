@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
+import { Player } from "@lottiefiles/react-lottie-player";
+import arrowAnimation from "@/src/animation/arrowright.json"; 
 import {
   FaSmile,
   FaTooth,
@@ -221,12 +223,19 @@ export default function Header() {
               href="/appointment"
               className="relative overflow-hidden bg-[#0E76CD] text-white font-semibold px-6 py-2 rounded-full uppercase tracking-wide text-sm shadow-md transition-all duration-500 ease-in-out group inline-block"
             >
-              <span className="relative z-10 transition-colors duration-500 ease-in-out">
-                Book Appointment →
-              </span>
+              <button className="relative flex items-center gap-2 z-10 transition-colors duration-500 ease-in-out">
+                <span>Book Appointment</span>
+                <Player
+                  autoplay
+                  loop
+                  src={arrowAnimation}
+                  className="w-6 h-6 filter invert brightness-0 saturate-0"
+                />
+              </button>
               <span className="absolute inset-0 bg-[#00A859] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
             </Link>
           </div>
+
 
           <button
             onClick={() => setOpen(!open)}

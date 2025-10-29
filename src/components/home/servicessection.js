@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function FeatureCards() {
@@ -24,15 +26,30 @@ export default function FeatureCards() {
     },
   ];
 
+  // Animation Variants
+  const container = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
+  };
+
   return (
     <section className="relative bg-gradient-to-br from-[#E6F4FF] via-white to-[#E6F4FF] py-24 md:py-28 overflow-hidden">
-      {/* Subtle background shape */}
-      <div
-        className="
-          absolute left-[10px] top-[30px]
-          w-[150px] md:w-[190px] lg:w-[210px]
-          opacity-80 pointer-events-none
-        "
+      {/* Floating Background Shape */}
+      <motion.div
+        initial={{ y: 0 }}
+        animate={{ y: [0, -15, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+        className="absolute left-[10px] top-[30px] w-[150px] md:w-[190px] lg:w-[210px] opacity-80 pointer-events-none"
       >
         <Image
           src="/shape-6.png"
@@ -42,10 +59,16 @@ export default function FeatureCards() {
           className="object-contain"
           priority
         />
-      </div>
+      </motion.div>
 
       {/* Section Heading */}
-      <div className="text-center mb-16 relative z-10">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center mb-16 relative z-10"
+      >
         <h2 className="text-3xl md:text-4xl font-bold text-[#0072CE] mb-4">
           OUR <span className="text-[#00B388]">SERVICES</span>
         </h2>
@@ -54,20 +77,31 @@ export default function FeatureCards() {
           Health Square.
         </p>
         <div className="mt-4 w-24 h-1 bg-gradient-to-r from-[#0072CE] to-[#00B388] mx-auto rounded-full" />
-      </div>
+      </motion.div>
 
       {/* Cards */}
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
+        className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10"
+      >
         {features.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            variants={fadeUp}
+            whileHover={{
+              y: -10, // 👈 only lift up — no rotation
+              transition: { type: "spring", stiffness: 300, damping: 18 },
+            }}
             className="
               group relative bg-white rounded-2xl overflow-hidden
-              shadow-md hover:shadow-lg transition-all duration-500 ease-out
+              shadow-md hover:shadow-xl transition-all duration-500 ease-out
               text-start p-8 flex flex-col items-start
             "
           >
-            {/* Blue → Green gradient hover overlay */}
+            {/* Gradient Hover Overlay */}
             <div
               className="
                 absolute inset-0 bg-gradient-to-b from-[#0072CE] to-[#00B388]
@@ -77,7 +111,7 @@ export default function FeatureCards() {
             ></div>
 
             {/* Icon */}
-            <div className="relative w-22 h-22 rounded-full overflow-hidden mb-6 z-10 border-2 border-[#E6F4FF] shadow-sm">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 z-10 border-2 border-[#E6F4FF] shadow-sm">
               <Image
                 src={item.icon}
                 alt={item.title}
@@ -105,9 +139,9 @@ export default function FeatureCards() {
             >
               {item.desc}
             </p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

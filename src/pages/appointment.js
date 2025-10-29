@@ -137,9 +137,9 @@ const generateCaptcha = () => {
   return (
     <>
       <Seo
-        title="About Health Square | Dental Clinic, Pharmacy & Wellness Center in Jaipur"
-        description="Discover Health Square — Jaipur’s trusted dental clinic, pharmacy, and wellness hub offering expert dental care, quality medicines, and convenient home delivery. Book your appointment today!"
-        keywords="Health Square Jaipur, dental clinic Jaipur, pharmacy Jaipur, dentist appointment Jaipur, wellness center, oral care, medicine home delivery"
+        title="Book Appointment | Health Square Jaipur – Dental Clinic & Pharmacy"
+        description="Book your appointment at Health Square Jaipur — a trusted dental clinic and pharmacy offering expert dental care, RGHS cashless treatment, and home medicine delivery. Schedule your visit today for healthy smiles and hassle-free care."
+        keywords="Health Square Jaipur appointment, book dentist Jaipur, dental clinic Jaipur, pharmacy Jaipur, RGHS cashless treatment, oral care Jaipur, medicine home delivery"
       />
 
       <main>
@@ -384,7 +384,6 @@ const generateCaptcha = () => {
     I agree to all{" "}
     <Link
       href="/tnc"
-      target="_blank"
       className="text-[#0070C9] underline hover:text-[#005fa3] transition-colors"
     >
       Terms and Conditions

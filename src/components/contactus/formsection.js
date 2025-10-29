@@ -38,6 +38,7 @@ export default function ContactForm() {
     }
     setCaptcha(randomStr);
   };
+
   const { register, handleSubmit, watch, setError, clearErrors, reset } =
     useForm();
   const mobile = watch("mobile");
@@ -129,13 +130,14 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-b from-[#e0f0ff] to-[#ffffff] py-16 sm:py-20 px-4 sm:px-8 md:px-12 lg:px-20 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-b from-[#e0f0ff] to-[#ffffff] py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 relative overflow-hidden">
+      {/* Decorative Background Circles */}
       <div className="absolute top-0 left-0 w-24 sm:w-32 h-24 sm:h-32 bg-blue-200/30 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-[#0070C9]/20 rounded-full translate-x-1/2 translate-y-1/2 animate-pulse"></div>
 
-      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row-reverse items-start gap-8 md:gap-12 relative z-10">
+      <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-start gap-8 md:gap-10 lg:gap-12 relative z-10">
         {/* RIGHT SIDE FORM */}
-        <div className="w-full lg:w-[60%] bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl">
+        <div className="w-full md:w-[55%] lg:w-[60%] bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0070C9] mb-4 text-center lg:text-left">
             HEALTH SQUARE
           </h2>
@@ -278,14 +280,10 @@ export default function ContactForm() {
 
             {/* CAPTCHA Section */}
             <div className="sm:col-span-2 flex flex-col gap-2 mt-2">
-              {/* Captcha Row */}
               <div className="flex items-center gap-3">
-                {/* Captcha Box (1/4 width) */}
                 <div className="w-1/4 px-4 py-2 bg-gray-100 text-lg font-semibold tracking-widest rounded-lg border border-gray-300 text-center select-none">
                   {captcha}
                 </div>
-
-                {/* Captcha Input (3/4 width) */}
                 <div className="w-3/4 flex items-center gap-2">
                   <input
                     type="text"
@@ -299,7 +297,7 @@ export default function ContactForm() {
                   <button
                     type="button"
                     onClick={generateCaptcha}
-                    className="text-[#0070C9] text-sm font-medium underline  cursor-pointer hover:text-[#005fa3]"
+                    className="text-[#0070C9] text-sm font-medium underline cursor-pointer hover:text-[#005fa3]"
                   >
                     Refresh
                   </button>
@@ -318,9 +316,11 @@ export default function ContactForm() {
               />
               <span className="text-gray-600 text-sm">
                 I agree to all{" "}
-                <Link href="/tnc"><span className="text-[#0070C9] underline">
-                  Terms and Conditions
-                </span></Link>
+                <Link href="/tnc">
+                  <span className="text-[#0070C9] underline">
+                    Terms and Conditions
+                  </span>
+                </Link>
                 .
               </span>
             </label>
@@ -340,13 +340,11 @@ export default function ContactForm() {
           </form>
         </div>
 
-        {/* LEFT SIDE IMAGE + DETAILS */}
-        {/* LEFT SIDE (same look, fully responsive) */}
-        <div className="flex-1 relative w-full md:w-[45%]">
-          {/* Image fills parent */}
-          <div className="absolute top-0 left-0 w-full h-[400px] sm:h-[450px] md:h-full rounded-3xl overflow-hidden shadow-2xl">
+        {/* LEFT SIDE */}
+        <div className="flex-1 relative w-full md:w-[45%] lg:w-[40%]">
+          <div className="absolute top-0 left-0 w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-full rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/appointment.jpg"
+              src="/CONTACT.png"
               alt="Contact Illustration"
               fill
               className="object-cover"
@@ -355,48 +353,46 @@ export default function ContactForm() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0070C9]/40 via-transparent to-transparent"></div>
           </div>
 
-          {/* Info Card overlays image on large, stacks below on small */}
-          <div className="relative bg-white/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 mt-[340px] sm:mt-[420px] md:mt-0 shadow-xl flex flex-col gap-6 z-20">
-            <h3 className="font-bold text-[#0070C9] text-lg flex items-center gap-2">
+          <div className="relative  rounded-3xl p-6 sm:p-8  shadow-xl flex flex-col gap-6 z-20">
+            <h3 className="font-bold text-[#fff] text-lg flex items-center gap-2">
               <HiOfficeBuilding className="text-xl animate-bounce" /> General
               Enquiries
             </h3>
-            <p className="flex items-center gap-3 text-sm sm:text-base">
-              <HiPhone className="text-[#0070C9]" /> 7403330888, 7403330777
+            <p className="flex items-center gap-3 text-[#fff] text-sm sm:text-base">
+              <HiPhone /> 7403330888, 7403330777
             </p>
-            <p className="flex items-center gap-3 text-sm sm:text-base">
-              <HiOutlineMail className="text-[#0070C9]" /> info@healthsquare.in
+            <p className="flex items-center text-[#fff] gap-3 text-sm sm:text-base">
+              <HiOutlineMail /> info@healthsquare.in
             </p>
-           <p className="flex items-start gap-3 text-sm sm:text-base">
-  <HiOutlineLocationMarker className="text-[#0070C9] text-3xl mt-[2px]" />
-  22, Ground Floor, Biswa Nagar, Opp. Metro Pillar No. 75, New
-  Sanganer Road, Jaipur – 302019
-</p>
-
+            <p className="flex items-start gap-3 text-[#fff] text-sm sm:text-base">
+              <HiOutlineLocationMarker className="text-3xl mt-[2px]" />
+              22, Ground Floor, Biswa Nagar, Opp. Metro Pillar No. 75, New
+              Sanganer Road, Jaipur – 302019
+            </p>
 
             <div className="border-t border-blue-200 pt-3"></div>
 
-            <h3 className="font-bold text-[#0070C9] text-lg flex items-center gap-2 mt-2">
+            <h3 className="font-bold text-[#fff] text-lg flex items-center gap-2 mt-2">
               <HiClock className="text-xl animate-pulse" /> Timings
             </h3>
             <div className="space-y-1 text-gray-700 text-sm sm:text-base">
               <div className="flex justify-between border-b border-gray-200 pb-1">
-                <p className="flex items-center gap-2 text-black">
-                  <HiOfficeBuilding className="text-[#0070C9]" /> Pharmacy
+                <p className="flex items-center text-[#fff] gap-2 ">
+                  <HiOfficeBuilding /> Pharmacy
                 </p>
-                <p>7 AM – 11 PM</p>
+                <p className="text-[#fff]">7 AM – 11 PM</p>
               </div>
               <div className="flex justify-between border-b border-gray-200 pb-1">
-                <p className="flex items-center gap-2">
-                  <HiHome className="text-[#0070C9]" /> Home Delivery
+                <p className="flex items-center text-[#fff] gap-2">
+                  <HiHome /> Home Delivery
                 </p>
-                <p>7 AM – 11 PM</p>
+                <p className="text-[#fff]">7 AM – 11 PM</p>
               </div>
               <div className="flex justify-between">
-                <p className="flex items-center gap-2">
-                  <HiClock className="text-[#0070C9]" /> Sunday
+                <p className="flex items-center text-[#fff] gap-2">
+                  <HiClock /> Sunday
                 </p>
-                <p>11 AM – 4 PM</p>
+                <p className="text-[#fff]">11 AM – 4 PM</p>
               </div>
             </div>
           </div>

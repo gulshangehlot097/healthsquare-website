@@ -1,4 +1,4 @@
-export  const servicesData = [
+export const servicesData = [
   // --- Existing Smile Design Service ---
   {
     slug: "smile-design",
@@ -116,25 +116,25 @@ export  const servicesData = [
   {
     slug: "advanced-root-canal-treatment",
     title: "Advanced Root Canal Treatment in Jaipur",
-    banner: "/images/root-canal.jpg",
+    banner: "/images/services/rootcanal/rootcanal-bg.png",
     intro:
       "Root Canal Treatment is a common dental procedure administered to over 15 million people yearly in India. Also known as endodontic treatments, they cause lesser pain compared to tooth extractions and carry little risk with an average success rate of over 92%.",
     sections: [
       {
         heading: "What is a Root Canal?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-01.png",
         content:
           "Each tooth has a visible, hard surface called enamel, beneath which is dentin, and then the soft, hyper-sensitive pulp. The pulp contains nerves and blood vessels. The root canal is the channel through which the tooth's nerves connect to the rest of the body.",
       },
       {
         heading: "What is Root Canal Treatment?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-02.png",
         content:
           "Tooth decay caused by bacteria can damage the pulp. Once decay reaches the pulp, the dentist removes the infected tissue in a procedure called Root Canal Treatment. This saves the natural tooth while removing the infected area.",
       },
       {
         heading: "When is Root Canal Treatment Necessary?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-03.png",
         list: [
           "Intense pain when chewing, biting, or applying pressure.",
           "Dental infection reaches the pulp but tooth is salvageable.",
@@ -145,7 +145,7 @@ export  const servicesData = [
       },
       {
         heading: "Steps of a Root Canal Treatment",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-04.png",
         list: [
           "Step 1: Identification – Digital X-ray to find infection extent.",
           "Step 2: Preparing The Area – Anaesthesia and cavity preparation.",
@@ -156,13 +156,13 @@ export  const servicesData = [
       },
       {
         heading: "Cost of Root Canal Treatment in Jaipur",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-05.png",
         content:
           "Costs vary based on infection extent and crown type. On average ₹2,000–₹10,000 for the procedure, excluding crowns (₹5,000–₹30,000). Health Square ensures world-class safety & service within budget.",
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/rootcanal/rootcanal-06.png",
         content:
           "Dr Sonal Agarwal is the best dentist in Jaipur for cosmetic dental procedures. Our clinic has cutting-edge equipment and experienced staff. Over 100+ successful advanced root canal treatments have been performed.",
       },
@@ -345,13 +345,13 @@ export  const servicesData = [
   {
     slug: "teeth-whitening",
     title: "Teeth Whitening",
-    banner: "/images/teeth-whitening.jpg",
+    banner: "/images/services/teethwhitening/teethwhitening-bg.png",
     intro:
       "Teeth whitening has surged in popularity in India, offering an effective way to enhance appearance and boost self-confidence.",
     sections: [
       {
         heading: "What is Teeth Whitening?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-01.png",
         content:
           "It’s a 100% non-invasive cosmetic dental procedure that improves smiles with minimal investment. Advanced dental technology brightens the teeth’s surface and reduces discolouration.",
         list: [
@@ -362,7 +362,7 @@ export  const servicesData = [
       },
       {
         heading: "Common Causes of Teeth Discoloration",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-02.png",
         list: [
           "Food & Drink: Everyday consumables like coffee, tea, red wine, and more can stain teeth.",
           "Tobacco Use: Smoking or chewing tobacco leads to significant teeth discolouration.",
@@ -373,7 +373,7 @@ export  const servicesData = [
       },
       {
         heading: "Benefits of Professional Teeth Whitening",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-03.png",
         list: [
           "Effective Results: Achieve significantly whiter teeth compared to over-the-counter products.",
           "Quick Treatment: Noticeable improvement within one session.",
@@ -383,7 +383,7 @@ export  const servicesData = [
       },
       {
         heading: "Teeth Whitening Procedures at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-04.png",
         list: [
           "In-office Whitening: Fast and effective treatment performed by a dentist using high-concentration bleaching gel and light or laser activation.",
           "Take-home Kits: Custom-made trays and professional-grade bleaching gel for convenient and gradual whitening at home.",
@@ -392,7 +392,7 @@ export  const servicesData = [
       {
         heading:
           "Steps of the Teeth Whitening Process at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-05.png",
         list: [
           "Consultation: Assess dental health and determine suitability for whitening.",
           "Preparation: Clean the teeth to remove any plaque or debris.",
@@ -403,7 +403,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/teethwhitening/teethwhitening-06.png",
         content:
           "At Health Square Dental Clinic, our cosmetic dentists specialize in teeth whitening, utilizing advanced technology to deliver outstanding results. Our team is dedicated to providing personalized care, ensuring a safe, effective, and comfortable whitening experience. Trust our expertise to enhance your smile with the best whitening solutions in Jaipur.",
       },
@@ -461,13 +461,13 @@ export  const servicesData = [
   {
     slug: "full-mouth-rehabilitation",
     title: "Full Mouth Rehabilitation",
-    banner: "/images/full-mouth-rehabilitation.jpg",
+    banner: "/images/services/mouth/mouth-bg.png",
     intro:
       "Full mouth rehabilitation is a comprehensive dental approach that restores function, aesthetics, and comfort by addressing multiple oral issues through restorative and cosmetic dental procedures.",
     sections: [
       {
         heading: "What is Full Mouth Rehabilitation?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-01.png",
         content:
           "Full mouth rehabilitation involves a series of dental treatments designed to restore the function and appearance of the entire mouth. This process addresses multiple dental issues, ensuring a comprehensive solution for overall oral health.",
         list: [
@@ -478,7 +478,7 @@ export  const servicesData = [
       },
       {
         heading: "Common Dental Issues Addressed by Full Mouth Rehabilitation",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-02.png",
         list: [
           "Tooth Decay: Severe cavities that damage multiple teeth.",
           "Gum Disease: Advanced periodontal disease affecting tooth stability.",
@@ -490,7 +490,7 @@ export  const servicesData = [
       },
       {
         heading: "Benefits of Full Mouth Rehabilitation",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-03.png",
         list: [
           "Improved Functionality: Restores chewing and speaking abilities.",
           "Enhanced Aesthetics: Achieves a healthier, more attractive smile.",
@@ -502,7 +502,7 @@ export  const servicesData = [
       {
         heading:
           "Full Mouth Rehabilitation Procedures at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-04.png",
         list: [
           "Crowns: Caps placed over damaged teeth to restore shape and function.",
           "Bridges: Fixed prosthetics that replace missing teeth.",
@@ -515,7 +515,7 @@ export  const servicesData = [
       {
         heading:
           "Steps of the Full Mouth Rehabilitation Process at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-05.png",
         list: [
           "Initial Consultation: Comprehensive examination and discussion of goals.",
           "Treatment Planning: Customized plan tailored to individual needs.",
@@ -527,7 +527,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/mouth/mouth-06.png",
         content:
           "At Health Square Dental Clinic, our restorative dentists are experts in full mouth rehabilitation, utilizing state-of-the-art technology to deliver exceptional results. Our clinic offers personalized, comprehensive care to restore function, aesthetics, and comfort, making us the top choice in Jaipur for full mouth rehabilitation.",
       },
@@ -591,13 +591,13 @@ export  const servicesData = [
   {
     slug: "veneers-and-crown",
     title: "Veneers & Crown",
-    banner: "/images/appointment.jpg",
+    banner: "/images/services/veneerscrown/veneerscrown-bg.png",
     intro:
       "In India, the demand for cosmetic and restorative dental procedures like veneers, crowns, and fillings has seen a significant rise, with over 60% of adults seeking these treatments to enhance their dental health and aesthetics. These procedures are essential for maintaining a healthy, attractive smile and addressing various dental issues effectively.",
     sections: [
       {
         heading: "What are Crowns, Fillings, & Veneers?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-01.png",
         list: [
           "Crowns: Caps placed over damaged teeth to restore shape and function.",
           "Fillings: Materials used to fill cavities and restore decayed teeth.",
@@ -606,7 +606,7 @@ export  const servicesData = [
       },
       {
         heading: "Common Dental Issues Addressed by Veneers and Crowns",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-02.png",
         list: [
           "Tooth Decay: Severe cavities that damage teeth.",
           "Chipped or Cracked Teeth: Restoring damaged teeth to prevent further issues.",
@@ -618,7 +618,7 @@ export  const servicesData = [
       },
       {
         heading: "Benefits of Veneers and Crowns",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-03.png",
         list: [
           "Improved Aesthetics: Achieve a more attractive and natural-looking smile.",
           "Enhanced Functionality: Restore the ability to chew and speak properly.",
@@ -629,7 +629,7 @@ export  const servicesData = [
       },
       {
         heading: "Veneers and Crowns Procedures at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-04.png",
         list: [
           "Application: Precise placement of crowns and veneers for optimal fit and appearance.",
           "Materials: High-quality porcelain, ceramic, and composite materials for durability and aesthetics.",
@@ -639,7 +639,7 @@ export  const servicesData = [
       {
         heading:
           "Steps of the Veneers and Crowns Process at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-05.png",
         list: [
           "Initial Consultation: Comprehensive examination and discussion of goals.",
           "Preparation: Cleaning and shaping of teeth for crown or veneer placement.",
@@ -651,7 +651,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/veneerscrown/veneerscrown-06.png",
         content:
           "At Health Square Dental Clinic, our cosmetic dentists specialize in veneers, crowns, and fillings, utilizing state-of-the-art technology to deliver exceptional results. Our team is dedicated to providing personalized care, ensuring a safe, effective, and comfortable experience. Trust our expertise to enhance your smile with the best dental solutions in Jaipur.",
       },
@@ -708,13 +708,13 @@ export  const servicesData = [
   {
     slug: "tooth-implant",
     title: "Tooth Implant",
-    banner: "/images/appointment.jpg",
+    banner: "/images/services/toothimplant/toothimplant-bg.png",
     intro:
       "Dental implants have become increasingly necessary in India, addressing severe dental issues and improving quality of life. With a success rate of over 95%, dental implants are a reliable solution for replacing missing teeth, offering long-term benefits for patients seeking to restore their smile and functionality.",
     sections: [
       {
         heading: "What are Dental Implants?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-01.png",
         list: [
           "Titanium Posts: Biocompatible metal posts act as tooth roots.",
           "Abutments: Connectors that secure the replacement teeth.",
@@ -723,7 +723,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Dental Implants Are Required",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-02.png",
         list: [
           "Missing Teeth: Replaces one or more missing teeth, restoring function and aesthetics.",
           "Bone Loss Prevention: Prevents bone deterioration that occurs when teeth are missing.",
@@ -734,7 +734,7 @@ export  const servicesData = [
       },
       {
         heading: "When Are Dental Implants Ideal?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-03.png",
         list: [
           "Single Tooth Replacement: Perfect for replacing a single missing tooth with a natural-looking implant.",
           "Multiple Teeth Replacement: Ideal for replacing several missing teeth in different areas.",
@@ -745,7 +745,7 @@ export  const servicesData = [
       },
       {
         heading: "Dental Implant Procedures at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-04.png",
         list: [
           "Consultation: Initial assessment and discussion of treatment goals.",
           "Diagnosis: Detailed examination and imaging to plan the implant procedure.",
@@ -757,7 +757,7 @@ export  const servicesData = [
       {
         heading:
           "Steps of the Dental Implant Process at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-05.png",
         list: [
           "Initial Consultation: Comprehensive evaluation and treatment planning.",
           "Imaging and Diagnosis: Using advanced imaging technology to assess bone structure and plan implant placement.",
@@ -770,7 +770,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothimplant/toothimplant-06.png",
         content:
           "At Health Square Dental Clinic, our experienced dentists specialize in dental implants, utilizing state-of-the-art technology to deliver exceptional results. Our personalized care ensures each patient receives the highest quality treatment, making us the top choice in Jaipur for dental implant procedures.",
       },
@@ -823,13 +823,13 @@ export  const servicesData = [
   {
     slug: "tooth-extraction",
     title: "Tooth Extraction",
-    banner: "/images/tooth-extraction.jpg",
+    banner: "/images/services/toothextraction/toothextraction-bg.png",
     intro:
       "Wisdom tooth extractions are common in India, with studies showing that around 70% of adults need to have their wisdom teeth removed due to various dental issues. This procedure helps alleviate pain, prevent complications, and maintain overall oral health.",
     sections: [
       {
         heading: "What is a Wisdom Tooth?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-01.png",
         content:
           "Wisdom teeth are the third set of molars that typically emerge in the late teens or early twenties. They are the last teeth to erupt and are located at the back of the mouth.",
         list: [
@@ -840,7 +840,7 @@ export  const servicesData = [
       },
       {
         heading: "Reasons for Wisdom Tooth Extraction",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-02.png",
         list: [
           "Impaction: Wisdom teeth that don’t have enough space to emerge properly.",
           "Crowding: Additional teeth cause overcrowding and misalignment.",
@@ -851,7 +851,7 @@ export  const servicesData = [
       },
       {
         heading: "What is Wisdom Tooth Removal?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-03.png",
         list: [
           "Surgical Extraction: Removal of impacted or problematic wisdom teeth.",
           "Prevention: Performed to prevent future dental issues.",
@@ -860,7 +860,7 @@ export  const servicesData = [
       },
       {
         heading: "When is Tooth Extraction Necessary?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-04.png",
         list: [
           "Severe Decay: Extensive tooth decay that cannot be repaired.",
           "Gum Disease: Advanced periodontal disease affecting tooth stability.",
@@ -871,7 +871,7 @@ export  const servicesData = [
       },
       {
         heading: "Benefits of Professional Wisdom Tooth Extraction",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-05.png",
         list: [
           "Pain Relief: Alleviates pain and discomfort caused by problematic wisdom teeth.",
           "Preventive Care: Reduces the risk of future dental issues and complications.",
@@ -882,7 +882,7 @@ export  const servicesData = [
       },
       {
         heading: "Tooth Extraction Procedure at Health Square Dental Clinic",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-06.png",
         list: [
           "Consultation: Initial assessment and discussion of treatment options.",
           "Evaluation: Detailed examination and imaging to plan the extraction.",
@@ -892,7 +892,7 @@ export  const servicesData = [
       },
       {
         heading: "Is It Necessary to Remove Wisdom Teeth?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-07.png",
         list: [
           "Wisdom tooth removal is necessary when it causes pain, infection, crowding, or damage to adjacent teeth.",
           "Proactive removal can prevent future complications and maintain overall oral health.",
@@ -900,7 +900,7 @@ export  const servicesData = [
       },
       {
         heading: "Why Choose Health Square Dental Clinic in Jaipur?",
-        image: "/images/appointment.jpg",
+        image: "/images/services/toothextraction/toothextraction-08.png",
         list: [
           "Expert dental surgeons specializing in wisdom tooth extractions.",
           "Use of advanced technology for safe and effective procedures.",

@@ -119,6 +119,7 @@ export default function BlogDetail() {
     [post?.content]
   );
   const title = post ? post.title : "Blog";
+  console.log(title)
   const hero = toAbs(post?.image || "");
   const readMins = post ? calcReadingTime(post.content) : null;
 

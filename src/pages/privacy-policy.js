@@ -39,7 +39,7 @@ function CookieBanner() {
             localStorage.setItem(KEY, "yes");
             setShow(false);
           }}
-          className="rounded-xl bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-1.5 font-medium shadow-sm hover:shadow transition"
+          className="rounded-xl bg-[#0C78D1] text-white px-4 py-1.5 font-medium shadow-sm hover:shadow transition"
         >
           Accept
         </motion.button>
@@ -137,7 +137,7 @@ useEffect(() => {
                 Trusted Healthcare Partner
               </div>
 
-              <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 font-[Playfair_Display]">
+              <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900">
                 Privacy Policy
               </h1>
               <p className="mt-3 max-w-2xl text-slate-700 leading-relaxed">
@@ -151,7 +151,7 @@ useEffect(() => {
                 </span>
                 <Link
                   href="#intro"
-                  className="rounded-full bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-1.5 hover:shadow-md transition"
+                  className="rounded-full bg-[#0C78D1] text-white px-4 py-1.5 hover:shadow-md transition"
                 >
                   Start Reading
                 </Link>
@@ -213,7 +213,7 @@ useEffect(() => {
           <article className="relative space-y-10 text-slate-700 leading-relaxed">
             {/* INTRODUCTION */}
             <ScrollSection id="intro" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">Introduction</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">Introduction</h2>
               <p>
                 Health Square recognises the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Privacy Policy sets out how Health Square uses and protects any information that you give Health Square when you use this www.healthsquare.in or any other digital medium and other offline sources of our Company. Health Square is committed to ensure that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this Privacy Policy as it describes how we treat user information we collect from you, the policies and procedures on the collection, use, disclosure and protection of your  information when you use our Health Square Platform.
               </p>
@@ -224,7 +224,7 @@ useEffect(() => {
 
             {/* DEFINITIONS */}
             <ScrollSection id="definitions" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">DEFINITIONS</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">DEFINITIONS</h2>
               <p>
                 The terms “Health Square”, “Company”, “we”, “us” and “our” refer to the Health Square. The term “Health Square Platform” refers to www.healthsquare.in or any other digital medium and other offline sources.
               </p>
@@ -247,7 +247,7 @@ useEffect(() => {
 
             {/* INFORMATION WE COLLECT */}
             <ScrollSection id="collect" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">INFORMATION WE COLLECT FROM YOU</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">INFORMATION WE COLLECT FROM YOU</h2>
 
               <h3 className="font-semibold text-slate-900 mt-2">Contact information:</h3>
               <p>We  might   collect   your  Name,   Email,  Phone,   Address,   IP Address.</p>
@@ -285,7 +285,7 @@ useEffect(() => {
 
             {/* WAYS OF COLLECTING */}
             <ScrollSection id="ways" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">WAYS OF COLLECTING INFORMATION</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">WAYS OF COLLECTING INFORMATION</h2>
 
               <h3 className="font-semibold text-slate-900 mt-2">We collect information directly from you:</h3>
               <p>
@@ -311,7 +311,7 @@ useEffect(() => {
 
             {/* USE OF PERSONAL INFORMATION */}
             <ScrollSection id="use" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">USE OF YOUR PERSONAL INFORMATION</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">USE OF YOUR PERSONAL INFORMATION</h2>
 
               <h3 className="font-semibold text-slate-900 mt-2">We use information to contact you:</h3>
               <p>
@@ -370,7 +370,7 @@ useEffect(() => {
 
             {/* SHARING / DISCLOSURE */}
             <ScrollSection id="sharing" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 SHARING/DISCLOSURE/DISTRIBUTION OF YOUR INFORMATION WITH THIRD-PARTIES
               </h2>
 
@@ -430,7 +430,7 @@ useEffect(() => {
 
             {/* CONSENT */}
             <ScrollSection id="consent" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">YOUR CONSENT</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">YOUR CONSENT</h2>
               <p>
                 By using the Health Square Platform and the Services provided therein, you agree and consent to the collection, transfer, use, storage, disclosure and sharing of your information as described and collected by us in accordance with this Policy. If you do not agree with the Policy, please do not use or access the Health Square website.
               </p>
@@ -438,7 +438,7 @@ useEffect(() => {
 
             {/* COOKIES */}
             <ScrollSection id="cookies" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">COOKIES</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">COOKIES</h2>
               <p>
                 Our Health Square website and third parties with whom we partner, may use cookies, pixel tags, web beacons, mobile device IDs, “flash cookies” and similar files or technologies to collect and store information with respect to your use of the Services and third-party websites.
               </p>
@@ -466,7 +466,7 @@ useEffect(() => {
 
             {/* DATA SECURITY */}
             <ScrollSection id="security" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">DATA SECURITY PRECAUTIONS</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">DATA SECURITY PRECAUTIONS</h2>
               <p>
                 We have in place appropriate technical and security measures to secure the information collected by us. We use vault and tokenization services from third party service providers to protect the sensitive personal information provided by you. The third-party service providers with respect to our vault and tokenization services and our payment gateway and payment processing are compliant with the payment card industry standard (generally referred to as PCI compliant service providers). You are advised not to send your full credit/debit card details through unencrypted electronic platforms. Where we have given you (or where you have chosen) a username and password which enables you to access certain parts of the Health Square Platform, you are responsible for keeping these details confidential. We ask you not to share your password with anyone.
               </p>
@@ -477,7 +477,7 @@ useEffect(() => {
 
             {/* THIRD PARTY SITES */}
             <ScrollSection id="thirdparty" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">THIRD PARTY SITES</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">THIRD PARTY SITES</h2>
               <p>
                 The Health Square website may contain links to other websites. If you click on one of the links to third party websites, you may be taken to websites we do not control. Any personal information about you collected whilst visiting such websites is not governed by this Policy. Health Square shall not be responsible for and has no control over the practices and content of any website accessed using the links contained on the Health Square Platform. Read the privacy policy of other websites carefully as this policy does not apply to the privacy practices of those websites. We are not responsible for these third party sites.
               </p>
@@ -488,7 +488,7 @@ useEffect(() => {
 
             {/* CONTACT */}
             <ScrollSection id="contact" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">Contact</h2>
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">Contact</h2>
               <p>
                 If you have any queries relating to the processing or usage of information provided by you in connection with this Policy or other privacy concerns, you can email us at{" "}
                 <a href="mailto:info@healthsquare.in" className="text-blue-600 underline">info@healthsquare.in</a>.
@@ -500,7 +500,7 @@ useEffect(() => {
               href="#intro"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-2 shadow-lg hover:shadow-xl transition"
+              className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-[#0C78D1] text-white px-4 py-2 shadow-lg hover:shadow-xl transition"
             >
               <ArrowUp className="h-4 w-4" />
               Top

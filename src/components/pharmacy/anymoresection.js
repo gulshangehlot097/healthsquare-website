@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function QuestionsSection() {
   // Animation variants for staggered entrance
@@ -57,13 +58,14 @@ export default function QuestionsSection() {
         </motion.p>
 
         {/* Button */}
+          <Link href="/contact" passHref>
         <motion.button
   type="submit"
   variants={item}
   whileHover={{ scale: 1.05 }}
   whileTap={{ scale: 0.95 }}
   className="
-    relative overflow-hidden bg-[#0072CE] text-white font-semibold
+    relative overflow-hidden bg-[#0072CE]  cursor-pointer text-white font-semibold
     py-3 px-10 rounded-full
     shadow-md transition-all duration-500 ease-in-out
     group
@@ -80,7 +82,7 @@ export default function QuestionsSection() {
     "
   ></span>
 </motion.button>
-
+</Link>
       </motion.div>
     </section>
   );

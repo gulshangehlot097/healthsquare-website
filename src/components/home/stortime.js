@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Clock, Phone } from "lucide-react";
+import Lottie from "lottie-react";
+import PhoneIcon from "@/src/animation/call.json";
 
 export default function StoreTimings() {
   return (
@@ -51,12 +53,22 @@ export default function StoreTimings() {
             className="bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl p-8 text-center md:text-left shadow-inner"
           >
             <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0072CE]/40 to-[#00A859]/40 blur-md animate-pulse"></div>
-                <div className="relative bg-gradient-to-br from-[#0072CE] to-[#00A859] p-4 rounded-full">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-              </div>
+ <div className="relative w-20 h-20 flex items-center justify-center">
+  {/* Glow Background */}
+  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0072CE]/40 to-[#00A859]/40 blur-md animate-pulse"></div>
+
+  {/* Icon Circle */}
+  <div className="w-14 h-14 bg-gradient-to-br from-[#0072CE] to-[#00A859] rounded-full flex items-center justify-center p-2 relative">
+    <Lottie
+      animationData={PhoneIcon}
+      loop
+      autoplay
+      style={{ width: "48px", height: "48px", filter: "brightness(0) invert(1)" }}
+    />
+  </div>
+</div>
+
+
 
               <div>
                 <h3 className="font-semibold text-xl text-white">

@@ -3,6 +3,7 @@ import { useEffect, useState,useMemo } from "react";
 import { motion } from "framer-motion";
 import { FileText, Scale, ArrowUp } from "lucide-react";
 import Link from "next/link";
+import Seo from "@/src/components/seo";
 
 const MotionLink = motion(Link);
 
@@ -39,7 +40,7 @@ function CookieBanner() {
             localStorage.setItem(KEY, "yes");
             setShow(false);
           }}
-          className="rounded-xl bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-1.5 font-medium shadow-sm hover:shadow transition"
+          className="rounded-xl bg-[#0C78D1] text-white px-4 py-1.5 font-medium shadow-sm hover:shadow transition"
         >
           Accept
         </motion.button>
@@ -87,7 +88,7 @@ const sections = useMemo(
     { id: "removal", label: "Removal of Links" },
     { id: "disclaimer", label: "Disclaimer" },
   ],
-  [] // ✅ computed once
+  []
 );
 
 useEffect(() => {
@@ -113,6 +114,12 @@ useEffect(() => {
 
   return (
     <>
+  <Seo
+  title="Terms & Conditions | Health Square Jaipur – Dental Clinic & Pharmacy"
+  description="Read the Terms & Conditions for using Health Square Jaipur’s website and services. Learn about appointments, payments, privacy, and RGHS cashless policies for our dental clinic and pharmacy."
+  keywords="Health Square Jaipur terms and conditions, dental clinic policy, pharmacy policy Jaipur, RGHS terms, Health Square privacy policy, clinic rules Jaipur"
+/>
+
       <div
         aria-hidden
         className="fixed inset-0 -z-10 bg-gradient-to-br from-[#E6F8FF] via-white to-[#F0FFF8] overflow-hidden"
@@ -136,7 +143,7 @@ useEffect(() => {
                 Trusted Healthcare Partner
               </div>
 
-              <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 font-[Playfair_Display]">
+              <h1 className="mt-4 text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 ">
                 Terms & Conditions
               </h1>
               <p className="mt-3 max-w-2xl text-slate-700 leading-relaxed">
@@ -150,7 +157,7 @@ useEffect(() => {
                 </span>
                 <Link
                   href="#overview"
-                  className="rounded-full bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-1.5 hover:shadow-md transition"
+                  className="rounded-full bg-[#0C78D1] text-white px-4 py-1.5 hover:shadow-md transition"
                 >
                   Start Reading
                 </Link>
@@ -208,7 +215,7 @@ useEffect(() => {
 
           <article className="relative space-y-10">
             <ScrollSection id="overview" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Overview
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -222,7 +229,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="cookies" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Cookies
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -234,7 +241,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="license" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3 ">
                 License
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -251,7 +258,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="hyperlinking" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Hyperlinking to Our Content
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -262,7 +269,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="iframes" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 iFrames
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -273,7 +280,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="liability" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Content Liability
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -285,7 +292,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="privacy" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Your Privacy
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -295,7 +302,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="rights" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3 ">
                 Reservation of Rights
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -306,7 +313,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="removal" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Removal of Links
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -317,7 +324,7 @@ useEffect(() => {
             </ScrollSection>
 
             <ScrollSection id="disclaimer" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
-              <h2 className="text-2xl font-semibold text-slate-900 mb-3 font-[Playfair_Display]">
+              <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 Disclaimer
               </h2>
               <p className="text-slate-700 leading-relaxed">
@@ -333,7 +340,7 @@ useEffect(() => {
               href="#overview"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#00B4D8] to-[#34D399] text-white px-4 py-2 shadow-lg hover:shadow-xl transition"
+              className="fixed bottom-6 right-6 inline-flex items-center gap-2 rounded-full bg-[#0C78D1] text-white px-4 py-2 shadow-lg hover:shadow-xl transition"
             >
               <ArrowUp className="h-4 w-4" />
               Top
