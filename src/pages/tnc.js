@@ -107,7 +107,7 @@ useEffect(() => {
     );
 
     sections.forEach((s) => {
-      const el = document?.getElementById(s.id);
+     const el = typeof document !== "undefined" ? document.getElementById(s.id) : null;
       if (el) obs.observe(el);
     });
 
