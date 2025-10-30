@@ -1,3 +1,4 @@
+"use client";
 import { servicesData } from "@/src/data/service";
 import Head from "next/head";
 import Image from "next/image";

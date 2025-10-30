@@ -8,7 +8,6 @@ import axios from "axios";
 export async function CallApi(url, method = "POST", data = null ) {
   console.log(url,data);
   // let token = localStorage.getItem("token");
-  console.log(token);
   let options = {
     method,
     headers: {
@@ -26,7 +25,7 @@ export async function CallApi(url, method = "POST", data = null ) {
 export async function CallApiData(url, method = "POST", data = null ) {
   console.log(url,data);
   // let token = localStorage.getItem("token");
-  console.log(token);
+
   let options = {
     method,
     headers: {
