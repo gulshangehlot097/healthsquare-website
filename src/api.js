@@ -1,12 +1,12 @@
-import { openDB } from 'idb';
+import { openDB } from "idb";
 //import {constant} from './pages'
 const DB_NAME = "DIGIBIMA";
 const STORE_NAME = "digibima";
-import constant from '@/src/env'
+import constant from "@/src/env";
 import axios from "axios";
 
-export async function CallApi(url, method = "POST", data = null ) {
-  console.log(url,data);
+export async function callApi(url, method = "POST", data = null) {
+  console.log(url, data);
   // let token = localStorage.getItem("token");
   let options = {
     method,
@@ -22,8 +22,8 @@ export async function CallApi(url, method = "POST", data = null ) {
   if (!res.ok) throw new Error("API request failed");
   return await res.json();
 }
-export async function CallApiData(url, method = "POST", data = null ) {
-  console.log(url,data);
+export async function callApiData(url, method = "POST", data = null) {
+  console.log(url, data);
   // let token = localStorage.getItem("token");
 
   let options = {
@@ -41,9 +41,7 @@ export async function CallApiData(url, method = "POST", data = null ) {
   return await res.json();
 }
 
-
-
-// export async function CallApi(url, method = "POST", data = null) {
+// export async function callApi(url, method = "POST", data = null) {
 //   const token = localStorage.getItem("token");
 
 //   try {
@@ -64,11 +62,10 @@ export async function CallApiData(url, method = "POST", data = null ) {
 //   }
 // }
 
-
-
-export async function CallApiWithFile(url, method = "POST", payload = null) {
+export async function callApiWithFile(url, method = "POST", payload = null) {
   const token = localStorage.getItem("token");
-  const isFormData = typeof FormData !== "undefined" && payload instanceof FormData;
+  const isFormData =
+    typeof FormData !== "undefined" && payload instanceof FormData;
 
   const options = {
     method,
@@ -82,24 +79,25 @@ export async function CallApiWithFile(url, method = "POST", payload = null) {
       options.body = payload;
     } else {
       options.headers["Content-Type"] = "application/json";
-      options.body = JSON.stringify(payload); 
+      options.body = JSON.stringify(payload);
     }
   }
-  console.log("hello",payload)
-   console.log(options)
+  console.log("hello", payload);
+  console.log(options);
   const res = await fetch(url, options);
   const ct = res.headers.get("content-type") || "";
 
   if (!res.ok) {
-    const errText = ct.includes("application/json") ? JSON.stringify(await res.json()) : await res.text();
+    const errText = ct.includes("application/json")
+      ? JSON.stringify(await res.json())
+      : await res.text();
     throw new Error(`API request failed: ${res.status} ${errText}`);
   }
 
   return ct.includes("application/json") ? res.json() : res.text();
 }
 
-
-export async function UploadDocument(url, method = "POST", file = null) {
+export async function uploadDocument(url, method = "POST", file = null) {
   const token = localStorage.getItem("token");
 
   // const formData = new FormData();
@@ -129,7 +127,7 @@ export async function getUserinfo(token = localStorage.getItem("token")) {
   });
   return response;
 }
-export async function VerifyToken(pretoken) {
+export async function verifyToken(pretoken) {
   //let token = localStorage.getItem('token');
   const response = await fetch("/api/verifytoken", {
     headers: {
@@ -139,7 +137,6 @@ export async function VerifyToken(pretoken) {
   });
   return response;
 }
-
 
 export async function getDB() {
   return openDB(DB_NAME, 1, {
@@ -153,20 +150,19 @@ export async function getDB() {
 
 export async function storeDBToken(token) {
   const db = await getDB();
-  await db.put(STORE_NAME, token, 'authToken');
+  await db.put(STORE_NAME, token, "authToken");
 }
 
 export async function getDBToken() {
   const db = await getDB();
-  return db.get(STORE_NAME, 'authToken');
+  return db.get(STORE_NAME, "authToken");
 }
 
 export async function deleteDBToken() {
   const db = await getDB();
-  await db.delete(STORE_NAME, 'authToken');
+  await db.delete(STORE_NAME, "authToken");
 }
 
 export async function isAuth() {
-  return localStorage.getItem('token')?true:false;
+  return localStorage.getItem("token") ? true : false;
 }
-

@@ -2,13 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { showSuccess, showError } from "@/src/components/toaster";
-import { CallApi } from "@/src/api";
+import { callApi } from "@/src/api";
 import constant from "@/src/env";
 import { FaUserShield } from "react-icons/fa";
-import Image from 'next/image';
+import Image from "next/image";
 
-
-const AdminLogin  = ({ usersData }) => {
+const AdminLogin = ({ usersData }) => {
   const [mobile, setMobile] = useState("");
   const [otp, setOtp] = useState("");
   const [showOtp, setShowOtp] = useState(false);
@@ -40,7 +39,7 @@ const AdminLogin  = ({ usersData }) => {
       }
 
       const payload = { mobile };
-      const response = await CallApi(
+      const response = await callApi(
         constant.API.ADMIN.ADMINLOGIN,
         "POST",
         payload
@@ -50,28 +49,23 @@ const AdminLogin  = ({ usersData }) => {
         return;
       }
 
-    if (response.status === true) {
-  // if (typeof window !== "undefined") {
-  //   localStorage.setItem("token", response.token);
-  //   localStorage.setItem("logintype", "admin");
-  //   window.dispatchEvent(new Event("auth-change"));
-  // }
+      if (response.status === true) {
+        // if (typeof window !== "undefined") {
+        //   localStorage.setItem("token", response.token);
+        //   localStorage.setItem("logintype", "admin");
+        //   window.dispatchEvent(new Event("auth-change"));
+        // }
 
-  setToken(response.token);
+        setToken(response.token);
 
-  const data = { mobile };
-  const res = await CallApi(
-    constant.API.ADMIN.SENDOTP,
-    "POST",
-    data
-  );
-  if (res.status === true) showSuccess(res.message);
+        const data = { mobile };
+        const res = await callApi(constant.API.ADMIN.SENDOTP, "POST", data);
+        if (res.status === true) showSuccess(res.message);
 
-  setShowOtp(true);
-  setTimer(20);
-  setCanResend(false);
-}
-
+        setShowOtp(true);
+        setTimer(20);
+        setCanResend(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -80,7 +74,7 @@ const AdminLogin  = ({ usersData }) => {
   const isValidOtp = (code) => /^[0-9]{6}$/.test(code);
 
   const verifyOTP = async () => {
-    console.log("ram")
+    console.log("ram");
     try {
       if (!isValidOtp(otp)) {
         showError("Please enter a valid OTP");
@@ -88,7 +82,7 @@ const AdminLogin  = ({ usersData }) => {
       }
 
       const data = { mobile, otp };
-      const response = await CallApi(
+      const response = await callApi(
         constant.API.ADMIN.VERIFYOTP,
         "POST",
         data
@@ -98,7 +92,6 @@ const AdminLogin  = ({ usersData }) => {
       }
 
       if (response.status === true) {
-      
         showSuccess("Welcome to admin");
         // router.push(constant.ROUTES.ADMIN.ADMINDASHBOARD);
         router.push(`admin/viewblogs`);
@@ -125,10 +118,10 @@ const AdminLogin  = ({ usersData }) => {
       <div className="bg-white shadow-xl rounded-3xl overflow-hidden w-full max-w-4xl grid md:grid-cols-[46%_54%] transition-all">
         {/* Left Side */}
         <div className="px-10 py-8 flex flex-col justify-center items-center space-y-4">
-         <h2 className="text-3xl font-bold bg-gradient-to-r from-[#0E76CD] via-[#00A859] to-[#0E76CD] text-transparent bg-clip-text flex items-center gap-3">
-  <FaUserShield className="text-4xl text-[#0E76CD] drop-shadow-md" />
-  Admin Login
-</h2>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-[#0E76CD] via-[#00A859] to-[#0E76CD] text-transparent bg-clip-text flex items-center gap-3">
+            <FaUserShield className="text-4xl text-[#0E76CD] drop-shadow-md" />
+            Admin Login
+          </h2>
 
           <p className="text-gray-500 text-center text-sm">
             Enter your registered mobile number to receive an OTP.
@@ -148,7 +141,10 @@ const AdminLogin  = ({ usersData }) => {
                   required
                 />
                 <div className="text-center">
-                  <button type="submit" className="px-6 py-3 cursor-pointer thmbtn rounded-full">
+                  <button
+                    type="submit"
+                    className="px-6 py-3 cursor-pointer thmbtn rounded-full"
+                  >
                     Send OTP
                   </button>
                 </div>
@@ -197,18 +193,18 @@ const AdminLogin  = ({ usersData }) => {
 
         {/* Right Side Image - hidden on small screens */}
         <div className="hidden md:block relative h-[512px] overflow-hidden">
-           <Image
-                  src="/admin.png"
-                  alt="Background"
-                  fill
-                  className="absolute inset-0 w-full h-full object-cover"
-                  priority
-                />
+          <Image
+            src="/admin.png"
+            alt="Background"
+            fill
+            className="absolute inset-0 w-full h-full object-cover"
+            priority
+          />
           <div className="relative h-full flex flex-col justify-center items-center text-white px-6 text-center">
             <h2 className="absolute top-[20%] w-full text-center text-3xl font-bold leading-snug">
               Welcome
               <br />
-              To  Health Square
+              To Health Square
             </h2>
             <p className="absolute bottom-6 w-full text-center text-sm px-6">
               Please enter your registered mobile number
@@ -222,4 +218,4 @@ const AdminLogin  = ({ usersData }) => {
   );
 };
 
-export default AdminLogin ;
+export default AdminLogin;
