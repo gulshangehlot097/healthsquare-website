@@ -51,11 +51,11 @@ const AdminLogin  = ({ usersData }) => {
       }
 
     if (response.status === true) {
-  if (typeof window !== "undefined") {
-    localStorage.setItem("token", response.token);
-    localStorage.setItem("logintype", "admin");
-    window.dispatchEvent(new Event("auth-change"));
-  }
+  // if (typeof window !== "undefined") {
+  //   localStorage.setItem("token", response.token);
+  //   localStorage.setItem("logintype", "admin");
+  //   window.dispatchEvent(new Event("auth-change"));
+  // }
 
   setToken(response.token);
 
