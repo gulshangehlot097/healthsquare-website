@@ -92,7 +92,8 @@ const sections = useMemo(
 );
 
 useEffect(() => {
-  if (typeof window === "undefined") return;
+
+  if (typeof window === "undefined" || typeof document === "undefined") return;
 
   const obs = new IntersectionObserver(
     (entries) => {
@@ -110,6 +111,7 @@ useEffect(() => {
 
   return () => obs.disconnect();
 }, [sections]);
+
 
 
 
