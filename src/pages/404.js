@@ -1,4 +1,6 @@
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import ErrorAnimation from "@/src/animation/404alt.json";
 import Link from "next/link";
 
