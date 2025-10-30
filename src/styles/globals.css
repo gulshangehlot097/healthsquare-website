@@ -40,6 +40,7 @@
   background-color:#0E76CD;
   color:#FFF;
   transition: background-color .25s ease, color .25s ease;
+  cursor: pointer;
 }
 
 .thmbtn:hover{

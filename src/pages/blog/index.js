@@ -138,7 +138,7 @@ export default function BlogList() {
               >
                 <button
                     type="submit"
-                    className="relative overflow-hidden bg-[#0072CE] text-white font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
+                    className="relative overflow-hidden cursor-pointer bg-[#0072CE] text-white font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
                   >
                     <span className="relative z-10 transition-colors duration-500 ease-in-out">
                      Read More →

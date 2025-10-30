@@ -27,9 +27,9 @@ const constant = {
     },
 
     ADMIN: {
-      ADMINLOGIN: "/api/adminpnlx/admin-login",
-      SENDOTP: "/api/adminpnlx/sendotp",
-      VERIFYOTP: "/api/adminpnlx/verifyotp",
+      ADMINLOGIN: "/api/admin/login",
+      SENDOTP: "/api/user/sendotp",
+      VERIFYOTP: "/api/user/verifyotp",
     },
     BLOG:"/api/user/blog",
     SINGLEBLOG:"/api/user/blog-show",

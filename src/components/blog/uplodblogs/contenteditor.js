@@ -58,9 +58,9 @@ export default function RichTextEditor({
         type="button"
         onClick={() => setActiveTab(id)}
         className={[
-          "px-3 py-1.5 text-sm rounded-lg border transition",
+          "px-3 py-1.5 text-sm cursor-pointer rounded-lg border transition",
           isActive
-            ? "bg-[#7998F4] text-white border-[#7998F4] shadow-sm"
+            ? "thmbtn  shadow-sm"
             : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50",
         ].join(" ")}
       >

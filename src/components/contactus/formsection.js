@@ -329,7 +329,7 @@ export default function ContactForm() {
             <div className="text-center sm:text-start">
               <button
                 type="submit"
-                className="relative overflow-hidden bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
+                className="relative overflow-hidden cursor-pointer bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
               >
                 <span className="relative z-10 transition-colors duration-500 ease-in-out">
                   {loading ? "Submitting..." : "SUBMIT FORM"}
@@ -344,7 +344,7 @@ export default function ContactForm() {
         <div className="flex-1 relative w-full md:w-[45%] lg:w-[40%]">
           <div className="absolute top-0 left-0 w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-full rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/CONTACT.png"
+              src="/contact.png"
               alt="Contact Illustration"
               fill
               className="object-cover"

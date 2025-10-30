@@ -90,59 +90,62 @@ export default function Header() {
 
   return (
     <>
-       <div className="fixed top-0 left-0 w-full z-40">
-      <div
-        className={`text-gray-100 text-sm transition-all duration-500 ease-in-out ${
-          isScrolled
-            ? "-translate-y-full opacity-0"
-            : "bg-gradient-to-r from-[#0E76CD] to-[#00A859] text-white translate-y-0 opacity-100"
-        }`}
-      >
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center h-auto sm:h-10 py-2 sm:py-0 space-y-2 sm:space-y-0">
-          {/* Left Section */}
-          <div className="flex flex-col sm:flex-row items-center sm:space-x-3 text-white text-sm text-center sm:text-left">
-            <div className="flex flex-wrap justify-center sm:justify-start items-center space-x-1">
-              <span>Call Us Today!</span>
-              <Link href="tel:7403330888" className="hover:underline font-medium">
-                7403330888
-              </Link>
-              <span>,</span>
-              <Link href="tel:7403330777" className="hover:underline font-medium">
-                7403330777
-              </Link>
-              <span className="hidden sm:inline">|</span>
-            </div>
+<div className="fixed top-0 left-0 w-full z-40">
+  <div
+    className={`text-gray-100 text-sm transition-all duration-500 ease-in-out ${
+      isScrolled
+        ? "-translate-y-full opacity-0"
+        : "bg-gradient-to-r from-[#0E76CD] to-[#00A859] text-white translate-y-0 opacity-100"
+    }`}
+  >
+    <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center sm:justify-between text-center sm:text-left py-3 sm:py-2 space-y-2 sm:space-y-0">
+      {/* Left Section */}
+      <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start text-sm gap-2 sm:gap-3">
+        <div className="flex flex-wrap justify-center items-center gap-x-1">
+          <span>Call Us Today!</span>
+          <Link href="tel:7403330888" className="hover:underline font-medium">
+            7403330888
+          </Link>
+          <span>,</span>
+          <Link href="tel:7403330777" className="hover:underline font-medium">
+            7403330777
+          </Link>
+        </div>
 
-            <div className="flex items-center space-x-2 mt-1 sm:mt-0">
-              <FaEnvelope className="text-white text-[16px]" />
-              <Link
-                href="mailto:info@healthsquare.in"
-                className="hover:underline truncate"
-              >
-                info@healthsquare.in
-              </Link>
-            </div>
-          </div>
-
-          {/* Right Section */}
-          <div className="flex items-center justify-center space-x-3 text-white text-sm">
-            <span className="hidden sm:inline">Follow us:</span>
-            <Link href="https://www.facebook.com/healthsquarejaipur" target="_blank" aria-label="Facebook">
-              <FaFacebookF className="hover:text-[#0E79D0] transition-colors text-[15px]" />
-            </Link>
-            <Link href="https://www.instagram.com/healthsquarejaipur/" target="_blank" aria-label="Instagram">
-              <FaInstagram className="hover:text-[#0E79D0] transition-colors text-[15px]" />
-            </Link>
-            {/* <Link href="https://twitter.com" target="_blank" aria-label="Twitter">
-              <FaTwitter className="hover:text-[#0E79D0] transition-colors text-[15px]" />
-            </Link>
-            <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <FaLinkedinIn className="hover:text-[#0E79D0] transition-colors text-[15px]" />
-            </Link> */}
-          </div>
+        <div className="flex items-center justify-center sm:justify-start gap-1">
+          <FaEnvelope className="text-white text-[15px]" />
+          <Link
+            href="mailto:info@healthsquare.in"
+            className="hover:underline break-all sm:break-normal"
+          >
+            info@healthsquare.in
+          </Link>
         </div>
       </div>
+
+      {/* Right Section */}
+      <div className="flex items-center justify-center gap-3 text-white text-sm mt-2 sm:mt-0">
+        <span className="hidden sm:inline">Follow us:</span>
+        <Link
+          href="https://www.facebook.com/healthsquarejaipur"
+          target="_blank"
+          aria-label="Facebook"
+        >
+          <FaFacebookF className="hover:text-[#0E79D0] transition-colors text-[15px]" />
+        </Link>
+        <Link
+          href="https://www.instagram.com/healthsquarejaipur/"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <FaInstagram className="hover:text-[#0E79D0] transition-colors text-[15px]" />
+        </Link>
+      </div>
     </div>
+  </div>
+</div>
+
+
 
       <header
         className={`w-full backdrop-blur-md bg-white/90  sticky top-0 z-50 mt-10 transition-all ${
@@ -223,7 +226,7 @@ export default function Header() {
               href="/appointment"
               className="relative overflow-hidden bg-[#0E76CD] text-white font-semibold px-6 py-2 rounded-full uppercase tracking-wide text-sm shadow-md transition-all duration-500 ease-in-out group inline-block"
             >
-              <button className="relative flex items-center gap-2 z-10 transition-colors duration-500 ease-in-out">
+              <button className="relative flex items-center cursor-pointer gap-2 z-10 transition-colors duration-500 ease-in-out">
                 <span>Book Appointment</span>
                 <Player
                   autoplay

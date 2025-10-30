@@ -9,6 +9,9 @@ import { useRouter } from "next/router";
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [isRouteChanging, setIsRouteChanging] = useState(false);
+  const pathNoQuery = router.asPath.split("?")[0].replace(/\/+$/, "") || "/";
+  const isAdminRoot = pathNoQuery === "/admin";
+
 
   useEffect(() => {
     const handleStart = () => setIsRouteChanging(true);
@@ -28,10 +31,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {isRouteChanging && <PageLoader />} {/* 👈 Loader only during route change */}
-      <Header />
+      {!isAdminRoot && <Header />}
       <Toaster />
       <Component {...pageProps} />
-      <Footer />
+      {!isAdminRoot && <Footer />}
     </>
   );
 }

@@ -396,7 +396,7 @@ const generateCaptcha = () => {
             <div className="text-center sm:text-start">
                   <button
                     type="submit"
-                    className="relative overflow-hidden bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
+                    className="relative thmbtn overflow-hidden bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
                   >
                     <span className="relative z-10 transition-colors duration-500 ease-in-out">
                      {loading ? "Submitting..." : "SUBMIT FORM"}

@@ -58,7 +58,7 @@ export default function ServicePage({ service }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="mt-6 relative overflow-hidden bg-[#03AB68] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all group"
+              className="mt-6 relative overflow-hidden cursor-pointer bg-[#03AB68] text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all group"
             >
               <span className="relative z-10">Book Appointment</span>
               <span className="absolute inset-0 -translate-x-full bg-[#0E76CD] transition-transform duration-500 group-hover:translate-x-0" />
@@ -207,7 +207,7 @@ export default function ServicePage({ service }) {
                   rediscover your confidence.
                 </p>
                 <div className="mt-6">
-                  <button className="px-8 py-3 bg-gradient-to-r from-[#03AB68] to-[#0E76CD] text-white font-semibold rounded-full shadow-lg hover:scale-[1.03] transition">
+                  <button className="px-8 py-3 cursor-pointer bg-gradient-to-r from-[#03AB68] to-[#0E76CD] text-white font-semibold rounded-full shadow-lg hover:scale-[1.03] transition">
                     Schedule a Consultation
                   </button>
                 </div>

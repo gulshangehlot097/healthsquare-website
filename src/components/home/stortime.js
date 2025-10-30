@@ -1,7 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import { Clock, Phone } from "lucide-react";
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import PhoneIcon from "@/src/animation/call.json";
 
 export default function StoreTimings() {
@@ -45,46 +46,49 @@ export default function StoreTimings() {
           </div>
 
           {/* RIGHT SIDE – Contact */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl p-8 text-center md:text-left shadow-inner"
-          >
-            <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
- <div className="relative w-20 h-20 flex items-center justify-center">
-  {/* Glow Background */}
-  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0072CE]/40 to-[#00A859]/40 blur-md animate-pulse"></div>
+            <motion.div
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      viewport={{ once: true }}
+      className="bg-white/10 border border-white/20 backdrop-blur-xl rounded-2xl p-8 text-center md:text-left shadow-inner"
+    >
+      <div className="flex items-center justify-center md:justify-start gap-4 mb-4">
+        <div className="relative w-20 h-20 flex items-center justify-center z-10">
+          <div className="absolute inset-0 rounded-full "></div>
+  <div className="w-14 h-14 bg-gradient-to-br from-[#0072CE] to-[#00A859] rounded-full flex items-center justify-center p-2 relative z-20 overflow-hidden">
+ <Lottie
+  animationData={PhoneIcon}
+  loop
+  autoplay
+  className="relative z-30"
+  style={{
+    width: 48,
+    height: 48,
+    display: "block",
+    filter: "brightness(0) invert(1)", // 👈 makes black → white
+  }}
+/>
 
-  {/* Icon Circle */}
-  <div className="w-14 h-14 bg-gradient-to-br from-[#0072CE] to-[#00A859] rounded-full flex items-center justify-center p-2 relative">
-    <Lottie
-      animationData={PhoneIcon}
-      loop
-      autoplay
-      style={{ width: "48px", height: "48px", filter: "brightness(0) invert(1)" }}
-    />
-  </div>
 </div>
 
+        </div>
 
+        <div>
+          <h3 className="font-semibold text-xl text-white">
+            7403330888, 7403330777
+          </h3>
+          <p className="text-sm text-white/70">
+            Call us anytime for assistance
+          </p>
+        </div>
+      </div>
 
-              <div>
-                <h3 className="font-semibold text-xl text-white">
-                  7403330888, 7403330777
-                </h3>
-                <p className="text-sm text-white/70">
-                  Call us anytime for assistance
-                </p>
-              </div>
-            </div>
-
-            <p className="text-white/85 text-base leading-relaxed">
-              We’re committed to your health and comfort. Whether it’s pharmacy support or 
-              doorstep delivery, our team is ready from morning till late night.
-            </p>
-          </motion.div>
+      <p className="text-white/85 text-base leading-relaxed">
+        We’re committed to your health and comfort. Whether it’s pharmacy support or
+        doorstep delivery, our team is ready from morning till late night.
+      </p>
+    </motion.div>
         </motion.div>
       </div>
     </section>

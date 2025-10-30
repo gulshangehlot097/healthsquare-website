@@ -585,7 +585,7 @@ function BlogUploadFormInner() {
                     <button
                       type="button"
                       onClick={addCategory}
-                      className="px-3 py-2 thmbtn"
+                      className="px-3 py-2 cursor-pointer thmbtn rounded-2xl"
                     >
                       Add
                     </button>
@@ -660,7 +660,7 @@ function BlogUploadFormInner() {
                     <button
                       type="button"
                       onClick={addAuthor}
-                      className="px-3 py-2 thmbtn"
+                      className="px-3 py-2 cursor-pointer thmbtn rounded-2xl"
                     >
                       Add
                     </button>
@@ -729,7 +729,7 @@ function BlogUploadFormInner() {
                       name="featured"
                       checked={formData.featured}
                       onChange={handleChange}
-                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-200"
+                      className="w-4 h-4 accent-[#04A868] cursor-pointer rounded border-gray-300 text-indigo-600 focus:ring-indigo-200"
                     />
                     <span className="text-sm text-gray-700">Featured Blog</span>
                   </label>
@@ -752,14 +752,14 @@ function BlogUploadFormInner() {
                   type="button"
                   onClick={handleSaveDraftClick}
                   disabled={submitting}
-                  className="px-6 py-2 thmbtn disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="px-6 py-2 thmbtn rounded-full cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isEdit ? "Save Draft (Update)" : "Save Draft"}
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-6 py-2 thmbtn disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="px-6 py-2 thmbtn rounded-full cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting
                     ? isEdit

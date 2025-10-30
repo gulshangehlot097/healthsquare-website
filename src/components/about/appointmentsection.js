@@ -121,7 +121,7 @@ export default function AppointmentSection() {
               <button
                 type="submit"
                 className="
-                  relative overflow-hidden bg-[#0072CE] text-white font-semibold
+                  relative cursor-pointer overflow-hidden bg-[#0072CE] text-white font-semibold
                   py-3 px-10 rounded-full
                   shadow-md transition-all duration-500 ease-in-out
                   group

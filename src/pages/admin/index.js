@@ -76,6 +76,7 @@ const AdminLogin  = ({ usersData }) => {
   const isValidOtp = (code) => /^[0-9]{6}$/.test(code);
 
   const verifyOTP = async () => {
+    console.log("ram")
     try {
       if (!isValidOtp(otp)) {
         showError("Please enter a valid OTP");
@@ -84,7 +85,7 @@ const AdminLogin  = ({ usersData }) => {
 
       const data = { mobile, otp };
       const response = await CallApi(
-        constant.API.HEALTH.VERIFYOTP,
+        constant.API.ADMIN.VERIFYOTP,
         "POST",
         data
       );
@@ -94,9 +95,9 @@ const AdminLogin  = ({ usersData }) => {
 
       if (response.status === true) {
       
-        showSuccess("Welcome to admin dashboard");
+        showSuccess("Welcome to admin");
         // router.push(constant.ROUTES.ADMIN.ADMINDASHBOARD);
-        router.push(`adminpnlx/admin-dashboard`);
+        router.push(`admin/viewblogs`);
       }
     } catch (error) {
       console.log(error);
@@ -116,14 +117,15 @@ const AdminLogin  = ({ usersData }) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#C2EBFF] px-4 mt-10">
+    <div className="min-h-screen flex items-center justify-center bg-[#C2EBFF] px-4 ">
       <div className="bg-white shadow-xl rounded-3xl overflow-hidden w-full max-w-4xl grid md:grid-cols-[46%_54%] transition-all">
         {/* Left Side */}
         <div className="px-10 py-8 flex flex-col justify-center items-center space-y-4">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text flex items-center gap-3">
-            <FaUserShield className="text-4xl text-indigo-600 drop-shadow-md" />
-            Admin Login
-          </h2>
+         <h2 className="text-3xl font-bold bg-gradient-to-r from-[#0E76CD] via-[#00A859] to-[#0E76CD] text-transparent bg-clip-text flex items-center gap-3">
+  <FaUserShield className="text-4xl text-[#0E76CD] drop-shadow-md" />
+  Admin Login
+</h2>
+
           <p className="text-gray-500 text-center text-sm">
             Enter your registered mobile number to receive an OTP.
           </p>
@@ -142,7 +144,7 @@ const AdminLogin  = ({ usersData }) => {
                   required
                 />
                 <div className="text-center">
-                  <button type="submit" className="px-6 py-3 thmbtn">
+                  <button type="submit" className="px-6 py-3 cursor-pointer thmbtn rounded-full">
                     Send OTP
                   </button>
                 </div>
@@ -179,7 +181,7 @@ const AdminLogin  = ({ usersData }) => {
                   <button
                     type="button"
                     onClick={verifyOTP}
-                    className="px-6 py-3 thmbtn"
+                    className="px-6 py-3 thmbtn cursor-pointer thmbtn rounded-full"
                   >
                     Verify OTP
                   </button>
@@ -192,7 +194,7 @@ const AdminLogin  = ({ usersData }) => {
         {/* Right Side Image - hidden on small screens */}
         <div className="hidden md:block relative h-[512px] overflow-hidden">
            <Image
-                  src="/images/services/health-service-01.png"
+                  src="/admin.png"
                   alt="Background"
                   fill
                   className="absolute inset-0 w-full h-full object-cover"
