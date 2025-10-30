@@ -3,13 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function WhyChoose() {
-  // Animation variants for staggered entrance
   const container = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, // delay between each element
+        staggerChildren: 0.3, 
       },
     },
   };
@@ -32,7 +31,7 @@ export default function WhyChoose() {
         viewport={{ once: true }}
         className="max-w-2xl"
       >
-        {/* Heading */}
+    
         <motion.h2
           variants={item}
           className="text-3xl md:text-4xl font-medium  mb-4"
@@ -40,13 +39,13 @@ export default function WhyChoose() {
         Why choose <span className="text-[#0e76cd]">HEALTH</span> <span className="text-[#00afef]">SQUARE</span> ?
         </motion.h2>
 
-        {/* Divider */}
+    
         <motion.div
           variants={item}
           className="w-48 h-[2px] bg-gray-300 mx-auto mb-6"
         ></motion.div>
 
-        {/* Paragraph */}
+       
         <motion.p
           variants={item}
           className="text-gray-700 leading-relaxed mb-8 text-base md:text-lg"

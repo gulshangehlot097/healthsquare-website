@@ -12,7 +12,7 @@ export default function About() {
     <>
       <Seo
         title="About Health Square | Dental Clinic & Pharmacy in Jaipur"
-        description="Learn about Health Square, a modern dental clinic and pharmacy in Jaipur. Discover our mission, expert dental services, pharmacy offerings, and commitment to premium care."
+        description="Learn more about Health Square — Jaipur’s trusted dental clinic and pharmacy offering expert care, quality medicines, and complete health solutions."
         />
       <main>
         <FirstAbout/>

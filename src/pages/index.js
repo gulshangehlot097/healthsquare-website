@@ -14,8 +14,8 @@ export default function Home() {
   return (
       <>
       <Seo
-        title="Pharmacy | Dental Clinic in Jaipur | Health Square"
-        description="Your one-stop dental clinic in Jaipur for comprehensive dental care and pharmacy needs. Visit our modern clinic today!"/>
+        title="Best dentist in jaipur | #1 Dental clinic jaipur | Pharmacy near me"
+        description="Looking for the best dentist in jaipur ? Healthsquare clinic is the #1 dental clinic in jaipur to treat all dental problems. Call us to schedule a visit today!"/>
        <main>
             <HeroTwo/>
       {/* <HeroSection/> */}

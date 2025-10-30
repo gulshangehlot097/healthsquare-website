@@ -65,21 +65,23 @@ export default function HeroSection() {
           variants={container}
           className="flex-1 text-center md:text-left"
         >
-          <motion.h1
-            variants={fadeFromRight}
-            className="text-4xl md:text-6xl font-extrabold text-[#0E76CD] leading-tight"
-          >
-            Your <span className="text-[#00A859]">Smile</span>, <br />
-            Our <span className="text-[#0E76CD]">Care</span>
-          </motion.h1>
+         <motion.h1
+          variants={fadeFromRight}
+          className="text-3xl md:text-5xl font-extrabold text-[#0E76CD] leading-tight"
+        >
+          WELCOME TO <br />
+          <span className="text-[#00A859]">HEALTH SQUARE</span> <br />
+          DENTAL CLINIC
+        </motion.h1>
 
           <motion.p
             variants={fadeFromRight}
             className="text-gray-600 mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0"
-          >
-            Experience advanced <b>dental care</b> and a trusted <b>pharmacy</b> — all under one roof.
-            Health Square brings you expert doctors, latest technology, and holistic health services in Jaipur.
+          >Health Square is Jaipur’s leading <b>Pharmacy</b> and <b>Dental Clinic</b> offering complete healthcare solutions under one roof. 
+            From professional dental treatments to authentic medicines and fast home delivery, we provide trusted, affordable, 
+            and accessible healthcare for every family in Jaipur.
           </motion.p>
+
 
            <motion.div
       variants={fadeFromRight}

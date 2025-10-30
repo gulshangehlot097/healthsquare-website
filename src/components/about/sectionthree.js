@@ -9,25 +9,24 @@ export default function SectionThree() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
- useEffect(() => {
-  const currentSection = sectionRef.current; 
+  useEffect(() => {
+    const currentSection = sectionRef.current;
 
-  if (!currentSection) return;
+    if (!currentSection) return;
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      setIsVisible(entry.isIntersecting);
-    },
-    { threshold: 0.2 }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
 
-  observer.observe(currentSection);
+    observer.observe(currentSection);
 
-  return () => {
-    observer.unobserve(currentSection); 
-  };
-}, []);
-
+    return () => {
+      observer.unobserve(currentSection);
+    };
+  }, []);
 
   return (
     <div
@@ -48,33 +47,34 @@ export default function SectionThree() {
               <p className="text-[#0E76CD] font-semibold text-sm uppercase tracking-wide mb-4">
                 Our Services
               </p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-[#0E76CD] leading-tight mb-6">
+              <h2 className="text-4xl sm:text-5xl font-bold text-[#0E76CD] leading-tight mb-6">
                 RGHS Pharmacy in Jaipur
-              </h1>
+              </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                The Health Square Pharmacy in Jaipur guarantees quality
-                healthcare. Our pharmacists are experts in medicines and use
-                their clinical expertise with practical knowledge to advise you
-                on health concerns. All products varying from medicines to basic
-                health and body care products are available at our pharmacy. We
-                also provide home delivery of medicine and all healthcare items
-                to your doorsteps. Customers can order their required products
-                by calling us. All the products and medicines are of standard
-                quality.{" "}
                 <span className="font-bold text-gray-700">Health Square</span>{" "}
                 is an{" "}
                 <span className="font-bold text-gray-700">
-                  RGHS empanelled pharmacy
-                </span>
-                , and hence beneficiaries can access authentic RGHS medicines
-                (branded and generic) with cashless billing under Rajasthan
-                Government Health Scheme.{" "}
+                  RGHS (Rajasthan Government Health Scheme) empanelled pharmacy
+                </span>{" "}
+                in Jaipur providing authentic branded and generic medicines,
+                healthcare products, and cashless billing for RGHS
+                beneficiaries. Our certified pharmacists combine clinical
+                expertise with compassionate care to ensure safe and effective
+                healthcare guidance. We offer a wide range of quality medicines,
+                health, and body-care products, along with fast home delivery
+                across Jaipur. Experience government-approved, affordable, and
+                reliable healthcare with{" "}
+                <span className="font-bold text-gray-700">
+                  Health Square Pharmacy
+                </span>{" "}
+                — your trusted RGHS partner in Jaipur.
                 <Link href="/rghs-empanelled-pharmacy">
                   <span className="font-bold text-[#0E76CD] cursor-pointer hover:text-[#00A859]">
-                    Click here
+                    {" "}
+                    Click here{" "}
                   </span>
-                </Link>{" "}
-                to know more about RGHS scheme.
+                </Link>
+                to know more about the RGHS scheme.
               </p>
             </div>
 

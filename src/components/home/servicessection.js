@@ -70,11 +70,10 @@ export default function FeatureCards() {
         className="text-center mb-16 relative z-10"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-[#0072CE] mb-4">
-          OUR <span className="text-[#00B388]">SERVICES</span>
+          OUR DENTAL AND PHARMACY <span className="text-[#00B388]">SERVICES</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Experience exceptional healthcare and convenience under one roof at
-          Health Square.
+          Your trusted dental and pharmacy partner in Jaipur — quality care, genuine medicines, and easy home delivery.
         </p>
         <div className="mt-4 w-24 h-1 bg-gradient-to-r from-[#0072CE] to-[#00B388] mx-auto rounded-full" />
       </motion.div>

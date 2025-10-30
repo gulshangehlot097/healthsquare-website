@@ -20,7 +20,6 @@ export default function AppointmentSection() {
     <section className="relative w-full bg-gradient-to-b from-[#E0F4FF] via-white to-[#E6F4FF] py-20 px-6 md:px-16 overflow-hidden">
 
  
-    {/* Floating Animated Health Icons */}
       {floatingIcons.map((item, idx) => (
         <motion.div
           key={idx}
@@ -34,15 +33,12 @@ export default function AppointmentSection() {
       ))}
 
 
-      {/* Section Title */}
       <h2 className="text-center text-3xl md:text-4xl font-bold text-[#0072CE] mb-10">
         MAKE <span className="text-[#00B388]">APPOINTMENT</span>
       </h2>
 
-      {/* Main Container */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch bg-white/80 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden relative border border-[#E6F4FF]">
 
-        {/* Left Image */}
         <div className="flex-1 relative">
           <Image
             src="/images/about/appointment.jpg"
@@ -66,7 +62,6 @@ export default function AppointmentSection() {
       </motion.div>
         </div>
 
-        {/* Right Form */}
         <div className="flex-1 w-full p-8 md:p-10 bg-white h-full">
           <p className="text-sm text-[#00B388] font-semibold mb-1 uppercase tracking-wide">
             Health Square Care

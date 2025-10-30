@@ -47,11 +47,10 @@ export default function FaqSection() {
       viewport={{ once: true }}
       className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start"
     >
-      {/* Left FAQ Content */}
       <div>
         <p className="text-base font-bold text-gray-800 mb-2">Our FAQ</p>
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug mb-8">
-         Frequently Asked Questions
+          Frequently Asked Questions
         </h2>
 
         <div className="space-y-5">
@@ -61,9 +60,7 @@ export default function FaqSection() {
               className="border-b border-gray-300 pb-4 cursor-pointer"
               onClick={() => toggleFAQ(index)}
             >
-              {/* Question Row */}
               <div className="flex items-start gap-3">
-                {/* Icon on Left */}
                 <motion.div
                   animate={{ rotate: activeIndex === index ? 45 : 0 }}
                   transition={{ duration: 0.35, ease: "easeInOut" }}
@@ -77,7 +74,6 @@ export default function FaqSection() {
                 </p>
               </div>
 
-              {/* Smooth Collapsible Answer */}
               <motion.div
                 initial={false}
                 animate={{
@@ -87,7 +83,7 @@ export default function FaqSection() {
                 }}
                 transition={{
                   duration: 0.5,
-                  ease: [0.25, 0.1, 0.25, 1], // smooth cubic-bezier
+                  ease: [0.25, 0.1, 0.25, 1],
                 }}
                 className="overflow-hidden pl-8"
               >
@@ -102,24 +98,23 @@ export default function FaqSection() {
         </div>
       </div>
 
-      {/* Right Image */}
-     <motion.div
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-  viewport={{ once: true }}
-  className="hidden lg:flex justify-center self-start"
->
-  <div className="relative w-full max-w-md h-[500px] rounded-2xl overflow-hidden shadow-lg">
-    <Image
-      src="/images/about/aboutfaq.jpg"
-      alt="FAQ illustration"
-      fill
-      className="object-cover"
-      priority
-    />
-  </div>
-</motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true }}
+        className="hidden lg:flex justify-center self-start"
+      >
+        <div className="relative w-full max-w-md h-[500px] rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src="/images/about/aboutfaq.jpg"
+            alt="FAQ illustration"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+      </motion.div>
     </motion.section>
   );
 }

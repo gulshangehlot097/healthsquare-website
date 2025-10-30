@@ -10,7 +10,7 @@ export default function Rghs() {
       <>
       <Seo
         title="RGHS Empanelled Clinic & Pharmacy in Jaipur | Health Square"
-        description="Health Square is an RGHS empanelled dental clinic and pharmacy in Jaipur. We offer cashless treatment for RGHS beneficiaries, advanced dental care, and trusted pharmacy services under one roof."/>
+        description="Health Square is an RGHS-empanelled dental clinic and pharmacy in Jaipur providing cashless treatment, authentic medicines, and trusted healthcare."/>
        <main>
       <SectionOne/>
       <SectionTwo/>

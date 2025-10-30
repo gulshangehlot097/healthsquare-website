@@ -90,7 +90,7 @@ export default function Footer() {
           <ul className="space-y-3 text-gray-300 text-sm">
             {[
               { name: "About Us", path: "/about" },
-              { name: "Dental Care Services", path: "/dental-care" },
+              { name: "Dental Care Services", path: "/services" },
               { name: "Pharmacy", path: "/pharmacy" },
               { name: "Contact", path: "/contact" },
             ].map((item) => (

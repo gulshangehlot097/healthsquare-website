@@ -9,7 +9,7 @@ export default function SectionTwo() {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const currentSection = sectionRef.current; 
+    const currentSection = sectionRef.current;
 
     if (!currentSection) return;
 
@@ -23,10 +23,9 @@ export default function SectionTwo() {
     observer.observe(currentSection);
 
     return () => {
-      observer.unobserve(currentSection); 
+      observer.unobserve(currentSection);
     };
   }, []);
-
 
   return (
     <div
@@ -35,7 +34,7 @@ export default function SectionTwo() {
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+       
           <div className="order-1 lg:order-2 space-y-6">
             <div
               className={`transition-all duration-1000 ${
@@ -47,17 +46,19 @@ export default function SectionTwo() {
               <p className="text-[#0E76CD] font-semibold text-sm uppercase tracking-wide mb-4">
                 About Us
               </p>
-              <h1 className="text-4xl sm:text-5xl font-bold text-[#0E76CD] leading-tight mb-6">
+              <h2 className="text-4xl sm:text-5xl font-bold text-[#0E76CD] leading-tight mb-6">
                 Dental Clinic in Jaipur
-              </h1>
+              </h2>
               <p className="text-gray-700 text-lg leading-relaxed mb-8">
-                Our Dental Clinic in Jaipur is run by Dr. Sonal Agarwal (BDS
-                from RUHS & Fellowship in Aesthetic & Cosmetic Dentistry, New
-                Delhi) has over 7 years of experience. We offer comprehensive
-                dental services, with everything from Full Mouth Rehabilitation
-                and RCT to Orthodontics (braces), Smile Design, and Child Dental
-                Care. We understand that dental work can be stressful and look
-                forward to attending to your needs with the utmost care.
+                Looking for the best dental clinic in Jaipur? Visit Health
+                Square, led by Dr. Sonal Agarwal (BDS from RUHS & Fellowship in
+                Aesthetic and Cosmetic Dentistry, New Delhi) — a trusted dentist
+                in Jaipur with 7+ years of experience. We offer advanced dental
+                treatments including RCT, Smile Design, Braces, Teeth Whitening,
+                Full Mouth Rehabilitation, and Pediatric Dentistry. Our modern
+                clinic combines technology, hygiene, and personalized care to
+                make every dental visit safe, comfortable, and affordable for
+                families in Jaipur.
               </p>
             </div>
 
@@ -90,31 +91,31 @@ export default function SectionTwo() {
                   : "opacity-0 translate-y-10"
               }`}
             >
-               <Link href="/appointment">
-              <button
-                className="
+              <Link href="/appointment">
+                <button
+                  className="
     relative overflow-hidden bg-[#0E76CD] text-white font-semibold
     px-8 py-3 cursor-pointer rounded-lg shadow-lg w-fit
     transition-all duration-500 ease-in-out
     group
   "
-              >
-                <span className="relative z-10 transition-colors duration-500 ease-in-out">
-                  Book Appointment
-                </span>
-                <span
-                  className="
+                >
+                  <span className="relative z-10 transition-colors duration-500 ease-in-out">
+                    Book Appointment
+                  </span>
+                  <span
+                    className="
       absolute inset-0 bg-[#00A859]
       -translate-x-full group-hover:translate-x-0
       transition-transform duration-500 ease-in-out
     "
-                ></span>
-              </button>
+                  ></span>
+                </button>
               </Link>
             </div>
           </div>
 
-          {/* Images Grid */}
+       
           <div className="order-2 lg:order-1 flex gap-4 justify-center items-center">
             <div className="flex flex-col gap-4">
               <div
