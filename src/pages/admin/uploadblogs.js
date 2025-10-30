@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import { showSuccess, showError } from "@/src/components/toaster";
-import { CallApiWithFile, CallApi } from "@/src/api";
+import { callApiWithFile, callApi } from "@/src/api";
 import constant from "@/src/env";
 import RichTextEditor from "@/src/components/blog/uplodblogs/contenteditor";
 import Image from "next/image";
@@ -13,32 +13,32 @@ export default function BlogUploadFormPage() {
   const [checking, setChecking] = useState(true);
   const [allowed, setAllowed] = useState(false);
 
-//   useEffect(() => {
-//     try {
-//       const type = sessionStorage.getItem("logintype");
-//       const token = sessionStorage.getItem("token");
-//       if (type === "admin" && token) {
-//         setAllowed(true);
-//       } else {
-//         showError("Please login as admin to access this page");
-//         router.replace("/");
-//       }
-//     } catch {
-//       router.replace("/");
-//     } finally {
-//       setChecking(false);
-//     }
-//   }, [router]);
+  //   useEffect(() => {
+  //     try {
+  //       const type = sessionStorage.getItem("logintype");
+  //       const token = sessionStorage.getItem("token");
+  //       if (type === "admin" && token) {
+  //         setAllowed(true);
+  //       } else {
+  //         showError("Please login as admin to access this page");
+  //         router.replace("/");
+  //       }
+  //     } catch {
+  //       router.replace("/");
+  //     } finally {
+  //       setChecking(false);
+  //     }
+  //   }, [router]);
 
-//   if (checking) {
-//     return (
-//       <div className="min-h-screen grid place-items-center text-sm text-gray-500">
-//         Checking permission…
-//       </div>
-//     );
-//   }
+  //   if (checking) {
+  //     return (
+  //       <div className="min-h-screen grid place-items-center text-sm text-gray-500">
+  //         Checking permission…
+  //       </div>
+  //     );
+  //   }
 
-//   if (!allowed) return null;
+  //   if (!allowed) return null;
 
   return <BlogUploadFormInner />;
 }
@@ -51,14 +51,10 @@ function BlogUploadFormInner() {
   const blogId = router?.query?.id ? String(router.query.id) : "";
   const isEdit = Boolean(blogId);
 
-  const [initializing, setInitializing] = useState(isEdit); 
+  const [initializing, setInitializing] = useState(isEdit);
   const [submitting, setSubmitting] = useState(false);
-  
 
-  const [categories, setCategories] = useState([
-    "DENTAL CARE",
-    "PHARMACY",
-  ]);
+  const [categories, setCategories] = useState(["DENTAL CARE", "PHARMACY"]);
   const [authors, setAuthors] = useState(["Admin"]);
 
   // inputs for adding new items
@@ -220,7 +216,7 @@ function BlogUploadFormInner() {
       const id = blogId;
       try {
         setInitializing(true);
-        const res = await CallApi(constant.API.SINGLEBLOG, "POST", { id });
+        const res = await callApi(constant.API.SINGLEBLOG, "POST", { id });
 
         const ok =
           res?.status === true || res?.success === true || res?.ok === true;
@@ -293,9 +289,7 @@ function BlogUploadFormInner() {
     { key: "keywords", label: "Keywords" },
   ];
 
-  const requiredFieldsEdit = [
-    ...requiredFieldsCreate,
-  ];
+  const requiredFieldsEdit = [...requiredFieldsCreate];
 
   async function submitToApi(payload) {
     const fd = new FormData();
@@ -303,7 +297,7 @@ function BlogUploadFormInner() {
     if (image) fd.append("featuredimage", image);
 
     if (!isEdit) {
-      const res = await CallApiWithFile(constant.API.BLOG, "POST", fd);
+      const res = await callApiWithFile(constant.API.BLOG, "POST", fd);
       const ok =
         (res && (res.status === true || res.status === "1")) || res === 1;
       if (!ok) throw new Error((res && res.message) || "Failed to save blog");
@@ -311,7 +305,7 @@ function BlogUploadFormInner() {
     }
 
     fd.append("id", blogId);
-    const res = await CallApiWithFile(constant.API.BLOG, "POST", fd);
+    const res = await callApiWithFile(constant.API.BLOG, "POST", fd);
     const ok =
       (res && (res.status === true || res.status === "1")) || res === 1;
     if (!ok) throw new Error((res && res.message) || "Failed to update blog");
@@ -539,13 +533,13 @@ function BlogUploadFormInner() {
                   />
 
                   {preview ? (
-                   <Image
+                    <Image
                       src={preview}
                       alt="Preview"
-                      width={800}       
-                      height={450}       
+                      width={800}
+                      height={450}
                       className="mt-3 aspect-[16/9] w-full rounded-lg border border-[#e5e7eb] object-cover shadow-sm"
-                      unoptimized        
+                      unoptimized
                     />
                   ) : (
                     <div className="mt-3 aspect-[16/9] w-full rounded-lg border border-dashed grid place-items-center text-gray-400">

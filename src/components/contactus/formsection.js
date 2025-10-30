@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { CallApi } from "@/src/api";
+import { callApi } from "@/src/api";
 import constant from "@/src/env";
 import { showSuccess, showError } from "@/src/components/toaster";
 import {
@@ -59,7 +59,7 @@ export default function ContactForm() {
     }
     try {
       setLoading(true);
-      const res = await CallApi(constant.API.USER.SENDOTP, "POST", { mobile });
+      const res = await callApi(constant.API.USER.SENDOTP, "POST", { mobile });
       if (res?.status || res?.message) {
         setOtp("");
         setOtpVisible(true);
@@ -78,7 +78,7 @@ export default function ContactForm() {
       return showError("Please enter a valid 6-digit OTP.");
     try {
       setLoading(true);
-      const res = await CallApi(constant.API.USER.VERIFYOTP, "POST", {
+      const res = await callApi(constant.API.USER.VERIFYOTP, "POST", {
         mobile,
         otp,
       });
@@ -105,7 +105,7 @@ export default function ContactForm() {
       return showError("Please verify your mobile number first.");
     try {
       setLoading(true);
-      const res = await CallApi(constant.API.USER.USERINQUIRE, "POST", data);
+      const res = await callApi(constant.API.USER.USERINQUIRE, "POST", data);
       showSuccess(res.message || "Inquiry submitted successfully!");
       reset();
       setOtp("");

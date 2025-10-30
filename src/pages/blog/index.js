@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { CallApi } from "@/src/api";
+import { callApi } from "@/src/api";
 import constant from "@/src/env";
 import Link from "next/link";
 import { showError } from "@/src/components/toaster";
-import Image from "next/image"
+import Image from "next/image";
 
 const PER_PAGE = 6;
 
@@ -26,7 +26,7 @@ export default function BlogList() {
       if (!base) throw new Error("API base URL missing");
 
       const url = `${base}?page=${p}&per_page=${PER_PAGE}`;
-      const res = await CallApi(url, "GET");
+      const res = await callApi(url, "GET");
 
       if (id !== reqIdRef.current) return;
 
@@ -100,19 +100,19 @@ export default function BlogList() {
               key={i}
               className="group bg-white rounded-2xl border border-[#e4ebfa] shadow-sm hover:shadow-md transition-all duration-300 p-5 cursor-pointer"
             >
-             <div className="relative overflow-hidden rounded-xl mb-4 group">
-  <div className="relative w-full h-56 rounded-xl overflow-hidden">
-    <Image
-      src={`${constant?.BASE_URL}/${blog.image}`}
-      alt={blog.title}
-      fill
-      className="object-cover rounded-xl transform transition-all duration-[900ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-110 group-hover:-translate-y-2"
-      sizes="(max-width: 768px) 100vw, 33vw"
-    />
-  </div>
+              <div className="relative overflow-hidden rounded-xl mb-4 group">
+                <div className="relative w-full h-56 rounded-xl overflow-hidden">
+                  <Image
+                    src={`${constant?.BASE_URL}/${blog.image}`}
+                    alt={blog.title}
+                    fill
+                    className="object-cover rounded-xl transform transition-all duration-[900ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-110 group-hover:-translate-y-2"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
 
-  <div className="absolute inset-0 bg-gradient-to-t from-[#00000070] via-[#00000030] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
-</div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#00000070] via-[#00000030] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+              </div>
 
               <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
                 <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -134,17 +134,16 @@ export default function BlogList() {
                   pathname: `/blog/${blog.slug}`,
                   query: { id: blog.id },
                 }}
-               
               >
                 <button
-                    type="submit"
-                    className="relative overflow-hidden cursor-pointer bg-[#0072CE] text-white font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
-                  >
-                    <span className="relative z-10 transition-colors duration-500 ease-in-out">
-                     Read More →
-                    </span>
-                    <span className="absolute inset-0 bg-[#00B388] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
-                  </button>
+                  type="submit"
+                  className="relative overflow-hidden cursor-pointer bg-[#0072CE] text-white font-semibold py-2 px-6 rounded-full shadow-md transition-all duration-500 ease-in-out group w-full sm:w-auto"
+                >
+                  <span className="relative z-10 transition-colors duration-500 ease-in-out">
+                    Read More →
+                  </span>
+                  <span className="absolute inset-0 bg-[#00B388] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
+                </button>
               </Link>
             </div>
           ))

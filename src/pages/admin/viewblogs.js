@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
-import { FiEdit, FiTrash2, FiPlusCircle,FiArchive  } from "react-icons/fi";
+import { FiEdit, FiTrash2, FiPlusCircle, FiArchive } from "react-icons/fi";
 import { AiOutlineRead } from "react-icons/ai";
-import { CallApi } from "@/src/api";
+import { callApi } from "@/src/api";
 import constant from "@/src/env";
 import { showSuccess, showError } from "@/src/components/toaster";
 import { useRouter } from "next/router";
@@ -55,7 +55,7 @@ export default function BlogTable() {
   //     console.log(url)
   //     url += (url.includes("?") ? "&" : "?") + `page=${targetPage}&per_page=${PER_PAGE}`;
 
-  //     const res = await CallApi(url, "GET");
+  //     const res = await callApi(url, "GET");
   //     if (!res?.status) {
   //       setBlogs([]);
   //       setPage(1);
@@ -90,68 +90,68 @@ export default function BlogTable() {
   //   }
   // }, []);
 
+  // second methode
 
-
-  // second methode 
-
-const fetchBlogs = useCallback(async (targetPage = 1) => {
-  try {
-    setLoading(true);
-    let url = constant.API.BLOG;
-    url += (url.includes("?") ? "&" : "?") + `page=${targetPage}&per_page=${PER_PAGE}`;
-
-    let res = null;
+  const fetchBlogs = useCallback(async (targetPage = 1) => {
     try {
-      res = await CallApi(url, "GET");
-    } catch (apiErr) {
-      console.error("API call failed:", apiErr);
-      showError("API request failed. Please check your connection or try again later.");
+      setLoading(true);
+      let url = constant.API.BLOG;
+      url +=
+        (url.includes("?") ? "&" : "?") +
+        `page=${targetPage}&per_page=${PER_PAGE}`;
+
+      let res = null;
+      try {
+        res = await callApi(url, "GET");
+      } catch (apiErr) {
+        console.error("API call failed:", apiErr);
+        showError(
+          "API request failed. Please check your connection or try again later."
+        );
+        setBlogs([]);
+        setPage(1);
+        setTotalPages(1);
+        return;
+      }
+
+      if (!res?.status) {
+        showError(res?.message || "Failed to fetch blogs.");
+        setBlogs([]);
+        setPage(1);
+        setTotalPages(1);
+        return;
+      }
+
+      const pg = res.data || {};
+      const rows = Array.isArray(pg.results)
+        ? pg.results
+        : Array.isArray(res.data)
+        ? res.data
+        : [];
+
+      setBlogs(rows.map(normalizeBlog));
+
+      const total = Number(pg.total) || rows.length || 1;
+      const last = Math.ceil(total / PER_PAGE);
+      setPage(targetPage);
+      setTotalPages(last);
+    } catch (err) {
+      console.error("Unexpected error fetching blogs:", err);
+      showError("Unexpected error occurred. Please try again later.");
       setBlogs([]);
       setPage(1);
       setTotalPages(1);
-      return;
+    } finally {
+      setLoading(false);
     }
+  }, []);
 
-    if (!res?.status) {
-      showError(res?.message || "Failed to fetch blogs.");
-      setBlogs([]);
-      setPage(1);
-      setTotalPages(1);
-      return;
-    }
-
-    const pg = res.data || {};
-    const rows = Array.isArray(pg.results)
-      ? pg.results
-      : Array.isArray(res.data)
-      ? res.data
-      : [];
-
-    setBlogs(rows.map(normalizeBlog));
-
-    const total = Number(pg.total) || rows.length || 1;
-    const last = Math.ceil(total / PER_PAGE);
-    setPage(targetPage);
-    setTotalPages(last);
-  } catch (err) {
-    console.error("Unexpected error fetching blogs:", err);
-    showError("Unexpected error occurred. Please try again later.");
-    setBlogs([]);
-    setPage(1);
-    setTotalPages(1);
-  } finally {
-    setLoading(false);
-  }
-}, []);
-
-
-
-  // second methode 
+  // second methode
 
   async function handleDelete(id) {
     if (!id) return;
     try {
-      const res = await CallApi(constant.API.DELETEBLOG, "POST", { id });
+      const res = await callApi(constant.API.DELETEBLOG, "POST", { id });
       if (res?.status) {
         showSuccess(res?.message || "Blog deleted successfully");
         setBlogs((prev) => {
@@ -172,7 +172,7 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
   async function handleTrash(id) {
     if (!id) return;
     try {
-      const res = await CallApi(constant.API.TRASHBLOG, "POST", { id });
+      const res = await callApi(constant.API.TRASHBLOG, "POST", { id });
       if (res?.status) {
         showSuccess(res?.message || "Blog moved to trash");
         setBlogs((prev) => {
@@ -246,12 +246,24 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
               {loading ? (
                 Array.from({ length: SKELETON_COUNT }).map((_, i) => (
                   <tr key={`sk-${i}`} className="animate-pulse border-b">
-                    <td className="px-6 py-4"><div className="h-4 w-6 rounded bg-gray-200" /></td>
-                    <td className="px-6 py-4"><div className="h-4 w-72 rounded bg-gray-200" /></td>
-                    <td className="px-6 py-4"><div className="h-4 w-32 rounded bg-gray-200" /></td>
-                    <td className="px-6 py-4"><div className="h-4 w-28 rounded bg-gray-200" /></td>
-                    <td className="px-6 py-4"><div className="h-4 w-40 rounded bg-gray-200" /></td>
-                    <td className="px-6 py-4"><div className="h-6 w-24 rounded-full bg-gray-200" /></td>
+                    <td className="px-6 py-4">
+                      <div className="h-4 w-6 rounded bg-gray-200" />
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="h-4 w-72 rounded bg-gray-200" />
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="h-4 w-32 rounded bg-gray-200" />
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="h-4 w-28 rounded bg-gray-200" />
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="h-4 w-40 rounded bg-gray-200" />
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="h-6 w-24 rounded-full bg-gray-200" />
+                    </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-center gap-3">
                         <div className="h-8 w-16 rounded bg-gray-200" />
@@ -260,20 +272,27 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
                     </td>
                   </tr>
                 ))
-              ) 
-              : blogs.length === 0 ? (
+              ) : blogs.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-6 py-8 text-center text-gray-500">
+                  <td
+                    colSpan={7}
+                    className="px-6 py-8 text-center text-gray-500"
+                  >
                     No blogs found
                   </td>
                 </tr>
-                
-              )
-               : (
-                blogs.map((blog,index) => (
-                  <tr key={blog.id || blog.title} className="border-b hover:bg-gray-50 transition duration-200">
-                     <td className="px-6 py-4">{(page - 1) * PER_PAGE + index + 1}.</td>
-                    <td className="px-6 py-4 font-medium text-gray-900">{blog.title}</td>
+              ) : (
+                blogs.map((blog, index) => (
+                  <tr
+                    key={blog.id || blog.title}
+                    className="border-b hover:bg-gray-50 transition duration-200"
+                  >
+                    <td className="px-6 py-4">
+                      {(page - 1) * PER_PAGE + index + 1}.
+                    </td>
+                    <td className="px-6 py-4 font-medium text-gray-900">
+                      {blog.title}
+                    </td>
                     <td className="px-6 py-4">{blog.category}</td>
                     <td className="px-6 py-4">{blog.author}</td>
                     <td className="px-6 py-4">{formatDate(blog.date)}</td>
@@ -291,10 +310,12 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
                     </td>
                     <td className="px-6 py-4 flex items-center justify-center gap-3">
                       <button
-                        onClick={() => router.push(`/admin/uploadblogs?id=${blog.id}`)}
+                        onClick={() =>
+                          router.push(`/admin/uploadblogs?id=${blog.id}`)
+                        }
                         className="flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-md bg-[#7998F4] text-white hover:bg-blue-600 transition"
                       >
-                        <FiEdit className="w-4 h-4" /> 
+                        <FiEdit className="w-4 h-4" />
                       </button>
 
                       {/* TRASH */}
@@ -306,7 +327,7 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
                         }}
                         className="flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-md bg-orange-500 text-white hover:bg-orange-600 transition"
                       >
-                        <FiArchive  className="w-4 h-4" /> 
+                        <FiArchive className="w-4 h-4" />
                       </button>
 
                       {/* DELETE */}
@@ -318,7 +339,7 @@ const fetchBlogs = useCallback(async (targetPage = 1) => {
                         }}
                         className="flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-md bg-red-500 text-white hover:bg-red-600 transition"
                       >
-                        <FiTrash2 className="w-4 h-4" /> 
+                        <FiTrash2 className="w-4 h-4" />
                       </button>
                     </td>
                   </tr>
