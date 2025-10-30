@@ -299,14 +299,14 @@ export default function BlogDetail() {
           </div>
         </section>
 
-        <Head>
+        {/* <Head>
           <title>{title} | Blog</title>
           {hero ? <meta property="og:image" content={hero} /> : null}
           <meta name="description" content={post?.meta?.description || title} />
           {post?.meta?.keywords && (
             <meta name="keywords" content={post.meta.keywords} />
           )}
-        </Head>
+        </Head> */}
       </main>
     </>
   );

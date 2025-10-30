@@ -7,9 +7,14 @@ import { FiChevronDown } from "react-icons/fi";
 // import { Player } from "@lottiefiles/react-lottie-player";
 import dynamic from "next/dynamic";
 
-const LottiePlayer = dynamic(() => import("@lottiefiles/react-lottie-player"), {
-  ssr: false,
-});
+// const LottiePlayer = dynamic(() => import("@lottiefiles/react-lottie-player"), {
+//   ssr: false,
+// });
+
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false }
+);
 import arrowAnimation from "@/src/animation/arrowright.json";
 import {
   FaSmile,
