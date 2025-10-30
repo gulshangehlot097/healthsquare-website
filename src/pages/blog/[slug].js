@@ -202,31 +202,35 @@ const formatDate = (dateString) => {
               className="mt-6 flex justify-center gap-4 flex-wrap"
             >
                <button
-              onClick={async () => {
-                const url = window.location.href;
-                try {
-                  if (navigator.share)
-                    await navigator.share({ title, text: title, url });
-                  else if (navigator.clipboard) {
-                    await navigator.clipboard.writeText(url);
-                    setCopied(true);
-                    setTimeout(() => setCopied(false), 1400);
-                  }
-                } catch {}
-              }}
+             onClick={async () => {
+  if (typeof window === "undefined") return;
+  const url = window.location.href;
+  try {
+    if (navigator.share)
+      await navigator.share({ title, text: title, url });
+    else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1400);
+    }
+  } catch {}
+}}
+
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50"
             >
               <FiShare2 /> Share
             </button>
             <button
-              onClick={async () => {
-                const url = window.location.href;
-                if (navigator.clipboard) {
-                  await navigator.clipboard.writeText(url);
-                  setCopied(true);
-                  setTimeout(() => setCopied(false), 1400);
-                }
-              }}
+             onClick={async () => {
+  if (typeof window === "undefined") return; 
+  const url = window.location.href;
+  if (navigator.clipboard) {
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1400);
+  }
+}}
+
               className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm hover:bg-slate-50"
             >
               {copied ? <FiCheck /> : <FiCopy />}{" "}

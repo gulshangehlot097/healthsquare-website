@@ -50,24 +50,28 @@ const AdminLogin  = ({ usersData }) => {
         return;
       }
 
-      if (response.status === true) {
-           localStorage.setItem("token", response.token);
-           localStorage.setItem("logintype", "admin");
-          setToken(response.token);
-          window.dispatchEvent(new Event("auth-change"));
-        const data = { mobile };
-        const res = await CallApi(
-          constant.API.ADMIN.SENDOTP,
-          "POST",
-          data
-        );
-        if (res.status === true) showSuccess(res.message);
-       
-         
-        setShowOtp(true);
-        setTimer(20);
-        setCanResend(false);
-      }
+    if (response.status === true) {
+  if (typeof window !== "undefined") {
+    localStorage.setItem("token", response.token);
+    localStorage.setItem("logintype", "admin");
+    window.dispatchEvent(new Event("auth-change"));
+  }
+
+  setToken(response.token);
+
+  const data = { mobile };
+  const res = await CallApi(
+    constant.API.ADMIN.SENDOTP,
+    "POST",
+    data
+  );
+  if (res.status === true) showSuccess(res.message);
+
+  setShowOtp(true);
+  setTimer(20);
+  setCanResend(false);
+}
+
     } catch (error) {
       console.log(error);
     }
