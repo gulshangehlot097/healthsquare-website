@@ -91,32 +91,7 @@ const sections = useMemo(
   []
 );
 
-useEffect(() => {
-  if (typeof window === "undefined") return;
 
-  const timer = setTimeout(() => {
-    if (!sections || sections.length === 0) return;
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActiveId(e.target.id);
-        });
-      },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0.1 }
-    );
-
-    sections.forEach((s) => {
-     const el = typeof document !== "undefined" ? document.getElementById(s.id) : null;
-      if (el) obs.observe(el);
-    });
-
-    // cleanup
-    return () => obs.disconnect();
-  }, 0);
-
-  return () => clearTimeout(timer);
-}, [sections]);
 
 
 
