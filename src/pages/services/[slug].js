@@ -23,10 +23,10 @@ export default function ServicePage({ service }) {
 
   return (
     <>
-      {/* <Head>
+      <Head>
         <title>{service.title} | Health Square Dental Clinic</title>
         <meta name="description" content={service.intro.slice(0, 150)} />
-      </Head> */}
+      </Head>
 
       {/* ========== HERO: Glass overlay + gradient blobs ========== */}
       <section className="relative h-[78vh] w-full overflow-hidden">

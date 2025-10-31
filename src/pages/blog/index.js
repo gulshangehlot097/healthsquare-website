@@ -3,6 +3,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import { callApi } from "@/src/api";
 import constant from "@/src/env";
 import Link from "next/link";
+import Seo from "@/src/components/seo";
 import { showError } from "@/src/components/toaster";
 import Image from "next/image";
 
@@ -76,6 +77,11 @@ export default function BlogList() {
   const handlePrev = () => page > 1 && setPage(page - 1);
 
   return (
+  <>
+   <Seo
+        title="Dental Care Tips & News - Health Square Blog"
+        description="Stay updated with expert dental care tips and news on the Health Square Blog. Your go-to resource for oral health advice."
+      />
     <section className="bg-[#f2f7fe] py-16 px-6 md:px-12 relative">
       <div className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         {loading ? (
@@ -182,5 +188,6 @@ export default function BlogList() {
         </div>
       )}
     </section>
+  </>
   );
 }

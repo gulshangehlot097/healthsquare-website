@@ -83,6 +83,7 @@ export default function BlogDetail() {
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+  console.log(router.query)
 
   useEffect(() => {
     if (!id) return;
