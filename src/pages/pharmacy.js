@@ -6,6 +6,7 @@ import WhyChooseUs from '@/src/components/pharmacy/whychoose'
 import QuestionsSection from '@/src/components/pharmacy/anymoresection'
 import HealthSquareFacilities from "@/src/components/contactus/healthsquarefacilities"
 import PharmaFaq from '@/src/components/pharmacy/faqsection'
+import ServicesSection from '@/src/components/pharmacy/services'
 
 
 
@@ -18,7 +19,9 @@ export default function Pharmacy() {
         description="Your one-stop dental clinic in Jaipur for comprehensive dental care and pharmacy needs. Visit our modern clinic today!"/>
        <main>
      <SectionOne/>
+    
      <SectionTwo/>  
+      <ServicesSection/>
      <WhyChooseUs/>  
      <QuestionsSection/>  
      <HealthSquareFacilities/>  
