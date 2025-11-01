@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Seo from '@/src/components/seo'
 import SectionOne from '@/src/components/pharmacy/sectionone'
-import SectionTwo from '@/src/components/pharmacy/sectiontwo'
+// import SectionTwo from '@/src/components/pharmacy/sectiontwo'
 import WhyChooseUs from '@/src/components/pharmacy/whychoose'
 import QuestionsSection from '@/src/components/pharmacy/anymoresection'
 import HealthSquareFacilities from "@/src/components/contactus/healthsquarefacilities"
@@ -20,7 +20,7 @@ export default function Pharmacy() {
        <main>
      <SectionOne/>
     
-     <SectionTwo/>  
+     {/* <SectionTwo/>   */}
       <ServicesSection/>
      <WhyChooseUs/>  
      <QuestionsSection/>  
