@@ -14,9 +14,9 @@ export default function FAQSection() {
   return (
     <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">
           Frequently Asked Questions
-        </h1>
+        </h2>
 
         <div className="mt-12 space-y-4">
           <div className="border-b border-gray-200">

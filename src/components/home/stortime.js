@@ -66,7 +66,7 @@ export default function StoreTimings() {
     width: 48,
     height: 48,
     display: "block",
-    filter: "brightness(0) invert(1)", // 👈 makes black → white
+    filter: "brightness(0) invert(1)",
   }}
 />
 

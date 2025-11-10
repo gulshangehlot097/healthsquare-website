@@ -108,7 +108,7 @@ export default function HealthServicesSection() {
             {/* Counter Box */}
             <div className="flex flex-col justify-center items-center bg-[#E6F4FF] rounded-3xl p-10 w-1/2 shadow-md relative overflow-hidden">
               <span className="absolute bottom-0 left-0 h-1 w-full bg-[#00A759]" />
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -116,7 +116,7 @@ export default function HealthServicesSection() {
                 className="text-5xl font-extrabold text-[#0D75CD] leading-tight"
               >
                 {displayValue}
-              </motion.h1>
+              </motion.h2>
               <p className="text-[#2B2F33]/70 text-center mt-2 text-lg">
                 Years Experience
               </p>

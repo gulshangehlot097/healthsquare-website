@@ -3,6 +3,7 @@ import { useEffect, useState,useMemo } from "react";
 import { motion } from "framer-motion";
 import { Shield, Lock, ArrowUp } from "lucide-react";
 import Link from "next/link";
+import Seo from "@/src/components/seo";
 
 const MotionLink = motion(Link);
 
@@ -99,6 +100,12 @@ const sections = useMemo(
 
   return (
     <>
+<Seo
+  title="Privacy Policy | Health Square Dental Clinic"
+  description="Read the Privacy Policy of Health Square Dental Clinic to learn how we collect, use, and protect your personal information with complete transparency and care."
+/>
+
+
       {/* Background */}
       <div
         aria-hidden

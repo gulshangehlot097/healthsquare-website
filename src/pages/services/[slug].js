@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FiChevronDown } from "react-icons/fi";
 import { HiCheckCircle } from "react-icons/hi";
+import Seo from "@/src/components/seo";
 
 export default function ServicePage({ service }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -20,13 +21,15 @@ export default function ServicePage({ service }) {
       </div>
     );
   }
-
+  console.log(service.title)
   return (
     <>
-      <Head>
-        <title>{service.title} | Health Square Dental Clinic</title>
-        <meta name="description" content={service.intro.slice(0, 150)} />
-      </Head>
+   <Seo
+  title={`${service.title} | Health Square Dental Clinic`}
+  description={service.intro.slice(0, 150)}
+/>
+
+    
 
       {/* ========== HERO: Glass overlay + gradient blobs ========== */}
       <section className="relative h-[78vh] w-full overflow-hidden">
