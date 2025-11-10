@@ -8,8 +8,10 @@ export default function Contact() {
   return (
       <>
       <Seo
-        title="Pharmacy | Dental Clinic in Jaipur | Health Square"
-        description="Your one-stop dental clinic in Jaipur for comprehensive dental care and pharmacy needs. Visit our modern clinic today!"/>
+  title="Contact Us | Health Square Dental Clinic & Pharmacy in Jaipur"
+  description="Reach out to Health Square Dental Clinic and Pharmacy in Jaipur. Call, visit, or message us for appointments, dental treatments, and pharmacy support."
+/>
+
        <main>
       <ContactForm/>
       <HealthSquareFacilities/>

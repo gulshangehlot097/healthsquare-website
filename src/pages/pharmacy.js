@@ -14,9 +14,11 @@ import ServicesSection from '@/src/components/pharmacy/services'
 export default function Pharmacy() {
   return (
       <>
-      <Seo
-        title="Pharmacy | Dental Clinic in Jaipur | Health Square"
-        description="Your one-stop dental clinic in Jaipur for comprehensive dental care and pharmacy needs. Visit our modern clinic today!"/>
+    <Seo
+  title="Pharmacy | Dental Clinic & Health Services in Jaipur | Health Square"
+  description="Get all your dental and pharmacy needs under one roof at Health Square Jaipur. Trusted medicines, expert care, and complete wellness solutions."
+/>
+
        <main>
      <SectionOne/>
     
