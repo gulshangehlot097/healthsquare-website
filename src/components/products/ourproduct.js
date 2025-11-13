@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import {
   FaHeartbeat,
   FaLeaf,
@@ -12,7 +13,6 @@ import {
   FaSyringe,
   FaShieldAlt,
 } from "react-icons/fa";
-import Image from "next/image";
 
 const categories = [
   { id: "health", name: "Health", icon: <FaHeartbeat /> },
@@ -83,7 +83,7 @@ export default function OurProducts() {
           Our Products
         </h2>
 
-        {/* Tabs */}
+
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((cat) => (
             <button
@@ -102,7 +102,7 @@ export default function OurProducts() {
           ))}
         </div>
 
-        {/* Product Cards */}
+ 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {(products[active] || []).map((item, index) => (
             <div
@@ -110,18 +110,19 @@ export default function OurProducts() {
               className="group relative w-full h-72"
               style={{ perspective: "1000px" }}
             >
-              {/* inner flip container */}
-              <div
-                className="relative w-full h-full cursor-pointer transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0.2,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] will-change-transform"
-              >
-                {/* FRONT SIDE */}
+         
+              <div className="relative w-full h-full cursor-pointer transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0.2,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] will-change-transform">
+            
                 <div className="absolute inset-0 bg-white rounded-2xl shadow-md overflow-hidden flex flex-col justify-between backface-hidden [transform:rotateY(0deg)]">
-                  <Image
-                    src={item.img}
-                    alt={item.title}
-                    fill
-                    className="w-full h-60 object-fill select-none pointer-events-none"
-                  />
+                  <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-fill select-none pointer-events-none"
+                    />
+                  </div>
+
                   <div className="p-4 text-center">
                     <h3 className="text-lg font-semibold text-gray-800">
                       {item.title}
@@ -129,7 +130,7 @@ export default function OurProducts() {
                   </div>
                 </div>
 
-                {/* BACK SIDE */}
+     
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-600/90 to-emerald-500 text-white p-6 flex flex-col justify-center items-center text-center backface-hidden [transform:rotateY(180deg)]">
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
                   <p className="text-sm opacity-90">{item.desc}</p>
