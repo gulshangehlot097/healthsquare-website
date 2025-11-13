@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { FaEnvelope, FaPhone, FaHeart, FaPills, FaStethoscope, FaSyringe, FaBandAid } from "react-icons/fa";
 import { motion } from "framer-motion";
+import AppointmentForm from "../appointment/appointmentform";
 
 const floatingIcons = [
   { icon: <FaHeart />, color: "#FF4D4D", size: "text-2xl", top: "5%", left: "5%", duration: 6 },
@@ -70,76 +71,7 @@ export default function AppointmentSection() {
             Book an Online Appointment for Expert Consultation
           </h3>
 
-          <form className="space-y-5">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="Enter Name*"
-                className="border border-gray-300 rounded-md p-3 w-full focus:ring-2 focus:ring-[#00B388]/50 outline-none"
-              />
-              <div className="relative">
-                <FaEnvelope className="absolute right-3 top-3.5 text-gray-400" />
-                <input
-                  type="email"
-                  placeholder="Enter E-mail*"
-                  className="border border-gray-300 rounded-md p-3 w-full pr-10 focus:ring-2 focus:ring-[#00B388]/50 outline-none"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <select
-                className="border border-gray-300 rounded-md p-3 w-full focus:ring-2 focus:ring-[#00B388]/50 outline-none"
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Your Subject
-                </option>
-                <option>Dental Care</option>
-                <option>Skin Treatment</option>
-                <option>Consultation</option>
-                <option>Health Checkup</option>
-              </select>
-
-              <div className="relative">
-                <FaPhone className="absolute right-3 top-3.5 text-gray-400" />
-                <input
-                  type="tel"
-                  placeholder="Enter Number*"
-                  className="border border-gray-300 rounded-md p-3 w-full pr-10 focus:ring-2 focus:ring-[#00B388]/50 outline-none"
-                />
-              </div>
-            </div>
-
-            <textarea
-              placeholder="Write a short message..."
-              rows={3}
-              className="border border-gray-300 rounded-md p-3 w-full focus:ring-2 focus:ring-[#00B388]/50 outline-none resize-none"
-            ></textarea>
-
-            <div className="text-start">
-              <button
-                type="submit"
-                className="
-                  relative cursor-pointer overflow-hidden bg-[#0072CE] text-white font-semibold
-                  py-3 px-10 rounded-full
-                  shadow-md transition-all duration-500 ease-in-out
-                  group
-                "
-              >
-                <span className="relative z-10 transition-colors duration-500 ease-in-out ">
-                  Send Now →
-                </span>
-                <span
-                  className="
-                    absolute inset-0 bg-[#00B388]
-                    -translate-x-full group-hover:translate-x-0
-                    transition-transform duration-500 ease-in-out
-                  "
-                ></span>
-              </button>
-            </div>
-          </form>
+           <AppointmentForm />
         </div>
       </div>
     </section>

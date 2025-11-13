@@ -31,9 +31,9 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      {isRouteChanging && <PageLoader />} {/* 👈 Loader only during route change */}
+      {isRouteChanging && <PageLoader />}
       {!isAdminRoot && <Header />}
-      <Toaster />
+      <Toaster  />
       <Component {...pageProps} />
       {!isAdminRoot && <Footer />}
     </>

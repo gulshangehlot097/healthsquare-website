@@ -4,12 +4,8 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { FiChevronDown } from "react-icons/fi";
-// import { Player } from "@lottiefiles/react-lottie-player";
 import dynamic from "next/dynamic";
 
-// const LottiePlayer = dynamic(() => import("@lottiefiles/react-lottie-player"), {
-//   ssr: false,
-// });
 
 const Player = dynamic(
   () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
@@ -103,7 +99,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-40">
+      <div className="hidden md:block fixed top-0 left-0 w-full z-40">
         <div
           className={`text-gray-100 text-sm transition-all duration-500 ease-in-out ${
             isScrolled
@@ -111,9 +107,9 @@ export default function Header() {
               : "bg-gradient-to-r from-[#0E76CD] to-[#00A859] text-white translate-y-0 opacity-100"
           }`}
         >
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-center sm:justify-between text-center sm:text-left py-3 sm:py-2 space-y-2 sm:space-y-0">
+          <div className="max-w-screen-2xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-between text-center md:text-left py-2 md:py-2 space-y-2 md:space-y-0 gap-2 overflow-hidden">
             {/* Left Section */}
-            <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start text-sm gap-2 sm:gap-3">
+            <div className="flex flex-col md:flex-row flex-wrap items-center justify-center md:justify-start text-[11px] sm:text-xs md:text-sm gap-1 sm:gap-3 leading-tight">
               <div className="flex flex-wrap justify-center items-center gap-x-1">
                 <span>Call Us Today!</span>
                 <Link
@@ -143,7 +139,7 @@ export default function Header() {
             </div>
 
             {/* Right Section */}
-            <div className="flex items-center justify-center gap-3 text-white text-sm mt-2 sm:mt-0">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 text-white text-xs sm:text-sm mt-1 md:mt-0">
               <span className="hidden sm:inline">Follow us:</span>
               <Link
                 href="https://www.facebook.com/healthsquarejaipur"
@@ -165,7 +161,7 @@ export default function Header() {
       </div>
 
       <header
-        className={`w-full backdrop-blur-md bg-white/90  sticky top-0 z-50 mt-10 transition-all ${
+        className={`w-full  bg-white sticky top-0 z-50 transition-all md:mt-10 ${
           isScrolled ? "shadow-lg" : ""
         }`}
       >

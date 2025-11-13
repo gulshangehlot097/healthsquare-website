@@ -22,10 +22,10 @@ export default function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [timer, setTimer] = useState(0);
   const [otp, setOtp] = useState("");
-
   const [captcha, setCaptcha] = useState("");
   const [userCaptcha, setUserCaptcha] = useState("");
 
+  // ---------- Generate Captcha ----------
   useEffect(() => {
     generateCaptcha();
   }, []);
@@ -39,8 +39,17 @@ export default function ContactForm() {
     setCaptcha(randomStr);
   };
 
-  const { register, handleSubmit, watch, setError, clearErrors, reset } =
-    useForm();
+  // ---------- Form Setup ----------
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setError,
+    clearErrors,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const firstError = Object.keys(errors)[0];
   const mobile = watch("mobile");
 
   useEffect(() => {
@@ -50,10 +59,11 @@ export default function ContactForm() {
     return () => clearInterval(interval);
   }, [timer]);
 
+  // ---------- OTP ----------
   const handleSendOtp = async () => {
     if (!mobile || mobile.length !== 10) {
       setError("mobile", {
-        message: "Please enter valid 10-digit mobile number.",
+        message: "Please enter a valid 10-digit mobile number.",
       });
       return showError("Please enter a valid 10-digit mobile number.");
     }
@@ -95,6 +105,7 @@ export default function ContactForm() {
     }
   };
 
+  // ---------- Submit ----------
   const onSubmit = async (data) => {
     if (userCaptcha.toUpperCase() !== captcha) {
       showError("Invalid CAPTCHA. Please try again.");
@@ -103,6 +114,7 @@ export default function ContactForm() {
     }
     if (!otpVerified)
       return showError("Please verify your mobile number first.");
+
     try {
       setLoading(true);
       const res = await callApi(constant.API.USER.USERINQUIRE, "POST", data);
@@ -119,24 +131,23 @@ export default function ContactForm() {
     }
   };
 
-  const handleFormError = (formErrors) => {
-    const firstErrorKey = Object.keys(formErrors)[0];
-    if (firstErrorKey) {
-      const message =
-        formErrors[firstErrorKey]?.message ||
-        "Please fill all required fields correctly.";
-      showError(message);
-    }
-  };
-
   return (
     <section className="w-full bg-gradient-to-b from-[#e0f0ff] to-[#ffffff] py-16 sm:py-20 px-4 sm:px-6 md:px-10 lg:px-20 relative overflow-hidden">
-      {/* Decorative Background Circles */}
+      <style jsx>{`
+        .form-error {
+          font-size: 12px;
+          color: #ef4444;
+          margin-top: 2px;
+          line-height: 1.2;
+          min-height: 16px;
+        }
+      `}</style>
+
       <div className="absolute top-0 left-0 w-24 sm:w-32 h-24 sm:h-32 bg-blue-200/30 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-[#0070C9]/20 rounded-full translate-x-1/2 translate-y-1/2 animate-pulse"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row-reverse items-start gap-8 md:gap-10 lg:gap-12 relative z-10">
-        {/* RIGHT SIDE FORM */}
+        {/* ---------- RIGHT SIDE FORM ---------- */}
         <div className="w-full md:w-[55%] lg:w-[60%] bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0070C9] mb-4 text-center lg:text-left">
             HEALTH SQUARE
@@ -148,30 +159,40 @@ export default function ContactForm() {
           </p>
 
           <form
-            onSubmit={handleSubmit(onSubmit, handleFormError)}
+            onSubmit={handleSubmit(onSubmit)}
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           >
-            <input
-              type="text"
-              placeholder="Name *"
-              {...register("name", { required: "Name is required" })}
-              className="inputcls"
-            />
-            <input
-              type="email"
-              placeholder="Email *"
-              {...register("email", {
-                required: "Email is required",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Invalid email address",
-                },
-              })}
-              className="inputcls"
-            />
+            <div className="flex flex-col">
+              <input
+                type="text"
+                placeholder="Name *"
+                {...register("name", { required: "Name is required" })}
+                className="inputcls"
+              />
+              {firstError === "name" && (
+                <p className="form-error">{errors.name?.message}</p>
+              )}
+            </div>
 
+            <div className="flex flex-col">
+              <input
+                type="email"
+                placeholder="Email *"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "Invalid email address",
+                  },
+                })}
+                className="inputcls"
+              />
+              {firstError === "email" && (
+                <p className="form-error">{errors.email?.message}</p>
+              )}
+            </div>
             <div className="col-span-full grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col">
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                   <input
                     type="tel"
@@ -202,6 +223,9 @@ export default function ContactForm() {
                     </button>
                   )}
                 </div>
+                {firstError === "mobile" && (
+                  <p className="form-error">{errors.mobile?.message}</p>
+                )}
                 {!otpVerified && timer > 0 && (
                   <p className="text-xs sm:text-sm text-red-600 mt-1">
                     You can resend OTP in 00:{timer.toString().padStart(2, "0")}
@@ -209,9 +233,8 @@ export default function ContactForm() {
                 )}
               </div>
 
-              {/* OTP or Department */}
               {!otpVisible ? (
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col">
                   <select
                     {...register("department", {
                       required: "Please select a department",
@@ -222,11 +245,13 @@ export default function ContactForm() {
                     <option value="dentalcare">DENTAL CARE</option>
                     <option value="pharmacy">PHARMACY</option>
                   </select>
+                  {firstError === "department" && (
+                    <p className="form-error">{errors.department?.message}</p>
+                  )}
                 </div>
               ) : (
                 <>
-                  {/* OTP verify field */}
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col">
                     <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                       <input
                         type="tel"
@@ -253,24 +278,25 @@ export default function ContactForm() {
                     </div>
                   </div>
 
-                  {/* Department below on small screens */}
-                  <div className="flex flex-col gap-2 mt-3">
+                  <div className="flex flex-col">
                     <select
                       {...register("department", {
                         required: "Please select a department",
                       })}
-                      className="border border-gray-300 rounded-xl px-3 py-2 sm:py-3 text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#0070C9]"
+                      className="inputcls"
                     >
                       <option value="">Select Department</option>
                       <option value="dentalcare">DENTAL CARE</option>
                       <option value="pharmacy">PHARMACY</option>
                     </select>
+                    {firstError === "department" && (
+                      <p className="form-error">{errors.department?.message}</p>
+                    )}
                   </div>
                 </>
               )}
             </div>
 
-            {/* Message */}
             <textarea
               placeholder="How can we help?"
               rows="4"
@@ -278,7 +304,6 @@ export default function ContactForm() {
               className="w-full sm:col-span-2 bg-white/70 rounded-xl px-4 py-3 text-gray-700 placeholder-gray-400 inputcls"
             ></textarea>
 
-            {/* CAPTCHA Section */}
             <div className="sm:col-span-2 flex flex-col gap-2 mt-2">
               <div className="flex items-center gap-3">
                 <div className="w-1/4 px-4 py-2 bg-gray-100 text-lg font-semibold tracking-widest rounded-lg border border-gray-300 text-center select-none">
@@ -305,27 +330,31 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Terms */}
-            <label className="flex items-center gap-2 sm:col-span-2 mt-2 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                {...register("terms", {
-                  required: "Accept Terms & Conditions",
-                })}
-                className="w-4 h-4 accent-[#04A868] cursor-pointer"
-              />
-              <span className="text-gray-600 text-sm">
-                I agree to all{" "}
-                <Link href="/tnc">
-                  <span className="text-[#0070C9] underline">
+            <div className="sm:col-span-2 flex flex-col">
+              <label className="flex items-center gap-2 mt-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  {...register("terms", {
+                    required: "Please accept Terms & Conditions",
+                  })}
+                  className="w-4 h-4 accent-[#04A868] cursor-pointer"
+                />
+                <span className="text-gray-600 text-sm">
+                  I agree to all{" "}
+                  <Link
+                    href="/tnc"
+                    className="text-[#0070C9] underline hover:text-[#005fa3] transition-colors"
+                  >
                     Terms and Conditions
-                  </span>
-                </Link>
-                .
-              </span>
-            </label>
+                  </Link>
+                  .
+                </span>
+              </label>
+              {firstError === "terms" && (
+                <p className="form-error">{errors.terms?.message}</p>
+              )}
+            </div>
 
-            {/* Submit */}
             <div className="text-center sm:text-start">
               <button
                 type="submit"
@@ -340,7 +369,7 @@ export default function ContactForm() {
           </form>
         </div>
 
-        {/* LEFT SIDE */}
+        {/* ---------- LEFT SIDE INFO ---------- */}
         <div className="flex-1 relative w-full md:w-[45%] lg:w-[40%]">
           <div className="absolute top-0 left-0 w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-full rounded-3xl overflow-hidden shadow-2xl">
             <Image
@@ -353,21 +382,44 @@ export default function ContactForm() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0070C9]/40 via-transparent to-transparent"></div>
           </div>
 
-          <div className="relative  rounded-3xl p-6 sm:p-8  shadow-xl flex flex-col gap-6 z-20">
+          <div className="relative rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col gap-6 z-20">
             <h3 className="font-bold text-[#fff] text-lg flex items-center gap-2">
               <HiOfficeBuilding className="text-xl animate-bounce" /> General
               Enquiries
             </h3>
-            <p className="flex items-center gap-3 text-[#fff] text-sm sm:text-base">
-              <HiPhone /> 7403330888, 7403330777
+            <p className="flex items-center  text-[#fff] text-sm sm:text-base">
+              <HiPhone className="gap-3" />
+              <Link href="tel:7403330888" passHref>
+                <span className="hover:underline cursor-pointer ml-3">
+                  7403330888
+                </span>
+              </Link>
+              ,{" "}
+              <Link href="tel:7403330777" passHref>
+                <span className="hover:underline cursor-pointer">
+                  7403330777
+                </span>
+              </Link>
             </p>
             <p className="flex items-center text-[#fff] gap-3 text-sm sm:text-base">
-              <HiOutlineMail /> info@healthsquare.in
+              <HiOutlineMail />
+              <Link href="mailto:info@healthsquare.in" passHref>
+                <span className="hover:underline cursor-pointer">
+                  info@healthsquare.in
+                </span>
+              </Link>
             </p>
-            <p className="flex items-start gap-3 text-[#fff] text-sm sm:text-base">
-              <HiOutlineLocationMarker className="text-3xl mt-[2px]" />
-              22, Ground Floor, Biswa Nagar, Opp. Metro Pillar No. 75, New
-              Sanganer Road, Jaipur – 302019
+            <p className="flex items-start gap-3 text-white text-sm sm:text-base leading-relaxed">
+              <HiOutlineLocationMarker className="mt-1" />
+              <span>
+                <strong>Health Square</strong>
+                <br />
+                Vinayak Tower, 22, Ground Floor, Biswa Nagar,
+                <br />
+                New Sanganer Road, Opp. Metro Pillar No. 75,
+                <br />
+                Jaipur, Rajasthan – 302019
+              </span>
             </p>
 
             <div className="border-t border-blue-200 pt-3"></div>

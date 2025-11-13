@@ -6,40 +6,52 @@ import constant from "@/src/env";
 import axios from "axios";
 
 export async function callApi(url, method = "POST", data = null) {
-  console.log(url, data);
-  // let token = localStorage.getItem("token");
+  // console.log(url, data);
   let options = {
     method,
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `${token}`,
     },
   };
   if (data) {
     options.body = JSON.stringify({ data: data });
   }
-  let res = await fetch(url, options);
-  if (!res.ok) throw new Error("API request failed");
-  return await res.json();
+  try {
+    let res = await fetch(url, options);
+    if (!res.ok) {
+      return { status: false, data: { results: [], total: 0 } };
+    }
+    return await res.json();
+  } catch (e) {
+    return { status: false, data: { results: [], total: 0 } };
+  }
 }
+
+
 export async function callApiData(url, method = "POST", data = null) {
   console.log(url, data);
-  // let token = localStorage.getItem("token");
 
   let options = {
     method,
     headers: {
       "Content-Type": "application/json",
-      // Authorization: `${token}`,
     },
   };
+
   if (data) {
     options.body = JSON.stringify(data);
   }
-  let res = await fetch(url, options);
-  if (!res.ok) throw new Error("API request failed");
-  return await res.json();
+  try {
+    let res = await fetch(url, options);
+    if (!res.ok) {
+      return { status: false, data: null };
+    }
+    return await res.json();
+  } catch (e) {
+    return { status: false, data: null };
+  }
 }
+
 
 // export async function callApi(url, method = "POST", data = null) {
 //   const token = localStorage.getItem("token");
@@ -97,72 +109,4 @@ export async function callApiWithFile(url, method = "POST", payload = null) {
   return ct.includes("application/json") ? res.json() : res.text();
 }
 
-export async function uploadDocument(url, method = "POST", file = null) {
-  const token = localStorage.getItem("token");
 
-  // const formData = new FormData();
-  // if (file) {
-  //   formData.append("file", file);
-  // }
-
-  let options = {
-    method,
-    headers: {
-      Authorization: `${token}`,
-    },
-    body: file,
-  };
-
-  const res = await fetch(url, options);
-  if (!res.ok) throw new Error("API request failed");
-  return await res.json();
-}
-
-export async function getUserinfo(token = localStorage.getItem("token")) {
-  const response = await fetch("/api/getuserinfo", {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `${token}`,
-    },
-  });
-  return response;
-}
-export async function verifyToken(pretoken) {
-  //let token = localStorage.getItem('token');
-  const response = await fetch("/api/verifytoken", {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `${pretoken}`,
-    },
-  });
-  return response;
-}
-
-export async function getDB() {
-  return openDB(DB_NAME, 1, {
-    upgrade(db) {
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME);
-      }
-    },
-  });
-}
-
-export async function storeDBToken(token) {
-  const db = await getDB();
-  await db.put(STORE_NAME, token, "authToken");
-}
-
-export async function getDBToken() {
-  const db = await getDB();
-  return db.get(STORE_NAME, "authToken");
-}
-
-export async function deleteDBToken() {
-  const db = await getDB();
-  await db.delete(STORE_NAME, "authToken");
-}
-
-export async function isAuth() {
-  return localStorage.getItem("token") ? true : false;
-}

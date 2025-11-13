@@ -7,6 +7,11 @@ import AppointmentSection from "@/src/components/about/appointmentsection"
 import WhyChoose from "@/src/components/about/whychoosesecond"
 import AboutFaq from "@/src/components/about/faqsection"
 
+
+
+
+
+
 export default function About() {
   return (
     <>

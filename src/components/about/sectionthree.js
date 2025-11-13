@@ -68,7 +68,7 @@ export default function SectionThree() {
                   Health Square Pharmacy
                 </span>{" "}
                 — your trusted RGHS partner in Jaipur.
-                <Link href="/rghs-empanelled-pharmacy">
+                <Link href="/rghs-pharmacy">
                   <span className="font-bold text-[#0E76CD] cursor-pointer hover:text-[#00A859]">
                     {" "}
                     Click here{" "}

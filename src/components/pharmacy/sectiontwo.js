@@ -94,7 +94,10 @@ export default function SectionTwo() {
             </motion.div>
           ))}
         </div>
+        
+        
       </div>
+      
     </section>
   );
 }

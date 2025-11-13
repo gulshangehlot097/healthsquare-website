@@ -12,86 +12,84 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-[#03254C] via-[#052E5E] to-[#041C32] text-white w-full">
-      {/* Accent line */}
-      <div className="w-full h-1 bg-gradient-to-r from-[#00C6FF] via-[#0072FF] to-[#00C6FF]" />
+      <div className="w-full h-[2px] bg-gradient-to-r from-[#00C6FF] via-[#0072FF] to-[#00C6FF]" />
 
-      {/* === Main Section === */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* --- Brand --- */}
-        <div className="flex flex-col">
-          <div className="text-start">
-            <Link href="/" className="relative z-50">
-              <Image
-                src="/images/logo.png"
-                alt="Health Square Logo"
-                width={286}
-                height={83}
-                priority
-                quality={90}
-                sizes="286px"
-                className="object-contain w-[286px] h-[100px] transition-transform duration-200 hover:scale-105"
-              />
-            </Link>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="flex flex-col justify-start">
+          <Link href="/" className="mb-3">
+            <Image
+              src="/images/footerlogo.png"
+              alt="Health Square Logo"
+              width={180}
+              height={60}
+              priority
+              quality={90}
+              sizes="180px"
+              className="object-contain w-[180px] h-auto"
+            />
+          </Link>
 
-          <p className="text-gray-300 text-sm leading-relaxed mb-6">
+          <p className="text-gray-300 text-sm leading-relaxed">
             Health Square is a modern dental clinic and pharmacy equipped with
             world-class technology. We ensure premium care, expert consultation,
             and home delivery of medical supplies from{" "}
             <span className="text-[#00A859] font-semibold">7 AM – 11 PM</span>.
           </p>
-
-          <div className="flex space-x-3 mt-auto">
-            {[
-              { icon: <FaFacebookF />, color: "#1877F2", link: "https://www.facebook.com/healthsquarejaipur" },
-              { icon: <FaInstagram />, color: "#E4405F", link: "https://www.instagram.com/healthsquarejaipur/" },
-              { icon: <FaWhatsapp />, color: "#25D366", link: "https://wa.me/7403330777" },
-            ].map((s, i) => (
-              <a
-                key={i}
-                href={s.link}
-                target="_blank"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 
-                           hover:scale-110 transition-all duration-300"
-                style={{ color: "white" }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = s.color)}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.1)")}
-              >
-                {s.icon}
-              </a>
-            ))}
-          </div>
         </div>
 
-        {/* --- Contact --- */}
         <div>
-          <h3 className="text-lg font-semibold mb-5 text-[#00A859]">Contact Info</h3>
-          <ul className="space-y-4 text-gray-300 text-sm">
+          <h3 className="text-lg font-semibold mb-4 text-[#00A859]">
+            Contact Info
+          </h3>
+          <ul className="space-y-3 text-gray-300 text-sm">
             <li className="flex items-start space-x-3">
               <FaMapMarkerAlt className="text-[#00A859] mt-1 flex-shrink-0" />
               <span>
-                22, Ground Floor, Biswa Nagar, Opp. Metro Pillar No. 75, New Sanganer Road, Jaipur – 302019
+                Vinayak Tower, 22, Ground Floor, Biswa Nagar, New Sanganer Road,
+                Opp. Metro Pillar no. 75, Jaipur, Rajasthan - 302019
               </span>
             </li>
             <li className="flex items-center space-x-3">
               <FaPhoneAlt className="text-[#00A859]" />
-              <span>7403330888 / 7403330777</span>
+              <span>
+                <Link
+                  href="tel:7403330888"
+                  className="hover:underline font-medium"
+                >
+                  7403330888
+                </Link>{" "}
+                /{" "}
+                <Link
+                  href="tel:7403330777"
+                  className="hover:underline font-medium"
+                >
+                  7403330777
+                </Link>
+              </span>
             </li>
             <li className="flex items-center space-x-3">
               <FaEnvelope className="text-[#00A859]" />
-              <span>info@healthsquare.in</span>
+              <Link
+                href="mailto:info@healthsquare.in"
+                className="hover:underline break-all sm:break-normal"
+              >
+                info@healthsquare.in
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* --- Quick Links --- */}
         <div>
-          <h3 className="text-lg font-semibold mb-5 text-[#00A859]">Quick Links</h3>
-          <ul className="space-y-3 text-gray-300 text-sm">
+          <h3 className="text-lg font-semibold mb-4 text-[#00A859]">
+            Quick Links
+          </h3>
+          <ul className="space-y-2 text-gray-300 text-sm">
             {[
-              { name: "About Us", path: "/about" },
+              { name: "Home", path: "/" },
+              { name: "About", path: "/about" },
               { name: "Dental Care Services", path: "/services" },
               { name: "Pharmacy", path: "/pharmacy" },
+              { name: "Blog", path: "/blog" },
               { name: "Contact", path: "/contact" },
             ].map((item) => (
               <li key={item.name}>
@@ -106,14 +104,15 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* --- Newsletter --- */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-5 text-[#00A859]">Stay Updated</h3>
-          <p className="text-gray-300 text-sm mb-4">
-            Subscribe to our newsletter for health tips, offers and updates.
+          <h3 className="text-lg font-semibold mb-4 text-[#00A859]">
+            Stay Updated
+          </h3>
+          <p className="text-gray-300 text-sm mb-3">
+            Subscribe to our newsletter for health tips, offers, and updates.
           </p>
 
-          <form className="w-full flex flex-col sm:flex-row gap-3">
+          <form className="w-full flex flex-col sm:flex-row gap-3 mb-5">
             <input
               type="email"
               placeholder="Enter your email"
@@ -130,17 +129,55 @@ export default function Footer() {
               Subscribe
             </button>
           </form>
+
+          <div className="flex space-x-3">
+            {[
+              {
+                icon: <FaFacebookF />,
+                color: "#1877F2",
+                link: "https://www.facebook.com/healthsquarejaipur",
+              },
+              {
+                icon: <FaInstagram />,
+                color: "#E4405F",
+                link: "https://www.instagram.com/healthsquarejaipur/",
+              },
+              {
+                icon: <FaWhatsapp />,
+                color: "#25D366",
+                link: "https://wa.me/7403330777",
+              },
+            ].map((s, i) => (
+              <a
+                key={i}
+                href={s.link}
+                target="_blank"
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 
+                           hover:scale-110 transition-all duration-300"
+                style={{ color: "white" }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = s.color)
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.backgroundColor =
+                    "rgba(255,255,255,0.1)")
+                }
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* === Bottom Strip === */}
-      <div className="border-t border-white/10 mt-6 py-4 text-center text-gray-400 text-xs sm:text-sm">
-        © {new Date().getFullYear()} Health Square — All Rights Reserved | Powered by{" "}
+      <div className="border-t border-white/10 mt-4 py-3 text-center text-gray-400 text-xs sm:text-sm">
+        © {new Date().getFullYear()} Health Square — All Rights Reserved |
+        Powered by{" "}
         <Link
           href="https://proactivedigital.in"
           className="text-[#00A859] hover:underline"
         >
-          Proactive Digital
+          Proactive Professional Services Pvt Ltd
         </Link>
       </div>
     </footer>

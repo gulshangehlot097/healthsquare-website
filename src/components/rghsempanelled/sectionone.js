@@ -12,15 +12,15 @@ const Page = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
 
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pt-5 ">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 ">
 
           <div className="w-full lg:w-1/2 space-y-8">
             <div>
-               <h1 className="mt-8 text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
-                <span className="">Health Square</span>
+               <h1 className=" text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
+                <span className="">RGHS Pharmacy:</span>
                 <br />
-               <span className="">RGHS Empanelled </span>
-                <span className="">Pharmacy </span>
+               <span className="">Complete Guide to Card, </span>
+                <span className="">Benefits & HealthSquare Services</span>
               </h1>
             </div>
 
@@ -37,7 +37,7 @@ const Page = () => {
                 Welcome to Confident
               </h2>
               <p className="text-gray-600 leading-relaxed text-base font-medium">
-                Rajasthan Government Health Scheme (RGHS) is a landmark initiative to extend affordable and quality medical care to state government staff, pensioners, and dependents. Members are eligible for cashless treatment, reduced medicine prices, and empanelled hospitals and pharmacies with an RGHS card.
+               Rajasthan Government Health Scheme (RGHS) is a landmark initiative to extend affordable and quality medical care to state government staff, pensioners, and dependents. Members are eligible for cashless treatment, reduced medicine prices, and impanelled hospitals and pharmacies with an RGHS card.
               </p>
               
               <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-blue-200 via-white to-blue-200 w-20 h-20 rounded-full flex items-center justify-center shadow-xl">

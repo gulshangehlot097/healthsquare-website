@@ -9,6 +9,7 @@ import {
   FaMedkit,
   FaGift,
 } from "react-icons/fa";
+import Link from "next/link";
 
 const products = [
   {
@@ -61,7 +62,7 @@ export default function ProductsSection() {
       </motion.div>
 
       {/* Cards Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-10 gap-8 justify-items-center">
         {products.map((item, index) => (
           <motion.div
             key={index}
@@ -151,6 +152,17 @@ export default function ProductsSection() {
           </motion.div>
         ))}
       </div>
+
+
+<div className="text-center">
+  <Link
+    href="/products" 
+    className="relative thmbtn overflow-hidden bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full shadow-md transition-all duration-500 ease-in-out group inline-block"
+  >
+    <span className="relative z-10">See More</span>
+    <span className="absolute inset-0 bg-[#00B388] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
+  </Link>
+</div>
     </section>
   );
 }

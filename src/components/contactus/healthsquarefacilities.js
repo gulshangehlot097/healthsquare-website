@@ -20,7 +20,7 @@ export default function HealthSquareFacilities() {
   };
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#e6f6ff] to-[#ffffff] py-24 px-6 md:px-12 overflow-hidden">
+    <section className="relative w-full bg-[#e6f6ff]  py-24 px-6 md:px-12 overflow-hidden">
       {/* ---------- Floating Icons ---------- */}
       <div className="absolute inset-0 -z-0 pointer-events-none">
         <FaHeart className="text-[#FF7B7B] absolute top-[40px] left-[50px] text-5xl opacity-30 animate-float1" />

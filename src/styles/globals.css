@@ -124,3 +124,41 @@ body {
     animation: spinLinear 4s linear infinite;
   }
 }
+/* swiper css start  */
+.Second {
+  position: relative;
+}
+
+.carousel-mask::before,
+.carousel-mask::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 50px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.carousel-mask::before {
+  left: 0;
+  background: linear-gradient(to right, #F6EDF9 20%, transparent 100%);
+}
+
+.carousel-mask::after {
+  right: 0;
+  background: linear-gradient(to left, #F6EDF9 20%, transparent 100%);
+}
+.swiper-slide{
+  width:auto!important;
+}
+
+@media (max-width: 768px) {
+
+  .carousel-mask::before,
+  .carousel-mask::after {
+    width: 50px;
+  }
+}
+/* swiper css start  */

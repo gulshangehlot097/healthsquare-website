@@ -49,7 +49,7 @@ export default function FaqSection() {
     >
       {/* Left FAQ Content */}
       <div>
-        <p className="text-base font-bold text-gray-800 mb-2">Our FAQ</p>
+        {/* <p className="text-base font-bold text-gray-800 mb-2">Our FAQ</p> */}
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug mb-8">
          Frequently Asked Questions about Pharmacy in Jaipur (FAQs)
         </h2>

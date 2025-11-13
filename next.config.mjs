@@ -6,11 +6,11 @@
 
 
 //     images: {
-//     domains: ["http://192.168.1.35:3001", "192.168.1.35:3001", "192.168.1.35:3001"],
+//     domains: ["http://192.168.1.50:3001", "192.168.1.50:3001", "192.168.1.50:3001"],
 //     remotePatterns: [
 //       {
 //         protocol: "http",
-//         hostname: "192.168.1.35:3001",
+//         hostname: "192.168.1.50:3001",
 //         pathname: "/",
 //       },
 //     ],
@@ -20,7 +20,7 @@
 //       {
         
 //         source: "/api/:path*",
-//         destination: "http://192.168.1.35:3001/api/:path", // note /api here
+//         destination: "http://192.168.1.50:3001/api/:path", // note /api here
 //       },
 //     ];
 //   },
@@ -36,11 +36,11 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
 
   images: {
-    domains: ["192.168.1.49"],
+    domains: ["192.168.1.50"],
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "192.168.1.49",
+        hostname: "192.168.1.50",
         port: "3001",
       },
     ],
@@ -50,7 +50,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "http://192.168.1.49:3001/api/:path*", 
+        destination: "http://192.168.1.50:3001/api/:path*", 
       },
     ];
   },
