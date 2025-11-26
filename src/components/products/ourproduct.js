@@ -69,10 +69,10 @@ const products = {
     }
     
   ],
-  "body-care": [
+  "baby-care": [
     {
       title: "Premium Body Lotions for All Skin Types.",
-      img: "/images/products/bodycare/body-lotion.jpg",
+      img: "/images/products/babycare/baby-lotion.jpg",
       desc: "Discover a wide range of dermatologist-recommended body lotions at Health Square Pharmacy. From deep nourishment to long-lasting hydration, we offer trusted brands like Nivea, Vaseline, and Biotique to keep your skin soft, smooth, and healthy every day.Whether you need intense moisture, aloe hydration, brightening care, or she butter nourishment, you’ll find the perfect lotion for your skin type—all at affordable prices.Now available in-store at Health Square Pharmacy! Your one-stop destination for genuine skincare and personal care essentials",
     }
     
