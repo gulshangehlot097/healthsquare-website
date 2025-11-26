@@ -1,85 +1,171 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { FaEye } from "react-icons/fa";
+import Modal from "../../components/modal";
 import {
-  FaHeartbeat,
-  FaLeaf,
+  FaBaby,
+  FaBriefcaseMedical,
+  FaStethoscope,
   FaAppleAlt,
-  FaThermometerHalf,
-  FaCarrot,
-  FaPills,
-  FaHandsWash,
-  FaTooth,
-  FaSyringe,
+  FaHandHoldingMedical,
+  FaBandAid,
   FaShieldAlt,
+  FaHeartbeat,
+  FaTooth,
+  FaPumpSoap,
+  FaBath,
+  FaSun,
+  FaSprayCan,
 } from "react-icons/fa";
 
 const categories = [
-  { id: "health", name: "Health", icon: <FaHeartbeat /> },
-  { id: "cosmetics", name: "Cosmetics", icon: <FaLeaf /> },
-  { id: "supplements", name: "Dietary Supplements", icon: <FaAppleAlt /> },
-  { id: "cough", name: "Cough, Cold, Fever", icon: <FaThermometerHalf /> },
-  { id: "nutrition", name: "Nutrition", icon: <FaCarrot /> },
-  { id: "medicine", name: "Medicine", icon: <FaPills /> },
-  { id: "pollen", name: "Pollen Sneeze", icon: <FaHandsWash /> },
-  { id: "allergies", name: "Allergies", icon: <FaHandsWash /> },
-  { id: "teeth", name: "Mouth & Teeth", icon: <FaTooth /> },
-  { id: "medication", name: "Medication", icon: <FaSyringe /> },
-  { id: "protection", name: "Protection", icon: <FaShieldAlt /> },
+  { id: "skin-care", name: "Skin Care", icon: <FaBath /> },
+  { id: "body-care", name: "Body Care", icon: <FaPumpSoap /> },
+  { id: "hair-care", name: "Hair Care", icon: <FaHeartbeat /> },
+  { id: "hygiene", name: "Personal Hygiene", icon: <FaShieldAlt /> },
+  { id: "perfume", name: "Deodorants & Perfumes", icon: <FaSprayCan /> },
+  { id: "oral-care", name: "Oral Care", icon: <FaTooth /> },
+  { id: "beauty", name: "Sunscreen & Beauty Essentials", icon: <FaSun /> },
+  { id: "baby-care", name: "Baby Care", icon: <FaBaby /> },
+  {
+    id: "first-aid",
+    name: "Health & First-Aid Essentials",
+    icon: <FaBandAid />,
+  },
+  {
+    id: "orthopedic",
+    name: "Orthopedic Supports & Brace",
+    icon: <FaBriefcaseMedical />,
+  },
+  { id: "medical-devices", name: "Medical Devices", icon: <FaStethoscope /> },
+  { id: "nutrition", name: "Nutrition & Supplements", icon: <FaAppleAlt /> },
+  {
+    id: "antiseptic",
+    name: "Antiseptics & Infection Care",
+    icon: <FaHandHoldingMedical />,
+  },
 ];
 
 const products = {
-  health: [
+  "skin-care": [
     {
-      title: "Vitamins Pack",
-      img: "/images/products/hero01.png",
-      price: "₹299",
-      desc: "Boosts immunity and supports daily wellness.",
+      title: "Best Face Wash & Brightening Products",
+      img: "/images/products/skincare/face-wash.jpg",
+      desc: "At our pharmacy, we offer a complete range of dermatologist-recommended face care products .“Discover gentle yet effective face washes that remove dirt, oil, pollutants and impurities without harming your skin barrier. We stock trusted brands like Himalaya, Ponds, Garnier, Clean & Clear, Nivea, Everyuth, and Dove—suitable for all skin types, including oily, dry, and sensitive.”",
     },
     {
-      title: "Heart Care",
-      img: "/images/products/hero02.png",
+      title: "Vitamin C Serum",
+      img: "/images/products/hero01.png",
       price: "₹499",
-      desc: "Maintains healthy cholesterol and blood pressure.",
+      desc: "Brightens skin & reduces pigmentation.",
     },
   ],
-  cosmetics: [
+  "body-care": [
     {
-      title: "Organic Cream",
-      img: "/images/products/hero03.png",
-      price: "₹199",
-      desc: "Made with natural extracts for glowing skin.",
-    },
-    {
-      title: "Skin Lotion",
-      img: "/images/products/hero01.png",
-      price: "₹249",
-      desc: "Hydrating formula for all skin types.",
-    },
+      title: "Premium Body Lotions for All Skin Types.",
+      img: "/images/products/bodycare/body-lotion.jpg",
+      desc: "Discover a wide range of dermatologist-recommended body lotions at Health Square Pharmacy. From deep nourishment to long-lasting hydration, we offer trusted brands like Nivea, Vaseline, and Biotique to keep your skin soft, smooth, and healthy every day.Whether you need intense moisture, aloe hydration, brightening care, or she butter nourishment, you’ll find the perfect lotion for your skin type—all at affordable prices.Now available in-store at Health Square Pharmacy! Your one-stop destination for genuine skincare and personal care essentials",
+    }
+    
   ],
-  supplements: [
+  "body-care": [
     {
-      title: "Protein Powder",
-      img: "/images/products/hero02.png",
-      price: "₹699",
-      desc: "Whey blend for muscle recovery and strength.",
-    },
-    {
-      title: "Omega Capsules",
-      img: "/images/products/hero03.png",
-      price: "₹399",
-      desc: "Supports heart and brain health naturally.",
-    },
+      title: "Premium Body Lotions for All Skin Types.",
+      img: "/images/products/bodycare/body-lotion.jpg",
+      desc: "Discover a wide range of dermatologist-recommended body lotions at Health Square Pharmacy. From deep nourishment to long-lasting hydration, we offer trusted brands like Nivea, Vaseline, and Biotique to keep your skin soft, smooth, and healthy every day.Whether you need intense moisture, aloe hydration, brightening care, or she butter nourishment, you’ll find the perfect lotion for your skin type—all at affordable prices.Now available in-store at Health Square Pharmacy! Your one-stop destination for genuine skincare and personal care essentials",
+    }
+    
   ],
+"hair-care": [
+  {
+    title: "Hair Care Essentials",
+    img: "/images/products/haircare/hair-care.png",
+    desc: `Nourish, strengthen, and revive your hair with our wide collection of <strong>top-brand shampoos and oils.</strong> Whether you need deep hydration, natural nourishment, or expert damage repair, we have the perfect products for every hair type.
+
+Choose from trusted brands like <strong> Dove, Bajaj Almond Drops, Garnier Fructis, Patanjali, Navratna, Dabur Amla, Sunsilk, L’Oréal Paris </strong> and more!
+      `
+
+  }
+],
+"hygiene": [
+  {
+    title: "Essential Personal Care & Hygiene",
+    img: "/images/products/hygiene/hygiene-one.png",
+    desc: `Stay protected and refreshed every day with our wide range of <strong> top-quality personal care & hygiene essentials. </strong> From gentle<strong> body washes</strong> and<strong>intimate hygiene washes</strong>  to <strong> trusted antiseptic liquids, liquid handwashes, and premium shaving products</strong> , we offer everything you need for complete daily care.
+
+Shop trusted brands like <strong> Dettol, Savlon, Dove, VWash, Gillette </strong> and more — all in one place!
+      `
+
+  }
+],
+"perfume": [
+     {
+      title: "Top Deodorants & Body Sprays for Long-Lasting Freshness.",
+      img: "/images/products/perfume/body-spray.jpg",
+      desc: "Stay confident and fresh all day with our premium collection of deodorants, body sprays, and fragrance mists, now available at Health Square Pharmacy.Choose from leading brands like Nivea, Old Spice, Denver, Beardo, and Godrej Aer—perfect for both men and women. Whether you prefer 48-hour sweat protection, smooth pearl-finish deodorants, or luxurious long-lasting fragrances, we have something for every lifestyle.Shop at Health Square Pharmacy for 100% authentic, dermatologically safe, and long-lasting deodorants.",
+    },
+],
+
 };
 
 export default function OurProducts() {
-  const [active, setActive] = useState("health");
+  const [active, setActive] = useState("skin-care");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  const openModal = (item) => {
+    setSelected(item);
+    setModalOpen(true);
+  };
+
+  const LENS_SIZE = 150;
+  const ZOOM_LEVEL = 2.5;
+
+  const imgRef = useRef(null);
+  const [lens, setLens] = useState({
+    x: 0,
+    y: 0,
+    show: false,
+    bgX: 0,
+    bgY: 0,
+  });
+
+  const [renderedSize, setRenderedSize] = useState({ width: 0, height: 0 });
+
+  const handleZoom = (e) => {
+    const rect = imgRef.current.getBoundingClientRect();
+
+    const posX = e.clientX - rect.left;
+    const posY = e.clientY - rect.top;
+
+    const lensX = posX - LENS_SIZE / 2;
+    const lensY = posY - LENS_SIZE / 2;
+
+    const bgX = posX * ZOOM_LEVEL - LENS_SIZE / 2;
+    const bgY = posY * ZOOM_LEVEL - LENS_SIZE / 2;
+
+    setLens({
+      x: lensX,
+      y: lensY,
+      bgX,
+      bgY,
+      show: true,
+    });
+
+    setRenderedSize({
+      width: rect.width,
+      height: rect.height,
+    });
+  };
 
   return (
-    <section className="py-16 bg-gray-50" id="our-products">
+    <section
+      className="py-20 bg-gradient-to-tr from-gray-100 to-gray-200/60"
+      id="our-products"
+    >
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
+       <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
           Our Products
         </h2>
 
@@ -89,7 +175,7 @@ export default function OurProducts() {
             <button
               key={cat.id}
               onClick={() => setActive(cat.id)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-all 
+              className={`flex items-center gap-2 px-4 py-2 cursor-pointer rounded-full text-sm sm:text-base font-medium transition-all 
                 ${
                   active === cat.id
                     ? "bg-green-600 text-white shadow-lg scale-105"
@@ -102,45 +188,113 @@ export default function OurProducts() {
           ))}
         </div>
 
- 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
           {(products[active] || []).map((item, index) => (
             <div
               key={index}
-              className="group relative w-full h-72"
-              style={{ perspective: "1000px" }}
+              className="relative bg-white rounded-3xl border cursor-pointer border-gray-100 shadow-xl overflow-hidden group hover:shadow-2xl transition-all"
             >
-         
-              <div className="relative w-full h-full cursor-pointer transition-transform duration-[800ms] ease-[cubic-bezier(0.4,0.2,0.3,1)] [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] will-change-transform">
-            
-                <div className="absolute inset-0 bg-white rounded-2xl shadow-md overflow-hidden flex flex-col justify-between backface-hidden [transform:rotateY(0deg)]">
-                  <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72">
-                    <Image
-                      src={item.img}
-                      alt={item.title}
-                      fill
-                      className="object-fill select-none pointer-events-none"
-                    />
-                  </div>
+              <div className="relative w-full h-60 overflow-hidden">
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-all duration-[900ms] ease-out group-hover:scale-110"
+                />
 
-                  <div className="p-4 text-center">
-                    <h3 className="text-lg font-semibold text-gray-800">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
+                {/* Eye Overlay */}
+             <div
+                className="absolute inset-0 bg-[#03AA67]/80 backdrop-blur-[2px] flex flex-col items-center justify-center
+                opacity-0 translate-y-[-100%] group-hover:opacity-100 group-hover:translate-y-0 
+                transition-all duration-500 ease-in-out"
+              >
+                <button
+                  onClick={() => openModal(item)}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <span className="bg-black/90 p-3 rounded-full cursor-pointer shadow-xl hover:scale-125 active:scale-95 transition-transform duration-300">
+                    <FaEye className="text-white text-2xl" />
+                  </span>
 
-     
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-600/90 to-emerald-500 text-white p-6 flex flex-col justify-center items-center text-center backface-hidden [transform:rotateY(180deg)]">
-                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm opacity-90">{item.desc}</p>
-                  <p className="text-lg font-bold mt-4">{item.price}</p>
-                </div>
+                  <p className="text-white font-semibold tracking-wide cursor-pointer">Learn More</p>
+                </button>
+              </div>
+
+              </div>
+
+              <div className="p-3 text-center space-y-1">
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {item.title}
+                </h3>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={selected?.title}
+        width="max-w-5xl"
+        showConfirmButton={false}
+        showCancelButton={false}
+      >
+        {selected && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              className="relative w-full h-[420px] overflow-hidden cursor-crosshair"
+              onMouseMove={handleZoom}
+              onMouseEnter={() => setLens((prev) => ({ ...prev, show: true }))}
+              onMouseLeave={() => setLens((prev) => ({ ...prev, show: false }))}
+            >
+              <Image
+                ref={imgRef}
+                src={selected.img}
+                alt="Preview"
+                fill
+                className="object-cover"
+              />
+
+              {lens.show && (
+                <div
+                  className="absolute rounded-full border-2 border-white pointer-events-none shadow-xl"
+                  style={{
+                    top: lens.y,
+                    left: lens.x,
+                    width: LENS_SIZE,
+                    height: LENS_SIZE,
+                    backgroundImage: `url(${selected.img})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: `${renderedSize.width * ZOOM_LEVEL}px ${
+                      renderedSize.height * ZOOM_LEVEL
+                    }px`,
+                    backgroundPosition: `-${lens.bgX}px -${lens.bgY}px`,
+                  }}
+                />
+              )}
+            </div>
+
+            {/* Product Details */}
+            <div className="space-y-4">
+              <h3 className="text-3xl font-semibold text-gray-800">
+                {selected.title}
+              </h3>
+             <p
+  className="text-gray-600 leading-relaxed text-lg"
+  dangerouslySetInnerHTML={{ __html: selected.desc }}
+/>
+
+              <p className="text-4xl font-extrabold text-green-600">
+                {selected.price}
+              </p>
+
+              
+            </div>
+          </div>
+        )}
+      </Modal>
     </section>
   );
 }

@@ -26,7 +26,6 @@ export default function FeatureCards() {
     },
   ];
 
-  // Animation Variants
   const container = {
     hidden: {},
     show: {
@@ -44,7 +43,6 @@ export default function FeatureCards() {
 
   return (
     <section className="relative bg-gradient-to-br from-[#E6F4FF] via-white to-[#E6F4FF] py-24 md:py-28 overflow-hidden">
-      {/* Floating Background Shape */}
       <motion.div
         initial={{ y: 0 }}
         animate={{ y: [0, -15, 0] }}
@@ -61,7 +59,6 @@ export default function FeatureCards() {
         />
       </motion.div>
 
-      {/* Section Heading */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -70,7 +67,7 @@ export default function FeatureCards() {
         className="text-center mb-16 relative z-10"
       >
         <h2 className="text-3xl md:text-4xl font-bold text-[#0072CE] mb-4">
-          OUR DENTAL AND PHARMACY <span className="text-[#00B388]">SERVICES</span>
+          OUR DENTAL AND PHARMACY <span className="text-[#00A859]">SERVICES</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Your trusted dental and pharmacy partner in Jaipur — quality care, genuine medicines, and easy home delivery.
@@ -78,7 +75,6 @@ export default function FeatureCards() {
         <div className="mt-4 w-24 h-1 bg-gradient-to-r from-[#0072CE] to-[#00B388] mx-auto rounded-full" />
       </motion.div>
 
-      {/* Cards */}
       <motion.div
         variants={container}
         initial="hidden"
@@ -91,7 +87,7 @@ export default function FeatureCards() {
             key={index}
             variants={fadeUp}
             whileHover={{
-              y: -10, // 👈 only lift up — no rotation
+              y: -10,
               transition: { type: "spring", stiffness: 300, damping: 18 },
             }}
             className="
@@ -100,7 +96,6 @@ export default function FeatureCards() {
               text-start p-8 flex flex-col items-start
             "
           >
-            {/* Gradient Hover Overlay */}
             <div
               className="
                 absolute inset-0 bg-gradient-to-b from-[#0072CE] to-[#00B388]
@@ -109,7 +104,6 @@ export default function FeatureCards() {
               "
             ></div>
 
-            {/* Icon */}
             <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 z-10 border-2 border-[#E6F4FF] shadow-sm">
               <Image
                 src={item.icon}
@@ -119,7 +113,6 @@ export default function FeatureCards() {
               />
             </div>
 
-            {/* Title */}
             <h3
               className="
                 text-[#1E1E3E] font-semibold text-lg mb-2 relative z-10 
@@ -129,7 +122,6 @@ export default function FeatureCards() {
               {item.title}
             </h3>
 
-            {/* Description */}
             <p
               className="
                 text-gray-600 text-sm leading-relaxed relative z-10 

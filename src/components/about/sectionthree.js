@@ -107,7 +107,7 @@ export default function SectionThree() {
                   : "opacity-0 translate-y-10"
               }`}
             >
-              <Link href="/pharmacy">
+              <Link href="/rghs-pharmacy">
                 <button
                   className="
     relative overflow-hidden bg-[#0E76CD] cursor-pointer text-white font-semibold

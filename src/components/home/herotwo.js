@@ -69,9 +69,9 @@ export default function HeroSection() {
             variants={fadeFromRight}
             className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0E76CD] leading-tight"
           >
-            WELCOME TO <br />
-            <span className="text-[#00A859]">HEALTH SQUARE</span> <br />
-            DENTAL CLINIC
+           Best Dental Care<br /> 
+            <span className="text-[#00A859]"> & Pharmacy Services</span> <br />
+            in Jaipur
           </motion.h1>
 
           <motion.p

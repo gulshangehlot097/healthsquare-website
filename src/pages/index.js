@@ -3,6 +3,7 @@ import Seo from '@/src/components/seo'
 import HeroSection from "@/src/components/home/herosection"
 import HeroTwo from "@/src/components/home/herotwo"
 import ServicesSection from "@/src/components/home/servicessection"
+import RghsSection from "@/src/components/home/rghssection"
 import StoreTimings from "@/src/components/home/stortime"
 import HealthServicesSection from "@/src/components/home/healthservices"
 import DentalSpecialist from "@/src/components/home/dentalspecialist"
@@ -21,6 +22,7 @@ export default function Home() {
       {/* <HeroSection/> */}
 
       <ServicesSection/>
+      <RghsSection/>
         <StoreTimings/>
         <HealthServicesSection/>
         <DentalServices/>

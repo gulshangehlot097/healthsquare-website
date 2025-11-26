@@ -108,10 +108,10 @@ export default function SectionOne() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="/services"
+                  href="/products"
                   className="border-2 border-[#0082e6] text-[#0082e6] px-8 py-3 rounded-full font-semibold hover:bg-[#0082e6] hover:text-white transition-all duration-300 block text-center"
                 >
-                  Explore Services
+                  Explore Products
                 </Link>
               </motion.div>
             </div>

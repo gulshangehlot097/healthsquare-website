@@ -55,14 +55,14 @@ export default function BlogList() {
         setTotalPages(Math.ceil(total / PER_PAGE));
       } else {
         console.warn("Invalid response:", res);
-        showError("Unable to load blogs.");
+        // showError("Unable to load blogs.");
         setBlogs([]);
         setRecent([]);
         setCategories([]);
       }
     } catch (err) {
       console.error("Error fetching blogs:", err);
-      showError("Network error. Please try again later.");
+      // showError("Network error. Please try again later.");
       setBlogs([]);
     } finally {
       if (id === reqIdRef.current) setLoading(false);
