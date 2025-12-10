@@ -26,7 +26,6 @@ const categories = [
   { id: "oral-care", name: "Oral Care", icon: <FaTooth /> },
   { id: "beauty", name: "Sunscreen & Beauty Essentials", icon: <FaSun /> },
   { id: "baby-care", name: "Baby Care", icon: <FaBaby /> },
-  { id: "first-aid", name: "Health & First-Aid Essentials", icon: <FaBandAid /> },
   { id: "orthopedic", name: "Orthopedic Supports & Brace", icon: <FaBriefcaseMedical /> },
   { id: "medical-devices", name: "Cough And Cold", icon: <FaStethoscope /> },
   { id: "heart-care", name: "Dibeties Care", icon: <FaHeartbeat /> },
@@ -69,15 +68,7 @@ Choose from trusted brands like <strong> Dove, Bajaj Almond Drops, Garnier Fruct
 
   }
 ],
-"first-aid": [
-  {
-    title: "Diabetes & Wellness essential",
-    img: "/images/products/diabetescare/diabetes-care.png",
-    desc: `Our pharmacy offers a trusted range of diabetes and wellness products including glucometers, sugar substitutes, digestive tonics, omega supplements, etc. Carefully selected to support balanced sugar levels, heart health, metabolism, and overall well-being.All available at our pharmacy for daily health support.
-      `
 
-  }
-],
 "hygiene": [
   {
     title: "Essential Personal Care & Hygiene",

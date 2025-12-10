@@ -7,8 +7,8 @@ export default function Home() {
   const slides = [
     {
       img: "/images/products/hero01.png",
-       title: "Daily Health Essentials",
-      desc: "From disinfectants and first-aid kits to digestive care and cold-relief solutions, our pharmacy offers a complete collection of essentials.",
+       title: "Hair Care Essential",
+      desc: "From daily shampoos to nourishing oils and repair treatments, our pharmacy offers reliable hair care products to keep your hair healthy, strong, and well-maintained.",
     },
     {
       img: "/images/products/hero02.png",
