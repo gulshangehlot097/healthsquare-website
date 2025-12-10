@@ -94,8 +94,7 @@ export async function callApiWithFile(url, method = "POST", payload = null) {
       options.body = JSON.stringify(payload);
     }
   }
-  console.log("hello", payload);
-  console.log(options);
+
   const res = await fetch(url, options);
   const ct = res.headers.get("content-type") || "";
 

@@ -24,7 +24,6 @@ import {
   FiCheck,
 } from "react-icons/fi";
 
-// Utility functions
 export async function getStaticPaths() {
   return { paths: [], fallback: "blocking" };
 }
@@ -166,7 +165,6 @@ export default function BlogDetail() {
       />
 
       <main className="relative w-full overflow-hidden">
-        {/* ---------- Hero Section ---------- */}
         <section className="relative w-full h-[75vh] overflow-hidden flex items-end justify-center">
           {hero && (
             <div className="absolute inset-0 flex items-center justify-center bg-black">
@@ -207,7 +205,6 @@ export default function BlogDetail() {
                 </span>
               )}
             </div>
-            {/* Share Buttons */}
             <motion.div
               {...fade}
               className="mt-6 flex justify-center gap-4 flex-wrap"
@@ -249,7 +246,6 @@ export default function BlogDetail() {
           </motion.div>
         </section>
 
-        {/* ---------- Article Section ---------- */}
         <section className="relative bg-gradient-to-b from-[#f8fbff] to-white py-20 px-6">
           <div className="max-w-5xl mx-auto">
             <div className="mb-10 flex justify-between items-center text-sm text-gray-600">

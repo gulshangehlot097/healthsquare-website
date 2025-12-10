@@ -4,11 +4,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const brands = [
-  { name: "VIGHY", img: "/images/products/hero01.png", desc: "Natural Wealth Beta Karoten", tag: "SALE 50%" },
-  { name: "Eucerin", img: "/images/products/hero02.png", desc: "Skincare that shines", tag: "Best Seller" },
-  { name: "NIQEA", img: "/images/products/hero03.png", desc: "Anti-age Skin Serum", tag: "Top Rated" },
-  { name: "Loreal", img: "/images/products/hero01.png", desc: "Because you’re worth it", tag: "New" },
-  { name: "Himalaya", img: "/images/products/hero02.png", desc: "Pure herbal care", tag: "Hot" },
+  {  img: "/images/products/featuredbrand/log-01.png",  },
+  {  img: "/images/products/featuredbrand/log-02.png",  },
+  { img: "/images/products/featuredbrand/log-03.png",  },
+  {  img: "/images/products/featuredbrand/log-04.png",   },
+  {  img: "/images/products/featuredbrand/log-05.png",   },
+  { img: "/images/products/featuredbrand/log-06.png",  },
+  { img: "/images/products/featuredbrand/log-07.png",  },
+  { img: "/images/products/featuredbrand/log-08.png",  },
+  
 ];
 
 export default function FeaturedBrand() {
@@ -43,7 +47,7 @@ export default function FeaturedBrand() {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused, isDragging]);
 
-  // Mousewheel scroll pause logic
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -59,7 +63,7 @@ export default function FeaturedBrand() {
     return () => container.removeEventListener("wheel", handleWheel);
   }, []);
 
-  // Manual drag (optional)
+
   const handleMouseDown = (e) => {
     const container = containerRef.current;
     if (!container) return;
@@ -93,7 +97,7 @@ export default function FeaturedBrand() {
 
   return (
     <section
-      className="py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
+      className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       
@@ -104,7 +108,7 @@ export default function FeaturedBrand() {
           Choose your health priority and explore expert care
         </p>
       </div>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 ">
         
 
         <div
@@ -125,7 +129,7 @@ export default function FeaturedBrand() {
                 key={i}
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="relative min-w-[260px] sm:min-w-[300px] h-[220px] "
+                className="relative min-w-[200px] sm:min-w-[260px] h-[190px] "
               >
                 <Image
                   src={brand.img}
@@ -135,13 +139,13 @@ export default function FeaturedBrand() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
 
-                <div className="absolute bottom-4 left-4 text-white drop-shadow-md">
+                {/* <div className="absolute bottom-4 left-4 text-white drop-shadow-md">
                   <h3 className="text-lg font-bold">{brand.name}</h3>
                   <p className="text-sm opacity-90">{brand.desc}</p>
                   <span className="inline-block bg-blue-500 text-xs px-3 py-1 mt-2 rounded-full">
                     {brand.tag}
                   </span>
-                </div>
+                </div> */}
               </motion.div>
             ))}
           </div>

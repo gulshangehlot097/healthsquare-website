@@ -19,7 +19,6 @@ export default function Modal({
       <div
         className={`bg-white rounded-xl shadow-lg w-full ${width} p-6 relative animate-slideUp`}
       >
-        {/* Header */}
         <div className="flex justify-between items-center border-b pb-2">
           <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
           <button onClick={onClose} className="text-gray-400 hover:text-red-500">
@@ -27,12 +26,10 @@ export default function Modal({
           </button>
         </div>
 
-        {/* Content */}
         <div className="mt-4 text-sm text-gray-700 max-h-[70vh] overflow-y-auto  pr-1">
           {children}
         </div>
 
-        {/* Footer Buttons */}
         {(showCancelButton || showConfirmButton) && (
           <div className="mt-6 flex justify-start gap-3">
             {showCancelButton && (

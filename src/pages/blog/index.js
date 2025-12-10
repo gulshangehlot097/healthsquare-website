@@ -62,7 +62,6 @@ export default function BlogList() {
       }
     } catch (err) {
       console.error("Error fetching blogs:", err);
-      // showError("Network error. Please try again later.");
       setBlogs([]);
     } finally {
       if (id === reqIdRef.current) setLoading(false);
@@ -72,7 +71,6 @@ export default function BlogList() {
   useEffect(() => {
     fetchBlogs(page);
   }, [page, fetchBlogs]);
-  //   console.log(blogs)
   const handleNext = () => page < totalPages && setPage(page + 1);
   const handlePrev = () => page > 1 && setPage(page - 1);
 

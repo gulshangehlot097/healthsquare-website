@@ -31,7 +31,6 @@ export default function ServicePage({ service }) {
 
     
 
-      {/* ========== HERO: Glass overlay + gradient blobs ========== */}
       <section className="relative h-[78vh] w-full overflow-hidden">
         <Image
           src={service.banner || "/images/appointment.jpg"}
@@ -71,18 +70,15 @@ export default function ServicePage({ service }) {
         </div>
       </section>
 
-      {/* ========== MAIN: Premium timeline layout ========== */}
       <main className="relative bg-gradient-to-b from-white/90 to-transparent">
-        {/* subtle pattern */}
       
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 space-y-24">
-          {/* vertical timeline spine (desktop only) */}
           <div className="hidden md:block absolute left-1/2 top-20 bottom-20 w-px bg-gradient-to-b from-transparent via-[#0E76CD]/20 to-transparent" />
 
           {mounted &&
             service.sections?.map((sec, i) => {
-              const leftSide = i % 2 === 0; // alternate
+              const leftSide = i % 2 === 0; 
               return (
                 <motion.section
                   key={i}
@@ -92,14 +88,12 @@ export default function ServicePage({ service }) {
                   transition={{ duration: 0.6 }}
                   className="relative grid md:grid-cols-2 gap-8 md:gap-12 items-center"
                 >
-                  {/* timeline dot */}
                   <div
                     className={`hidden md:block absolute top-1/2 -translate-y-1/2 left-1/2 -ml-[10px] h-5 w-5 rounded-full border-4 border-white shadow-lg ${
                       leftSide ? "bg-[#03AB68]" : "bg-[#0E76CD]"
                     }`}
                   />
 
-                  {/* IMAGE CARD */}
                   <div
                     className={`order-1 ${
                       leftSide ? "md:order-1" : "md:order-2"
@@ -117,13 +111,11 @@ export default function ServicePage({ service }) {
                       <h3 className="absolute bottom-5 left-5 text-white text-2xl font-semibold drop-shadow">
                         {sec.heading}
                       </h3>
-                      {/* corner gradient accents */}
                       <span className="pointer-events-none absolute -top-10 -right-10 h-28 w-28 rounded-full bg-[#03AB68]/30 blur-2xl" />
                       <span className="pointer-events-none absolute -bottom-10 -left-10 h-28 w-28 rounded-full bg-[#0E76CD]/30 blur-2xl" />
                     </div>
                   </div>
 
-                  {/* TEXT / LIST CARD (glass) */}
                   <div
                     className={`order-2 ${
                       leftSide ? "md:order-2" : "md:order-1"
@@ -160,10 +152,8 @@ export default function ServicePage({ service }) {
               );
             })}
 
-          {/* ========== FAQ with smile-arc divider ========== */}
           {service.faqs?.length > 0 && (
             <section className="relative">
-              {/* smile arc */}
               <div className="mx-auto mb-10 h-6 w-40 rounded-b-[999px] bg-gradient-to-r from-[#03AB68]/40 via-[#0E76CD]/40 to-[#03AB68]/40" />
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
@@ -191,7 +181,6 @@ export default function ServicePage({ service }) {
             </section>
           )}
 
-          {/* ========== DOCTOR CTA ========== */}
           <motion.section
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -200,7 +189,6 @@ export default function ServicePage({ service }) {
             className="relative overflow-hidden rounded-3xl border border-[#CFE6FF] bg-gradient-to-r from-[#E9FFF5] via-white to-[#EAF4FF] shadow-2xl"
           >
             <div className="grid md:grid-cols-2">
-              {/* text */}
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
                   Ready to Redesign Your Smile?
@@ -217,7 +205,6 @@ export default function ServicePage({ service }) {
                 </div>
               </div>
 
-              {/* doctor image */}
               <div className="relative min-h-[280px] md:min-h-[340px]">
                 <Image
                   src="/images/services/smile/smile-06.png"
@@ -229,7 +216,6 @@ export default function ServicePage({ service }) {
               </div>
             </div>
 
-            {/* subtle bubbles */}
             <span className="pointer-events-none absolute -top-10 right-10 h-24 w-24 rounded-full bg-[#0E76CD]/15 blur-2xl" />
             <span className="pointer-events-none absolute -bottom-10 left-10 h-28 w-28 rounded-full bg-[#03AB68]/15 blur-2xl" />
           </motion.section>
@@ -239,7 +225,6 @@ export default function ServicePage({ service }) {
   );
 }
 
-/* ---------- small accordion component ---------- */
 function FAQItem({ i, openIndex, setOpenIndex, question, answer }) {
   const open = openIndex === i;
   return (

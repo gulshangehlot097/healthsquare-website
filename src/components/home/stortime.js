@@ -10,10 +10,10 @@ export default function StoreTimings() {
     <section
       className="relative bg-[url('/images/background1.png')] bg-cover bg-center bg-fixed py-28"
     >
-      {/* Gradient Overlay */}
+
       <div className="absolute inset-0 bg-gradient-to-br from-[#0072CE]/80 via-[#008CC1]/70 to-[#00A859]/70 backdrop-blur-[1px]"></div>
 
-      {/* Main Content */}
+
       <div className="relative max-w-6xl mx-auto px-6 md:px-10 z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -22,7 +22,7 @@ export default function StoreTimings() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-10 bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.15)] p-10 md:p-14"
         >
-          {/* LEFT SIDE – Timings */}
+      
           <div>
             <div className="flex items-center gap-3 mb-8">
               <div className="bg-gradient-to-br from-[#0072CE] to-[#00A859] p-3 rounded-full shadow-md">
@@ -45,7 +45,7 @@ export default function StoreTimings() {
             </div>
           </div>
 
-          {/* RIGHT SIDE – Contact */}
+   
             <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}

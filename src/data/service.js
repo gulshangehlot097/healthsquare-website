@@ -1,5 +1,4 @@
 export const servicesData = [
-  // --- Existing Smile Design Service ---
   {
     slug: "smile-design",
     title: "Smile Design in Jaipur",
@@ -112,7 +111,7 @@ export const servicesData = [
     ],
   },
 
-  // --- New Advanced Root Canal Treatment Service ---
+
   {
     slug: "advanced-root-canal-treatment",
     title: "Advanced Root Canal Treatment in Jaipur",

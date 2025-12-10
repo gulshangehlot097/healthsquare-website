@@ -13,13 +13,11 @@ export default function ShopByConcern() {
   });
 
   const concerns = [
-    { name: "Heart Care", img: "/images/products/hero01.png" },
-    { name: "Stomach Care", img: "/images/products/hero02.png" },
-    { name: "Liver Care", img: "/images/products/hero01.png" },
-    { name: "Bone, Joint & Muscle", img: "/images/products/hero02.png" },
-    { name: "Kidney Care", img: "/images/products/hero01.png" },
-    { name: "Derma Care", img: "/images/products/hero02.png" },
-    { name: "Diabetes", img: "/images/products/hero01.png" },
+    { name: "Dibaties care ", img: "/images/products/shopbyconcern/dibatiescare.png" },
+    { name: "Oral care ", img: "/images/products/shopbyconcern/oralcare.png" },
+    { name: "Derma care", img: "/images/products/shopbyconcern/dermacare.png" },
+    { name: "joint care ", img: "/images/products/shopbyconcern/jointcare.png" },
+    { name: "heart care", img: "/images/products/shopbyconcern/heartcare.png" },
   ];
 
   const scroll = (direction) => {

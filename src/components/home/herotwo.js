@@ -6,7 +6,7 @@ import RotatingBadge from "@/src/components/rotatingbadge";
 import Link from "next/link";
 
 export default function HeroSection() {
-  // Parent for staggered animation
+
   const container = {
     hidden: {},
     show: {
@@ -17,7 +17,7 @@ export default function HeroSection() {
     },
   };
 
-  // Each child (text line / button) slides in from right
+
   const fadeFromRight = {
     hidden: { opacity: 0, x: 80 },
     show: {
@@ -27,7 +27,7 @@ export default function HeroSection() {
     },
   };
 
-  // Image section slides up
+
   const fadeFromBottom = {
     hidden: { opacity: 0, y: 100 },
     show: {
@@ -39,7 +39,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative bg-white pt-[40px] pb-20 sm:pb-24 overflow-hidden">
-      {/* Glowing Background Circles */}
+
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -53,14 +53,13 @@ export default function HeroSection() {
         className="absolute bottom-[-80px] right-[-80px] w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-[#00A859]/10 rounded-full blur-3xl"
       ></motion.div>
 
-      {/* MAIN CONTENT */}
+
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col md:flex-row items-center justify-between relative z-10 gap-10 md:gap-0"
       >
-        {/* LEFT CONTENT — Text from Right to Left */}
         <motion.div
           variants={container}
           className="flex-1 text-center md:text-left"
@@ -115,7 +114,6 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT SECTION — Image from Bottom to Top */}
         <motion.div
           variants={fadeFromBottom}
           className="flex-1 relative mt-12 sm:mt-16 md:mt-0 flex justify-center"
@@ -134,7 +132,7 @@ export default function HeroSection() {
             />
           </motion.div>
 
-          {/* Floating Icons */}
+     
           <motion.div
             animate={{ y: [0, -15, 0], rotate: [0, 5, 0] }}
             transition={{ repeat: Infinity, duration: 3 }}
@@ -159,7 +157,7 @@ export default function HeroSection() {
             <FaHeartbeat className="text-2xl sm:text-3xl md:text-4xl opacity-70" />
           </motion.div>
 
-          {/* Rotating Badge */}
+
          <motion.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}

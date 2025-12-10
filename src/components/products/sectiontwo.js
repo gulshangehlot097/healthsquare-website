@@ -7,12 +7,12 @@ export default function Home() {
   const slides = [
     {
       img: "/images/products/hero01.png",
-      title: "Health & Care Products",
-      desc: "Discover a wide range of hair care essentials — from nourishing oils to advanced serums — all tested, trusted, and delivered by Health Square.",
+       title: "Daily Health Essentials",
+      desc: "From disinfectants and first-aid kits to digestive care and cold-relief solutions, our pharmacy offers a complete collection of essentials.",
     },
     {
       img: "/images/products/hero02.png",
-      title: "Explore Skincare & Personal Beauty Essentials",
+      title: "Explore Skincare & Beauty Essentials",
       desc: "Discover a curated range of beauty and skincare products that nourish, protect, and enhance your natural glow — all certified and authentic.",
     },
     {

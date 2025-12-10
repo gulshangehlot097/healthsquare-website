@@ -106,7 +106,6 @@ const sections = useMemo(
 />
 
 
-      {/* Background */}
       <div
         aria-hidden
         className="fixed inset-0 -z-10 bg-gradient-to-br from-[#E6F8FF] via-white to-[#F0FFF8] overflow-hidden"
@@ -116,7 +115,6 @@ const sections = useMemo(
       </div>
 
       <main className="mx-auto max-w-7xl px-4 sm:px-8 py-20">
-        {/* Hero */}
         <motion.header
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -171,9 +169,7 @@ const sections = useMemo(
           </div>
         </motion.header>
 
-        {/* Sidebar + Content */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-[18rem_1fr] gap-10">
-          {/* TOC */}
           <aside className="hidden lg:block sticky top-28 self-start">
             <nav className="rounded-2xl bg-white/60 backdrop-blur border border-white/50 shadow-sm p-4">
               <div className="mb-2 text-xs uppercase tracking-wider text-slate-500 font-medium">
@@ -203,9 +199,7 @@ const sections = useMemo(
             </nav>
           </aside>
 
-          {/* Content */}
           <article className="relative space-y-10 text-slate-700 leading-relaxed">
-            {/* INTRODUCTION */}
             <ScrollSection id="intro" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">Introduction</h2>
               <p>
@@ -216,7 +210,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* DEFINITIONS */}
             <ScrollSection id="definitions" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">DEFINITIONS</h2>
               <p>
@@ -239,7 +232,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* INFORMATION WE COLLECT */}
             <ScrollSection id="collect" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">INFORMATION WE COLLECT FROM YOU</h2>
 
@@ -277,7 +269,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* WAYS OF COLLECTING */}
             <ScrollSection id="ways" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">WAYS OF COLLECTING INFORMATION</h2>
 
@@ -303,7 +294,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* USE OF PERSONAL INFORMATION */}
             <ScrollSection id="use" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">USE OF YOUR PERSONAL INFORMATION</h2>
 
@@ -362,7 +352,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* SHARING / DISCLOSURE */}
             <ScrollSection id="sharing" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">
                 SHARING/DISCLOSURE/DISTRIBUTION OF YOUR INFORMATION WITH THIRD-PARTIES
@@ -422,7 +411,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* CONSENT */}
             <ScrollSection id="consent" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">YOUR CONSENT</h2>
               <p>
@@ -430,7 +418,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* COOKIES */}
             <ScrollSection id="cookies" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">COOKIES</h2>
               <p>
@@ -458,7 +445,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* DATA SECURITY */}
             <ScrollSection id="security" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">DATA SECURITY PRECAUTIONS</h2>
               <p>
@@ -469,7 +455,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* THIRD PARTY SITES */}
             <ScrollSection id="thirdparty" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">THIRD PARTY SITES</h2>
               <p>
@@ -480,7 +465,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* CONTACT */}
             <ScrollSection id="contact" className="rounded-3xl bg-white/80 backdrop-blur border border-white/50 shadow p-6">
               <h2 className="text-2xl font-semibold text-slate-900 mb-3">Contact</h2>
               <p>
@@ -489,7 +473,6 @@ const sections = useMemo(
               </p>
             </ScrollSection>
 
-            {/* Scroll to top */}
             <MotionLink
               href="#intro"
               whileHover={{ scale: 1.05 }}

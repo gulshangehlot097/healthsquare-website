@@ -116,7 +116,6 @@ const AdminLogin = ({ usersData }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#C2EBFF] px-4 ">
       <div className="bg-white shadow-xl rounded-3xl overflow-hidden w-full max-w-4xl grid md:grid-cols-[46%_54%] transition-all">
-        {/* Left Side */}
         <div className="px-10 py-8 flex flex-col justify-center items-center space-y-4">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-[#0E76CD] via-[#00A859] to-[#0E76CD] text-transparent bg-clip-text flex items-center gap-3">
             <FaUserShield className="text-4xl text-[#0E76CD] drop-shadow-md" />
@@ -191,7 +190,6 @@ const AdminLogin = ({ usersData }) => {
           </form>
         </div>
 
-        {/* Right Side Image - hidden on small screens */}
         <div className="hidden md:block relative h-[512px] overflow-hidden">
           <Image
             src="/admin.png"

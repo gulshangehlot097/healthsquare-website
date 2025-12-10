@@ -91,7 +91,6 @@ export default function HeroSection() {
       `}</style>
 
       <section className="relative flex flex-col md:flex-row items-center justify-between gradient-bg text-white px-8 md:px-20 pt-10 overflow-hidden min-h-[500px] md:min-h-[550px]">
-        {/* Text Section */}
         <div
           key={current + "-text"}
           className="w-full md:w-1/2 flex flex-col gap-4 md:gap-5 text-center md:text-left"
@@ -105,7 +104,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Image Section */}
+
         <div
           key={current + "-image"}
           className="w-full md:w-1/2 flex justify-center slide-image"
@@ -119,7 +118,6 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-[#005FB8]/20 pointer-events-none" />
       </section>
     </>

@@ -42,7 +42,7 @@ export default function About() {
           <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#00A6FB]/10 rounded-full blur-3xl" />
 
           <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-10 flex flex-col lg:flex-row items-stretch relative z-10 gap-6 sm:gap-8 lg:gap-0">
-            {/* ---------- LEFT: FORM ---------- */}
+
             <motion.div
               initial={{ opacity: 0, y: 80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function About() {
               <AppointmentForm />
             </motion.div>
 
-            {/* ---------- RIGHT: IMAGE + INFO ---------- */}
+
             <motion.div
               initial={{ opacity: 0, y: -80 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,7 +149,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* ---------- GOOGLE MAP ---------- */}
         <section className="w-full">
           <iframe
             title="Health Square Location"

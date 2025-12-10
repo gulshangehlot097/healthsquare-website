@@ -46,7 +46,7 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-white text-slate-900 antialiased">
-      {/* NAV */}
+
       <nav className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-400 to-cyan-300 flex items-center justify-center text-white font-extrabold shadow-md">
@@ -71,7 +71,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      {/* HERO */}
+
       <section className="max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row gap-12 items-center">
         <div className="flex-1">
           <motion.h2
@@ -110,7 +110,7 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {/* Skills badges */}
+ 
           <div className="mt-8 flex flex-wrap gap-3">
             {skills.map((s) => (
               <motion.span key={s} whileHover={{ scale: 1.03 }} className="px-3 py-1 rounded-full bg-white/70 border border-slate-100 text-sm shadow-sm">
@@ -120,7 +120,7 @@ export default function Portfolio() {
           </div>
         </div>
 
-        {/* Hero visual (Glass card) */}
+
         <div className="w-full max-w-md flex-1">
           <div className="relative bg-white/60 backdrop-blur-md border border-slate-100 rounded-2xl p-6 shadow-lg">
             <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-60 bg-gradient-to-tr from-indigo-50 to-cyan-50" />
@@ -141,7 +141,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Services */}
+   
       <section className="max-w-7xl mx-auto px-6 py-12">
         <h3 className="text-2xl font-semibold mb-6 text-slate-900">What I build</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -161,7 +161,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Projects */}
+
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex items-center justify-between mb-6">
           <h3 className="text-2xl font-semibold text-slate-900">Featured Projects</h3>
@@ -198,7 +198,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About */}
+ 
       <section className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
@@ -223,7 +223,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Contact */}
+    
       <footer className="max-w-7xl mx-auto px-6 py-12">
         <div className="bg-white/60 backdrop-blur-md rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-100 shadow-sm">
          <div>

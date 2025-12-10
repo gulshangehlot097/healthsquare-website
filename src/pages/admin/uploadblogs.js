@@ -7,7 +7,7 @@ import constant from "@/src/env";
 import RichTextEditor from "@/src/components/blog/uplodblogs/contenteditor";
 import Image from "next/image";
 
-/** -------- Wrapper: handles auth guard only -------- */
+
 export default function BlogUploadFormPage() {
   const router = useRouter();
   const [checking, setChecking] = useState(true);
@@ -57,7 +57,6 @@ function BlogUploadFormInner() {
   const [categories, setCategories] = useState(["DENTAL CARE", "PHARMACY"]);
   const [authors, setAuthors] = useState(["Admin"]);
 
-  // inputs for adding new items
   const [newCat, setNewCat] = useState("");
   const [newAuthor, setNewAuthor] = useState("");
 
@@ -80,7 +79,7 @@ function BlogUploadFormInner() {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
-  // -------- helpers --------
+
   const normalizeSlug = (s) =>
     String(s || "")
       .toLowerCase()
@@ -447,7 +446,7 @@ function BlogUploadFormInner() {
                   </p>
                 </div>
 
-                {/* Slug */}
+          
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-gray-700">
                     Slug <span className="text-rose-500">*</span>
@@ -466,7 +465,7 @@ function BlogUploadFormInner() {
                   </p>
                 </div>
 
-                {/* shortdes */}
+            
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-semibold text-gray-700">
@@ -486,7 +485,7 @@ function BlogUploadFormInner() {
                   />
                 </div>
 
-                {/* Content */}
+             
                 <div className="space-y-2">
                   <label className="block text-sm font-semibold text-gray-700">
                     Content <span className="text-rose-500">*</span>
@@ -508,7 +507,7 @@ function BlogUploadFormInner() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE */}
+             
               <div className="space-y-8 lg:pl-2">
                 <div className="space-y-3 rounded-xl border border-[#e5e7eb] bg-white shadow-sm p-4">
                   <div className="flex items-center justify-between">
@@ -740,7 +739,7 @@ function BlogUploadFormInner() {
                 </div>
               </div>
 
-              {/* Submit */}
+          
               <div className="lg:col-span-3 border-t border-[#e5e7eb] pt-6 flex flex-col sm:flex-row justify-end gap-3 sm:gap-4">
                 <button
                   type="button"

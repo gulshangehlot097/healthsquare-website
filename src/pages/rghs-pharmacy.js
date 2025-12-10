@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import HeroSection from "../components/rghs/herosection";
+import RGHSFAQ from "../components/rghs/rghsfaq";
 import { HiClock } from "react-icons/hi";
 import { Ri24HoursFill } from "react-icons/ri";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -467,7 +468,11 @@ export default function Home() {
             </div>
           </motion.div>
         </aside>
+        
       </main>
+
+
+      <RGHSFAQ />
     </>
   );
 }

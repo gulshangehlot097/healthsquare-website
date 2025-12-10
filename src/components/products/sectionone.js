@@ -18,7 +18,7 @@ import {
 import Image from "next/image";
 
 export default function Home() {
-  // 🩺 Category list with React Icons
+  //  Category list with React Icons
   const categories = [
     { name: "Health", icon: <FaHeartbeat /> },
     { name: "Cosmetics", icon: <FaSpa /> },
@@ -33,12 +33,12 @@ export default function Home() {
     { name: "Protection", icon: <FaShieldVirus /> },
   ];
 
-  // 🎞 Slides (Image + Title + Description)
+  //  Slides (Image + Title + Description)
   const slides = [
     {
       img: "/images/services/dental/06-dental-services.png",
-      title: "Health & Care Products",
-      desc: "Discover a wide range of hair care essentials — from nourishing oils to advanced serums — all tested, trusted, and delivered by Health Square.",
+      title: "Daily Health Essentials",
+      desc: "From disinfectants and first-aid kits to digestive care and cold-relief solutions, our pharmacy offers a complete collection of essentials.",
     },
     {
       img: "/images/services/dental/07-dental-services.png",
@@ -54,7 +54,7 @@ export default function Home() {
 
   const [current, setCurrent] = useState(0);
 
-  // ⏱ Auto-slide every 5 seconds
+  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -66,7 +66,6 @@ export default function Home() {
     <div className="bg-[#f9f7f3]">
       {/* ======== NAVBAR ======== */}
       <nav className="bg-[#5BB174] text-white flex items-center justify-between px-8 py-3 shadow-md">
-     
         <div className="flex items-center gap-4 font-semibold">
           <div className="flex items-center bg-[#3C9B5E] px-4 py-2 rounded-sm cursor-pointer">
             <span className="text-xl mr-2">⋯</span>
@@ -108,9 +107,9 @@ export default function Home() {
           </ul>
         </aside>
 
-        {/* ==== Hero Section ==== */}
+
         <section className="flex-1 relative flex items-center bg-[#f9f7f3] overflow-hidden">
-          {/* Text Content */}
+  
           <div className="relative z-10 max-w-lg space-y-5 pl-4 lg:pl-8 xl:pl-10 pr-8 transition-all duration-700 ease-in-out">
             <h1
               key={slides[current].title}
@@ -121,10 +120,9 @@ export default function Home() {
             <p className="text-gray-600 transition-opacity duration-700">
               {slides[current].desc}
             </p>
-            
           </div>
 
-          {/* Right Image */}
+
           <div className="absolute right-0 top-0 h-full w-1/2 transition-all duration-700 ease-in-out">
             <Image
               key={slides[current].img}
@@ -135,7 +133,7 @@ export default function Home() {
             />
           </div>
 
-          {/* Floating Icons */}
+
           <div className="absolute right-10 bottom-10 flex flex-col gap-3 z-20">
             <div className="bg-pink-600 text-white w-12 h-12 flex items-center justify-center rounded-full shadow-lg cursor-pointer text-xl hover:scale-105 transition-transform">
               <FaCommentDots />

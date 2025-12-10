@@ -27,7 +27,7 @@ export default function HealthServicesSection() {
     show: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
-  // 🔢 Smooth Counting Animation (0 → 20)
+
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.floor(latest));
   const [displayValue, setDisplayValue] = useState(0);
@@ -47,7 +47,7 @@ export default function HealthServicesSection() {
   return (
     <div className="bg-white">
       <section className="container mx-auto relative py-16 px-6 md:px-20 flex flex-col md:flex-row items-center gap-12 overflow-hidden">
-        {/* Floating Decorative Squares */}
+   
         <motion.div
           initial={{ y: 0 }}
           animate={{ y: [0, -20, 0] }}
@@ -62,7 +62,7 @@ export default function HealthServicesSection() {
           className="absolute bottom-10 right-10 w-16 h-16 border-2 border-[#00A759] -rotate-12 rounded-md"
         ></motion.div>
 
-        {/* LEFT SIDE — Image Grid + Counter */}
+
         <motion.div
           variants={container}
           initial="hidden"
@@ -70,7 +70,7 @@ export default function HealthServicesSection() {
           viewport={{ once: true, amount: 0.3 }}
           className="flex flex-col md:w-1/2 gap-6 relative z-10"
         >
-          {/* Top Two Images */}
+
           <motion.div variants={fadeUp} className="flex gap-4">
             <div className="relative w-1/2 h-52 rounded-3xl overflow-hidden shadow-md">
               <Image
@@ -93,7 +93,7 @@ export default function HealthServicesSection() {
             </div>
           </motion.div>
 
-          {/* Bottom Row — Image + Counter Box */}
+
           <motion.div variants={fadeUp} className="flex items-center gap-4">
             <div className="relative w-1/2 h-52 rounded-3xl overflow-hidden shadow-md">
               <Image
@@ -105,7 +105,7 @@ export default function HealthServicesSection() {
               />
             </div>
 
-            {/* Counter Box */}
+
             <div className="flex flex-col justify-center items-center bg-[#E6F4FF] rounded-3xl p-10 w-1/2 shadow-md relative overflow-hidden">
               <span className="absolute bottom-0 left-0 h-1 w-full bg-[#00A759]" />
               <motion.h2
@@ -124,7 +124,7 @@ export default function HealthServicesSection() {
           </motion.div>
         </motion.div>
 
-        {/* RIGHT SIDE — Text Content */}
+
         <motion.div
           variants={fadeRight}
           initial="hidden"
@@ -171,7 +171,7 @@ export default function HealthServicesSection() {
             </Link>
           </div>
 
-          {/* CTA Button */}
+
           <Link href="/services">
             <motion.button
               whileHover={{ scale: 1.07 }}
@@ -187,7 +187,7 @@ export default function HealthServicesSection() {
           </Link>
         </motion.div>
 
-        {/* Soft Gradient Background */}
+    
         <div className="absolute inset-0 -z-10 opacity-10 bg-gradient-to-br from-[#0D75CD] via-white to-[#00A759]" />
       </section>
     </div>

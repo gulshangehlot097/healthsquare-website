@@ -23,12 +23,12 @@ export default function DentalSpecialist() {
       aria-labelledby="dental-specialist"
       className="relative bg-gradient-to-br from-[#E6F7FF] via-white to-[#E0F9F0] py-16 md:py-24 overflow-hidden"
     >
-      {/* Floating gradient blobs */}
+
       <div className="absolute top-10 left-0 w-72 h-72 bg-[#0072CE]/10 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-10 right-0 w-72 h-72 bg-[#00A859]/10 rounded-full blur-3xl animate-pulse"></div>
 
       <div className="max-w-5xl mx-auto px-6 md:px-10 relative z-10">
-        {/* Header */}
+
         <motion.div
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,9 +61,9 @@ export default function DentalSpecialist() {
           </p>
         </motion.div>
 
-        {/* Content Grid */}
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column */}
+
           <motion.div
             variants={fadeLeft}
             initial="hidden"
@@ -117,7 +117,7 @@ export default function DentalSpecialist() {
             </div>
           </motion.div>
 
-          {/* Right Column */}
+     
           <motion.div
             variants={fadeRight}
             initial="hidden"
@@ -136,7 +136,7 @@ export default function DentalSpecialist() {
               feels confident in their smile.
             </p>
 
-            {/* Highlights */}
+       
             <motion.div
               className="grid grid-cols-2 gap-5 mt-8"
               initial="hidden"

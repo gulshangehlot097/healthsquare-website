@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-[url('/hero-pattern.jpg')] bg-[length:800px_800px] bg-repeat pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-        {/* ✅ Left Content */}
+     
         <div className="flex-1 relative flex flex-col justify-center md:pl-10">
           <div className="absolute -left-6 top-1/2 -translate-y-1/2 w-20 h-[90%] bg-gradient-to-b from-[#e1efff] to-white rounded-full blur-lg opacity-90 md:block hidden"></div>
 
@@ -28,7 +28,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ✅ Right Image */}
+
         <div className="flex-1 relative flex justify-center md:justify-end items-center">
           <div className="relative w-[92%] md:w-[500px] h-[340px] md:h-[420px] transform rotate-[-2deg] rounded-2xl overflow-hidden shadow-xl bg-white">
             <Image
@@ -40,7 +40,7 @@ export default function HeroSection() {
             />
           </div>
 
-          {/* 🌀 Rotating Badge Overlay */}
+
           <div className="absolute -bottom-10 -left-10">
             <RotatingBadge
    text="HEALTH SQUARE • PHARMACY • DENTAL • "

@@ -873,7 +873,7 @@ const onSubmit = async (data) => {
             <div className="sm:col-span-2 text-start">
               <button
                 type="submit"
-                className="relative bg-[#0072CE] text-white font-semibold py-3 px-10 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto"
+                className="relative bg-[#0072CE] cursor-pointer text-white font-semibold py-3 px-10 rounded-full flex items-center justify-center gap-2 w-full sm:w-auto"
               >
               {submitLoading ? (
   <>
