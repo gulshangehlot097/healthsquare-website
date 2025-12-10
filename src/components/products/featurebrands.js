@@ -103,7 +103,7 @@ export default function FeaturedBrand() {
       
     >
        <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-gray-900">Featured Brand</h2>
+        <h2 className="text-4xl font-bold text-gray-900">Featured Brands</h2>
         <p className="text-gray-500 mt-2 text-base">
           Choose your health priority and explore expert care
         </p>

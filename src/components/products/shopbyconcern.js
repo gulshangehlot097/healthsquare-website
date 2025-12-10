@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ShopByConcern() {
   const scrollRef = useRef(null);
-  const cardRef = useRef(null); // ⭐ card width detect
+  const cardRef = useRef(null);
   const [cardWidth, setCardWidth] = useState(0);
 
   const [zoomState, setZoomState] = useState({
@@ -24,13 +24,23 @@ export default function ShopByConcern() {
 
   const loopedConcerns = [...concerns, ...concerns];
 
-  // ⭐ Detect actual card width
+  // Detect card width
   useEffect(() => {
     if (cardRef.current) {
-      setCardWidth(cardRef.current.offsetWidth + 32); // 32px gap approx
+      setCardWidth(cardRef.current.offsetWidth + 32);
     }
   }, []);
 
+  // Start from center
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (container && cardWidth) {
+      const halfWidth = (loopedConcerns.length / 2) * cardWidth;
+      container.scrollLeft = halfWidth;
+    }
+  }, [cardWidth]);
+
+  // ⭐ FIXED INFINITE SCROLL LOGIC
   const scroll = (direction) => {
     const container = scrollRef.current;
     if (!container || !cardWidth) return;
@@ -43,30 +53,26 @@ export default function ShopByConcern() {
     setTimeout(() => {
       let sl = container.scrollLeft;
 
+      // If user reaches second half → instantly shift back
       if (sl >= halfWidth) {
+        container.style.scrollBehavior = "auto";
         container.scrollLeft = sl - halfWidth;
+        container.style.scrollBehavior = "smooth";
       }
 
+      // If user reaches before start → jump forward
       if (sl < 0) {
+        container.style.scrollBehavior = "auto";
         container.scrollLeft = sl + halfWidth;
+        container.style.scrollBehavior = "smooth";
       }
-    }, 310);
+    }, 320);
   };
-
-  // ⭐ Start from middle
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (container && cardWidth) {
-      const halfWidth = (loopedConcerns.length / 2) * cardWidth;
-      container.scrollLeft = halfWidth;
-    }
-  }, [cardWidth]);
 
   const handleZoomMove = (e, index) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-
     setZoomState({ activeIndex: index, x, y });
   };
 
@@ -78,28 +84,31 @@ export default function ShopByConcern() {
     <section className="py-16 bg-white relative">
       <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-gray-900">Shop by Concern</h2>
-        <p className="text-gray-500 mt-2 text-base">Choose your health priority and explore expert care</p>
+        <p className="text-gray-500 mt-2 text-base">
+          Choose your health priority and explore expert care
+        </p>
       </div>
 
       <div className="relative max-w-7xl mx-auto flex items-center justify-center px-10">
 
+        {/* LEFT BUTTON */}
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-300 
-          hover:bg-green-50 shadow-md p-3 rounded-full z-20"
+          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white border border-gray-300 hover:bg-green-50 shadow-md p-3 rounded-full z-20"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
 
+        {/* CARDS WRAPPER */}
         <div
           ref={scrollRef}
-          className="flex gap-8 overflow-x-hidden scroll-smooth
+          className="flex gap-8 overflow-x-hidden scroll-smooth 
           [&::-webkit-scrollbar]:hidden [scrollbar-width:none]"
         >
           {loopedConcerns.map((item, i) => (
             <div
               key={i}
-              ref={i === 0 ? cardRef : null} // ⭐ measure first card
+              ref={i === 0 ? cardRef : null}
               className="relative flex flex-col items-center 
               min-w-[160px] sm:min-w-[180px] md:min-w-[200px] lg:min-w-[220px]"
             >
@@ -138,6 +147,7 @@ export default function ShopByConcern() {
           ))}
         </div>
 
+        {/* RIGHT BUTTON */}
         <button
           onClick={() => scroll("right")}
           className="absolute right-0 top-1/2 -translate-y-1/2 bg-white border border-gray-300 

@@ -83,7 +83,7 @@ Shop trusted brands like <strong> Dettol, Savlon, Dove, VWash, Gillette </strong
 "perfume": [
      {
       title: "Top Deodorants & Body Sprays for Long-Lasting Freshness.",
-      img: "/images/products/perfume/body-spray.jpg",
+      img: "/images/products/perfume/body-spray.png",
       desc: "Stay confident and fresh all day with our premium collection of deodorants, body sprays, and fragrance mists, now available at Health Square Pharmacy.Choose from leading brands like Nivea, Old Spice, Denver, Beardo, and Godrej Aer—perfect for both men and women. Whether you prefer 48-hour sweat protection, smooth pearl-finish deodorants, or luxurious long-lasting fragrances, we have something for every lifestyle.Shop at Health Square Pharmacy for 100% authentic, dermatologically safe, and long-lasting deodorants.",
     },
 ],
